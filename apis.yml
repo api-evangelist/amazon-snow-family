@@ -8,11 +8,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - AWS
   - Data Migration
   - Edge Computing
   - Offline Transfer
   - Physical Appliance
-  - AWS
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/apis.yml
 created: '2026-03-16'
