@@ -1,0 +1,6 @@
+{
+  "SnsTopicARN": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "JobStatesToNotify": "example-value",
+  "NotifyAll": "example-value",
+  "DevicePickupSnsTopicARN": "arn:aws:service:us-east-1:123456789012:resource/example"
+}

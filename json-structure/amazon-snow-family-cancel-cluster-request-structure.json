@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-cancel-cluster-request-structure.json",
+  "name": "CancelClusterRequest",
+  "description": "CancelClusterRequest schema from Amazon Snow Family API",
+  "properties": {
+    "ClusterId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClusterId"
+        },
+        {
+          "description": "The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ClusterId"
+  ]
+}

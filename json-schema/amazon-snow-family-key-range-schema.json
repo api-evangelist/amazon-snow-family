@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-key-range-schema.json",
+  "title": "KeyRange",
+  "description": "Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.",
+  "type": "object",
+  "properties": {
+    "BeginMarker": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted."
+        }
+      ]
+    },
+    "EndMarker": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted."
+        }
+      ]
+    }
+  }
+}

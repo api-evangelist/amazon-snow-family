@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-list-long-term-pricing-result-schema.json",
+  "title": "ListLongTermPricingResult",
+  "description": "ListLongTermPricingResult schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "LongTermPricingEntries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongTermPricingEntryList"
+        },
+        {
+          "description": "Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. "
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list."
+        }
+      ]
+    }
+  }
+}

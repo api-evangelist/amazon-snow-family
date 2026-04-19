@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-impact-level-schema.json",
+  "title": "ImpactLevel",
+  "description": "ImpactLevel schema from Amazon Snow Family API",
+  "type": "string",
+  "enum": [
+    "IL2",
+    "IL4",
+    "IL5",
+    "IL6",
+    "IL99"
+  ]
+}

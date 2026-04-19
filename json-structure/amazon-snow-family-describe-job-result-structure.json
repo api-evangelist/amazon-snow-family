@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-describe-job-result-structure.json",
+  "name": "DescribeJobResult",
+  "description": "DescribeJobResult schema from Amazon Snow Family API",
+  "properties": {
+    "JobMetadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobMetadata"
+        },
+        {
+          "description": "Information about a specific job, including shipping information, job status, and other important metadata."
+        }
+      ]
+    },
+    "SubJobMetadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobMetadataList"
+        },
+        {
+          "description": "Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-list-compatible-images-request-schema.json",
+  "title": "ListCompatibleImagesRequest",
+  "description": "ListCompatibleImagesRequest schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListLimit"
+        },
+        {
+          "description": "The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "HTTP requests are stateless. To identify what object comes \"next\" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images."
+        }
+      ]
+    }
+  }
+}

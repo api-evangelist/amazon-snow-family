@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-address-schema.json",
+  "title": "Address",
+  "description": "The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.",
+  "type": "object",
+  "properties": {
+    "AddressId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressId"
+        },
+        {
+          "description": "The unique ID for an address."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of a person to receive a Snow device at an address."
+        }
+      ]
+    },
+    "Company": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of the company to receive a Snow device at an address."
+        }
+      ]
+    },
+    "Street1": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The first line in a street address that a Snow device is to be delivered to."
+        }
+      ]
+    },
+    "Street2": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The second line in a street address that a Snow device is to be delivered to."
+        }
+      ]
+    },
+    "Street3": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The third line in a street address that a Snow device is to be delivered to."
+        }
+      ]
+    },
+    "City": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The city in an address that a Snow device is to be delivered to."
+        }
+      ]
+    },
+    "StateOrProvince": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The state or province in an address that a Snow device is to be delivered to."
+        }
+      ]
+    },
+    "PrefectureOrDistrict": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "This field is no longer used and the value is ignored."
+        }
+      ]
+    },
+    "Landmark": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "This field is no longer used and the value is ignored."
+        }
+      ]
+    },
+    "Country": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The country in an address that a Snow device is to be delivered to."
+        }
+      ]
+    },
+    "PostalCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The postal code in an address that a Snow device is to be delivered to."
+        }
+      ]
+    },
+    "PhoneNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The phone number associated with an address that a Snow device is to be delivered to."
+        }
+      ]
+    },
+    "IsRestricted": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressType"
+        },
+        {
+          "description": "Differentiates between delivery address and pickup address in the customer account. Provided at job creation."
+        }
+      ]
+    }
+  }
+}

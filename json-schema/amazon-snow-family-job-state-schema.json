@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-job-state-schema.json",
+  "title": "JobState",
+  "description": "JobState schema from Amazon Snow Family API",
+  "type": "string",
+  "enum": [
+    "New",
+    "PreparingAppliance",
+    "PreparingShipment",
+    "InTransitToCustomer",
+    "WithCustomer",
+    "InTransitToAWS",
+    "WithAWSSortingFacility",
+    "WithAWS",
+    "InProgress",
+    "Complete",
+    "Cancelled",
+    "Listing",
+    "Pending"
+  ]
+}

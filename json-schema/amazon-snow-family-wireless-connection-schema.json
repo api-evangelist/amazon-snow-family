@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-wireless-connection-schema.json",
+  "title": "WirelessConnection",
+  "description": "Configures the wireless connection on an Snowcone device.",
+  "type": "object",
+  "properties": {
+    "IsWifiEnabled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Enables the Wi-Fi adapter on an Snowcone device."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-shipment-state-structure.json",
+  "name": "ShipmentState",
+  "description": "ShipmentState schema from Amazon Snow Family API",
+  "enum": [
+    "RECEIVED",
+    "RETURNED"
+  ]
+}

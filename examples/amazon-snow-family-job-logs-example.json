@@ -1,0 +1,5 @@
+{
+  "JobCompletionReportURI": "example-value",
+  "JobSuccessLogURI": "example-value",
+  "JobFailureLogURI": "example-value"
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-update-job-result-schema.json",
+  "title": "UpdateJobResult",
+  "description": "UpdateJobResult schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {}
+}

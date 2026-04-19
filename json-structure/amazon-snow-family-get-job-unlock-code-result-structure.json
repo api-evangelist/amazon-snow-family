@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-get-job-unlock-code-result-structure.json",
+  "name": "GetJobUnlockCodeResult",
+  "description": "GetJobUnlockCodeResult schema from Amazon Snow Family API",
+  "properties": {
+    "UnlockCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created."
+        }
+      ]
+    }
+  }
+}

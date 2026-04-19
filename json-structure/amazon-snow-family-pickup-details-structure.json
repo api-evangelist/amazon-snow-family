@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-pickup-details-structure.json",
+  "name": "PickupDetails",
+  "description": "Information identifying the person picking up the device.",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of the person picking up the device."
+        }
+      ]
+    },
+    "PhoneNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PhoneNumber"
+        },
+        {
+          "description": "The phone number of the person picking up the device."
+        }
+      ]
+    },
+    "Email": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Email"
+        },
+        {
+          "description": "The email address of the person picking up the device."
+        }
+      ]
+    },
+    "IdentificationNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The number on the credential identifying the person picking up the device."
+        }
+      ]
+    },
+    "IdentificationExpirationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "Expiration date of the credential identifying the person picking up the device."
+        }
+      ]
+    },
+    "IdentificationIssuingOrg": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Organization that issued the credential identifying the person picking up the device."
+        }
+      ]
+    },
+    "DevicePickupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DevicePickupId"
+        },
+        {
+          "description": "The unique ID for a device that will be picked up."
+        }
+      ]
+    }
+  }
+}

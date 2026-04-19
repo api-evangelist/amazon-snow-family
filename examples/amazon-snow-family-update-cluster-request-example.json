@@ -1,0 +1,11 @@
+{
+  "ClusterId": "example-value",
+  "RoleARN": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "Description": "example-value",
+  "Resources": "example-value",
+  "OnDeviceServiceConfiguration": "example-value",
+  "AddressId": "example-value",
+  "ShippingOption": "example-value",
+  "Notification": "example-value",
+  "ForwardingAddressId": "example-value"
+}

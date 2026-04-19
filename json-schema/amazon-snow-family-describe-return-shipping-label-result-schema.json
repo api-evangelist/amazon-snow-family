@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-describe-return-shipping-label-result-schema.json",
+  "title": "DescribeReturnShippingLabelResult",
+  "description": "DescribeReturnShippingLabelResult schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShippingLabelStatus"
+        },
+        {
+          "description": "The status information of the task on a Snow device that is being returned to Amazon Web Services."
+        }
+      ]
+    },
+    "ExpirationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The expiration date of the current return shipping label."
+        }
+      ]
+    },
+    "ReturnShippingLabelURI": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The pre-signed Amazon S3 URI used to download the return shipping label."
+        }
+      ]
+    }
+  }
+}

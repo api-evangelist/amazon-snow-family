@@ -1,0 +1,17 @@
+{
+  "ClusterId": "example-value",
+  "Description": "example-value",
+  "KmsKeyARN": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "RoleARN": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "ClusterState": "example-value",
+  "JobType": "example-value",
+  "SnowballType": "example-value",
+  "CreationDate": "example-value",
+  "Resources": "example-value",
+  "AddressId": "example-value",
+  "ShippingOption": "example-value",
+  "Notification": "example-value",
+  "ForwardingAddressId": "example-value",
+  "TaxDocuments": "example-value",
+  "OnDeviceServiceConfiguration": "example-value"
+}

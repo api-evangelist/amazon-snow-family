@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-list-cluster-jobs-result-structure.json",
+  "name": "ListClusterJobsResult",
+  "description": "ListClusterJobsResult schema from Amazon Snow Family API",
+  "properties": {
+    "JobListEntries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobListEntryList"
+        },
+        {
+          "description": "Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. "
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array."
+        }
+      ]
+    }
+  }
+}

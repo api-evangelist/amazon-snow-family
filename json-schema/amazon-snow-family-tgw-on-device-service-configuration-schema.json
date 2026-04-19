@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-tgw-on-device-service-configuration-schema.json",
+  "title": "TGWOnDeviceServiceConfiguration",
+  "description": "An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.",
+  "type": "object",
+  "properties": {
+    "StorageLimit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StorageLimit"
+        },
+        {
+          "description": "The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge."
+        }
+      ]
+    },
+    "StorageUnit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StorageUnit"
+        },
+        {
+          "description": "The scale unit of the virtual tapes on the device."
+        }
+      ]
+    }
+  }
+}

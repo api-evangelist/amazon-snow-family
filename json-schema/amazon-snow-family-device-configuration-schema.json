@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-device-configuration-schema.json",
+  "title": "DeviceConfiguration",
+  "description": "The container for <code>SnowconeDeviceConfiguration</code>. ",
+  "type": "object",
+  "properties": {
+    "SnowconeDeviceConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SnowconeDeviceConfiguration"
+        },
+        {
+          "description": "Returns information about the device configuration for an Snowcone job."
+        }
+      ]
+    }
+  }
+}

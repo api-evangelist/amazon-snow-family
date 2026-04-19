@@ -1,0 +1,21 @@
+{
+  "JobType": "example-value",
+  "Resources": "example-value",
+  "OnDeviceServiceConfiguration": "example-value",
+  "Description": "example-value",
+  "AddressId": "example-value",
+  "KmsKeyARN": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "RoleARN": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "SnowballCapacityPreference": "example-value",
+  "ShippingOption": "example-value",
+  "Notification": "example-value",
+  "ClusterId": "example-value",
+  "SnowballType": "example-value",
+  "ForwardingAddressId": "example-value",
+  "TaxDocuments": "example-value",
+  "DeviceConfiguration": "example-value",
+  "RemoteManagement": "example-value",
+  "LongTermPricingId": "example-value",
+  "ImpactLevel": "example-value",
+  "PickupDetails": "example-value"
+}

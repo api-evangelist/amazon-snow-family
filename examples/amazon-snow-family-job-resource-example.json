@@ -1,0 +1,5 @@
+{
+  "S3Resources": "example-value",
+  "LambdaResources": "example-value",
+  "Ec2AmiResources": "example-value"
+}

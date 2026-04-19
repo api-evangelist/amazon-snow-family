@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-eks-on-device-service-configuration-schema.json",
+  "title": "EKSOnDeviceServiceConfiguration",
+  "description": "An object representing the metadata and configuration settings of EKS Anywhere on the Snow Family device.",
+  "type": "object",
+  "properties": {
+    "KubernetesVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Kubernetes version for EKS Anywhere on the Snow Family device."
+        }
+      ]
+    },
+    "EKSAnywhereVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The version of EKS Anywhere on the Snow Family device."
+        }
+      ]
+    }
+  }
+}

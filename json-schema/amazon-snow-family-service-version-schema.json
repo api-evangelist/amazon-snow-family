@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-service-version-schema.json",
+  "title": "ServiceVersion",
+  "description": "The version of the requested service.",
+  "type": "object",
+  "properties": {
+    "Version": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The version number of the requested service."
+        }
+      ]
+    }
+  }
+}

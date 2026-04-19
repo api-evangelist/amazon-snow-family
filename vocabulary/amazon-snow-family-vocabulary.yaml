@@ -1,0 +1,143 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon Snow Family
+  description: Vocabulary for Amazon Snow Family covering all resources, actions, and schemas.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon Snow Family API
+    namespace: amazon-snow-family
+    version: '2024-01-01'
+    baseUrl: https://snowball.{region}.amazonaws.com
+    status: active
+  resources:
+  - name: Jobs
+    api: amazon-snow-family
+    actions: &id001
+    - CreateJob
+    - DescribeJob
+    - ListJobs
+    - CancelJob
+    - UpdateJob
+  - name: Addresses
+    api: amazon-snow-family
+    actions: &id002
+    - CreateAddress
+    - DescribeAddress
+    - ListCompatibleImages
+  - name: Clusters
+    api: amazon-snow-family
+    actions: &id003
+    - CreateCluster
+    - DescribeCluster
+    - ListClusters
+    - CancelCluster
+    - UpdateCluster
+  actions:
+  - name: list
+    httpMethod: GET
+    pattern: read
+  - name: get
+    httpMethod: GET
+    pattern: read
+  - name: describe
+    httpMethod: GET
+    pattern: read
+  - name: create
+    httpMethod: POST
+    pattern: write
+  - name: delete
+    httpMethod: DELETE
+    pattern: destructive
+  - name: update
+    httpMethod: PUT
+    pattern: write
+  - name: start
+    httpMethod: POST
+    pattern: write
+  - name: stop
+    httpMethod: POST
+    pattern: destructive
+  schemas:
+    core:
+    - Jobs
+    - Addresses
+    - Clusters
+  parameters:
+    pagination:
+    - nextToken
+    - maxResults
+    identifiers:
+    - arn
+    - name
+    - id
+  authentication:
+    schemes:
+    - AWS Signature Version 4
+    headers:
+    - Authorization
+    - X-Amz-Date
+    - X-Amz-Security-Token
+capability:
+  workflows:
+  - name: Amazon Snow Family Management
+    file: capabilities/shared/amazon-snow-family.yaml
+    description: Manage Amazon Snow Family resources
+    apis:
+    - Amazon Snow Family API
+    personas:
+    - Developer
+    - Cloud Engineer
+  personas:
+  - id: developer
+    name: Developer
+    description: Developer using the API for application integration
+    workflows:
+    - Amazon Snow Family Management
+  - id: cloud-engineer
+    name: Cloud Engineer
+    description: Engineer managing cloud infrastructure
+    workflows:
+    - Amazon Snow Family Management
+  domains:
+  - AWS
+  - Edge Computing
+  - Data Transfer
+  - Data Migration
+  - Hybrid Cloud
+  namespaces:
+  - name: amazon-snow-family
+    type: consumed
+  - name: amazon-snow-family-rest
+    type: rest
+    port: 8080
+  - name: amazon-snow-family-mcp
+    type: mcp
+    port: 9090
+  binds:
+  - AWS_ACCESS_KEY_ID
+  - AWS_SECRET_ACCESS_KEY
+  - AWS_REGION
+crossReference:
+- resource: Jobs
+  operations: *id001
+  workflows:
+  - Amazon Snow Family Management
+  personas:
+  - Developer
+  - Cloud Engineer
+- resource: Addresses
+  operations: *id002
+  workflows:
+  - Amazon Snow Family Management
+  personas:
+  - Developer
+  - Cloud Engineer
+- resource: Clusters
+  operations: *id003
+  workflows:
+  - Amazon Snow Family Management
+  personas:
+  - Developer
+  - Cloud Engineer

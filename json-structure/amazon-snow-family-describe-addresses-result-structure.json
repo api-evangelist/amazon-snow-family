@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-describe-addresses-result-structure.json",
+  "name": "DescribeAddressesResult",
+  "description": "DescribeAddressesResult schema from Amazon Snow Family API",
+  "properties": {
+    "Addresses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressList"
+        },
+        {
+          "description": "The Snow device shipping addresses that were created for this account."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "string",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-shipping-option-structure.json",
+  "name": "ShippingOption",
+  "description": "ShippingOption schema from Amazon Snow Family API",
+  "enum": [
+    "SECOND_DAY",
+    "NEXT_DAY",
+    "EXPRESS",
+    "STANDARD"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "ServiceVersions": "example-value",
+  "ServiceName": "MyResource",
+  "DependentServices": "example-value",
+  "NextToken": "example-value"
+}

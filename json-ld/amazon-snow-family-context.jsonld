@@ -1,0 +1,574 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "UpdateJobShipmentStateRequest": "aws:UpdateJobShipmentStateRequest",
+    "ListCompatibleImagesResult": "aws:ListCompatibleImagesResult",
+    "GetSnowballUsageRequest": "aws:GetSnowballUsageRequest",
+    "TGWOnDeviceServiceConfiguration": "aws:TGWOnDeviceServiceConfiguration",
+    "ClusterListEntry": "aws:ClusterListEntry",
+    "UpdateLongTermPricingResult": "aws:UpdateLongTermPricingResult",
+    "CancelJobRequest": "aws:CancelJobRequest",
+    "Ec2AmiResource": "aws:Ec2AmiResource",
+    "NFSOnDeviceServiceConfiguration": "aws:NFSOnDeviceServiceConfiguration",
+    "CreateReturnShippingLabelRequest": "aws:CreateReturnShippingLabelRequest",
+    "UpdateClusterRequest": "aws:UpdateClusterRequest",
+    "DescribeAddressRequest": "aws:DescribeAddressRequest",
+    "CreateLongTermPricingResult": "aws:CreateLongTermPricingResult",
+    "ListJobsRequest": "aws:ListJobsRequest",
+    "DependentService": "aws:DependentService",
+    "ListCompatibleImagesRequest": "aws:ListCompatibleImagesRequest",
+    "ListServiceVersionsResult": "aws:ListServiceVersionsResult",
+    "LambdaResource": "aws:LambdaResource",
+    "GetSoftwareUpdatesResult": "aws:GetSoftwareUpdatesResult",
+    "PickupDetails": {
+      "@id": "aws:PickupDetails",
+      "@type": "xsd:string"
+    },
+    "CancelClusterRequest": "aws:CancelClusterRequest",
+    "ClusterMetadata": {
+      "@id": "aws:ClusterMetadata",
+      "@type": "xsd:string"
+    },
+    "GetJobManifestRequest": "aws:GetJobManifestRequest",
+    "CancelJobResult": "aws:CancelJobResult",
+    "CancelClusterResult": "aws:CancelClusterResult",
+    "DescribeReturnShippingLabelRequest": "aws:DescribeReturnShippingLabelRequest",
+    "ListLongTermPricingRequest": "aws:ListLongTermPricingRequest",
+    "DescribeJobRequest": "aws:DescribeJobRequest",
+    "DescribeReturnShippingLabelResult": "aws:DescribeReturnShippingLabelResult",
+    "ListPickupLocationsResult": "aws:ListPickupLocationsResult",
+    "DataTransfer": "aws:DataTransfer",
+    "ListClustersResult": "aws:ListClustersResult",
+    "ListClusterJobsRequest": "aws:ListClusterJobsRequest",
+    "DescribeAddressesResult": "aws:DescribeAddressesResult",
+    "GetJobUnlockCodeResult": "aws:GetJobUnlockCodeResult",
+    "CreateClusterRequest": "aws:CreateClusterRequest",
+    "GetSnowballUsageResult": "aws:GetSnowballUsageResult",
+    "GetJobUnlockCodeRequest": "aws:GetJobUnlockCodeRequest",
+    "DeviceConfiguration": {
+      "@id": "aws:DeviceConfiguration",
+      "@type": "xsd:string"
+    },
+    "UpdateClusterResult": "aws:UpdateClusterResult",
+    "TaxDocuments": {
+      "@id": "aws:TaxDocuments",
+      "@type": "xsd:string"
+    },
+    "DescribeAddressesRequest": "aws:DescribeAddressesRequest",
+    "JobMetadata": {
+      "@id": "aws:JobMetadata",
+      "@type": "xsd:string"
+    },
+    "ListClusterJobsResult": "aws:ListClusterJobsResult",
+    "S3Resource": "aws:S3Resource",
+    "CreateClusterResult": "aws:CreateClusterResult",
+    "CreateAddressResult": "aws:CreateAddressResult",
+    "CreateJobResult": "aws:CreateJobResult",
+    "TargetOnDeviceService": "aws:TargetOnDeviceService",
+    "DescribeClusterRequest": "aws:DescribeClusterRequest",
+    "CreateJobRequest": "aws:CreateJobRequest",
+    "Shipment": "aws:Shipment",
+    "DescribeAddressResult": "aws:DescribeAddressResult",
+    "WirelessConnection": {
+      "@id": "aws:WirelessConnection",
+      "@type": "xsd:string"
+    },
+    "S3OnDeviceServiceConfiguration": "aws:S3OnDeviceServiceConfiguration",
+    "SnowconeDeviceConfiguration": {
+      "@id": "aws:SnowconeDeviceConfiguration",
+      "@type": "xsd:string"
+    },
+    "DescribeClusterResult": "aws:DescribeClusterResult",
+    "CreateLongTermPricingRequest": "aws:CreateLongTermPricingRequest",
+    "UpdateJobShipmentStateResult": "aws:UpdateJobShipmentStateResult",
+    "CreateReturnShippingLabelResult": "aws:CreateReturnShippingLabelResult",
+    "Address": {
+      "@id": "aws:Address",
+      "@type": "xsd:string"
+    },
+    "LongTermPricingListEntry": "aws:LongTermPricingListEntry",
+    "ListServiceVersionsRequest": "aws:ListServiceVersionsRequest",
+    "KeyRange": {
+      "@id": "aws:KeyRange",
+      "@type": "xsd:string"
+    },
+    "JobLogs": "aws:JobLogs",
+    "INDTaxDocuments": "aws:INDTaxDocuments",
+    "JobListEntry": "aws:JobListEntry",
+    "ShippingDetails": {
+      "@id": "aws:ShippingDetails",
+      "@type": "xsd:string"
+    },
+    "UpdateLongTermPricingRequest": "aws:UpdateLongTermPricingRequest",
+    "CreateAddressRequest": "aws:CreateAddressRequest",
+    "OnDeviceServiceConfiguration": {
+      "@id": "aws:OnDeviceServiceConfiguration",
+      "@type": "xsd:string"
+    },
+    "ServiceVersion": {
+      "@id": "aws:ServiceVersion",
+      "@type": "xsd:string"
+    },
+    "GetJobManifestResult": "aws:GetJobManifestResult",
+    "EventTriggerDefinition": "aws:EventTriggerDefinition",
+    "EKSOnDeviceServiceConfiguration": "aws:EKSOnDeviceServiceConfiguration",
+    "GetSoftwareUpdatesRequest": "aws:GetSoftwareUpdatesRequest",
+    "ListLongTermPricingResult": "aws:ListLongTermPricingResult",
+    "UpdateJobRequest": "aws:UpdateJobRequest",
+    "DescribeJobResult": "aws:DescribeJobResult",
+    "ListClustersRequest": "aws:ListClustersRequest",
+    "ListJobsResult": "aws:ListJobsResult",
+    "UpdateJobResult": "aws:UpdateJobResult",
+    "Notification": {
+      "@id": "aws:Notification",
+      "@type": "xsd:string"
+    },
+    "CompatibleImage": "aws:CompatibleImage",
+    "JobResource": "aws:JobResource",
+    "ListPickupLocationsRequest": "aws:ListPickupLocationsRequest",
+    "JobId": {
+      "@id": "aws:JobId",
+      "@type": "xsd:string"
+    },
+    "ShipmentState": {
+      "@id": "aws:ShipmentState",
+      "@type": "xsd:string"
+    },
+    "CompatibleImages": {
+      "@id": "aws:CompatibleImages",
+      "@type": "xsd:string"
+    },
+    "NextToken": {
+      "@id": "aws:NextToken",
+      "@type": "xsd:string"
+    },
+    "StorageLimit": {
+      "@id": "aws:StorageLimit",
+      "@type": "xsd:string"
+    },
+    "StorageUnit": {
+      "@id": "aws:StorageUnit",
+      "@type": "xsd:string"
+    },
+    "ClusterId": {
+      "@id": "aws:ClusterId",
+      "@type": "xsd:string"
+    },
+    "ClusterState": {
+      "@id": "aws:ClusterState",
+      "@type": "xsd:string"
+    },
+    "CreationDate": {
+      "@id": "aws:CreationDate",
+      "@type": "xsd:string"
+    },
+    "Description": "schema:description",
+    "AmiId": {
+      "@id": "aws:AmiId",
+      "@type": "xsd:string"
+    },
+    "SnowballAmiId": {
+      "@id": "aws:SnowballAmiId",
+      "@type": "xsd:string"
+    },
+    "ShippingOption": {
+      "@id": "aws:ShippingOption",
+      "@type": "xsd:string"
+    },
+    "RoleARN": {
+      "@id": "aws:RoleARN",
+      "@type": "xsd:string"
+    },
+    "Resources": {
+      "@id": "aws:Resources",
+      "@type": "xsd:string"
+    },
+    "AddressId": {
+      "@id": "aws:AddressId",
+      "@type": "xsd:string"
+    },
+    "ForwardingAddressId": {
+      "@id": "aws:ForwardingAddressId",
+      "@type": "xsd:string"
+    },
+    "LongTermPricingId": {
+      "@id": "aws:LongTermPricingId",
+      "@type": "xsd:string"
+    },
+    "MaxResults": {
+      "@id": "aws:MaxResults",
+      "@type": "xsd:string"
+    },
+    "ServiceName": {
+      "@id": "aws:ServiceName",
+      "@type": "xsd:string"
+    },
+    "ServiceVersions": {
+      "@id": "aws:ServiceVersions",
+      "@type": "xsd:string"
+    },
+    "DependentServices": {
+      "@id": "aws:DependentServices",
+      "@type": "xsd:string"
+    },
+    "LambdaArn": {
+      "@id": "aws:LambdaArn",
+      "@type": "xsd:string"
+    },
+    "EventTriggers": {
+      "@id": "aws:EventTriggers",
+      "@type": "xsd:string"
+    },
+    "UpdatesURI": {
+      "@id": "aws:UpdatesURI",
+      "@type": "xsd:string"
+    },
+    "Name": "schema:name",
+    "PhoneNumber": {
+      "@id": "aws:PhoneNumber",
+      "@type": "xsd:string"
+    },
+    "Email": "schema:email",
+    "IdentificationNumber": {
+      "@id": "aws:IdentificationNumber",
+      "@type": "xsd:string"
+    },
+    "IdentificationExpirationDate": {
+      "@id": "aws:IdentificationExpirationDate",
+      "@type": "xsd:string"
+    },
+    "IdentificationIssuingOrg": {
+      "@id": "aws:IdentificationIssuingOrg",
+      "@type": "xsd:string"
+    },
+    "DevicePickupId": {
+      "@id": "aws:DevicePickupId",
+      "@type": "xsd:string"
+    },
+    "KmsKeyARN": {
+      "@id": "aws:KmsKeyARN",
+      "@type": "xsd:string"
+    },
+    "JobType": {
+      "@id": "aws:JobType",
+      "@type": "xsd:string"
+    },
+    "SnowballType": {
+      "@id": "aws:SnowballType",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "aws:Status",
+      "@type": "xsd:string"
+    },
+    "ExpirationDate": {
+      "@id": "aws:ExpirationDate",
+      "@type": "xsd:string"
+    },
+    "ReturnShippingLabelURI": {
+      "@id": "aws:ReturnShippingLabelURI",
+      "@type": "xsd:string"
+    },
+    "Addresses": {
+      "@id": "aws:Addresses",
+      "@type": "xsd:string"
+    },
+    "BytesTransferred": {
+      "@id": "aws:BytesTransferred",
+      "@type": "xsd:string"
+    },
+    "ObjectsTransferred": {
+      "@id": "aws:ObjectsTransferred",
+      "@type": "xsd:string"
+    },
+    "TotalBytes": {
+      "@id": "aws:TotalBytes",
+      "@type": "xsd:string"
+    },
+    "TotalObjects": {
+      "@id": "aws:TotalObjects",
+      "@type": "xsd:string"
+    },
+    "ClusterListEntries": {
+      "@id": "aws:ClusterListEntries",
+      "@type": "xsd:string"
+    },
+    "UnlockCode": {
+      "@id": "aws:UnlockCode",
+      "@type": "xsd:string"
+    },
+    "RemoteManagement": {
+      "@id": "aws:RemoteManagement",
+      "@type": "xsd:string"
+    },
+    "InitialClusterSize": {
+      "@id": "aws:InitialClusterSize",
+      "@type": "xsd:string"
+    },
+    "ForceCreateJobs": {
+      "@id": "aws:ForceCreateJobs",
+      "@type": "xsd:string"
+    },
+    "LongTermPricingIds": {
+      "@id": "aws:LongTermPricingIds",
+      "@type": "xsd:string"
+    },
+    "SnowballCapacityPreference": {
+      "@id": "aws:SnowballCapacityPreference",
+      "@type": "xsd:string"
+    },
+    "SnowballLimit": {
+      "@id": "aws:SnowballLimit",
+      "@type": "xsd:string"
+    },
+    "SnowballsInUse": {
+      "@id": "aws:SnowballsInUse",
+      "@type": "xsd:string"
+    },
+    "IND": {
+      "@id": "aws:IND",
+      "@type": "xsd:string"
+    },
+    "JobState": {
+      "@id": "aws:JobState",
+      "@type": "xsd:string"
+    },
+    "DataTransferProgress": {
+      "@id": "aws:DataTransferProgress",
+      "@type": "xsd:string"
+    },
+    "JobLogInfo": {
+      "@id": "aws:JobLogInfo",
+      "@type": "xsd:string"
+    },
+    "ImpactLevel": {
+      "@id": "aws:ImpactLevel",
+      "@type": "xsd:string"
+    },
+    "SnowballId": {
+      "@id": "aws:SnowballId",
+      "@type": "xsd:string"
+    },
+    "JobListEntries": {
+      "@id": "aws:JobListEntries",
+      "@type": "xsd:string"
+    },
+    "BucketArn": {
+      "@id": "aws:BucketArn",
+      "@type": "xsd:string"
+    },
+    "TargetOnDeviceServices": {
+      "@id": "aws:TargetOnDeviceServices",
+      "@type": "xsd:string"
+    },
+    "TransferOption": {
+      "@id": "aws:TransferOption",
+      "@type": "xsd:string"
+    },
+    "TrackingNumber": {
+      "@id": "aws:TrackingNumber",
+      "@type": "xsd:string"
+    },
+    "IsWifiEnabled": {
+      "@id": "aws:IsWifiEnabled",
+      "@type": "xsd:string"
+    },
+    "ServiceSize": {
+      "@id": "aws:ServiceSize",
+      "@type": "xsd:string"
+    },
+    "FaultTolerance": {
+      "@id": "aws:FaultTolerance",
+      "@type": "xsd:string"
+    },
+    "LongTermPricingType": {
+      "@id": "aws:LongTermPricingType",
+      "@type": "xsd:string"
+    },
+    "IsLongTermPricingAutoRenew": {
+      "@id": "aws:IsLongTermPricingAutoRenew",
+      "@type": "xsd:string"
+    },
+    "Company": {
+      "@id": "aws:Company",
+      "@type": "xsd:string"
+    },
+    "Street1": {
+      "@id": "aws:Street1",
+      "@type": "xsd:string"
+    },
+    "Street2": {
+      "@id": "aws:Street2",
+      "@type": "xsd:string"
+    },
+    "Street3": {
+      "@id": "aws:Street3",
+      "@type": "xsd:string"
+    },
+    "City": {
+      "@id": "aws:City",
+      "@type": "xsd:string"
+    },
+    "StateOrProvince": {
+      "@id": "aws:StateOrProvince",
+      "@type": "xsd:string"
+    },
+    "PrefectureOrDistrict": {
+      "@id": "aws:PrefectureOrDistrict",
+      "@type": "xsd:string"
+    },
+    "Landmark": {
+      "@id": "aws:Landmark",
+      "@type": "xsd:string"
+    },
+    "Country": {
+      "@id": "aws:Country",
+      "@type": "xsd:string"
+    },
+    "PostalCode": {
+      "@id": "aws:PostalCode",
+      "@type": "xsd:string"
+    },
+    "IsRestricted": {
+      "@id": "aws:IsRestricted",
+      "@type": "xsd:string"
+    },
+    "Type": {
+      "@id": "aws:Type",
+      "@type": "xsd:string"
+    },
+    "LongTermPricingEndDate": {
+      "@id": "aws:LongTermPricingEndDate",
+      "@type": "xsd:string"
+    },
+    "LongTermPricingStartDate": {
+      "@id": "aws:LongTermPricingStartDate",
+      "@type": "xsd:string"
+    },
+    "CurrentActiveJob": {
+      "@id": "aws:CurrentActiveJob",
+      "@type": "xsd:string"
+    },
+    "ReplacementJob": {
+      "@id": "aws:ReplacementJob",
+      "@type": "xsd:string"
+    },
+    "LongTermPricingStatus": {
+      "@id": "aws:LongTermPricingStatus",
+      "@type": "xsd:string"
+    },
+    "JobIds": {
+      "@id": "aws:JobIds",
+      "@type": "xsd:string"
+    },
+    "BeginMarker": {
+      "@id": "aws:BeginMarker",
+      "@type": "xsd:string"
+    },
+    "EndMarker": {
+      "@id": "aws:EndMarker",
+      "@type": "xsd:string"
+    },
+    "JobCompletionReportURI": {
+      "@id": "aws:JobCompletionReportURI",
+      "@type": "xsd:string"
+    },
+    "JobSuccessLogURI": {
+      "@id": "aws:JobSuccessLogURI",
+      "@type": "xsd:string"
+    },
+    "JobFailureLogURI": {
+      "@id": "aws:JobFailureLogURI",
+      "@type": "xsd:string"
+    },
+    "GSTIN": {
+      "@id": "aws:GSTIN",
+      "@type": "xsd:string"
+    },
+    "IsMaster": {
+      "@id": "aws:IsMaster",
+      "@type": "xsd:string"
+    },
+    "InboundShipment": {
+      "@id": "aws:InboundShipment",
+      "@type": "xsd:string"
+    },
+    "OutboundShipment": {
+      "@id": "aws:OutboundShipment",
+      "@type": "xsd:string"
+    },
+    "NFSOnDeviceService": {
+      "@id": "aws:NFSOnDeviceService",
+      "@type": "xsd:string"
+    },
+    "TGWOnDeviceService": {
+      "@id": "aws:TGWOnDeviceService",
+      "@type": "xsd:string"
+    },
+    "EKSOnDeviceService": {
+      "@id": "aws:EKSOnDeviceService",
+      "@type": "xsd:string"
+    },
+    "S3OnDeviceService": {
+      "@id": "aws:S3OnDeviceService",
+      "@type": "xsd:string"
+    },
+    "Version": "schema:version",
+    "ManifestURI": {
+      "@id": "aws:ManifestURI",
+      "@type": "xsd:string"
+    },
+    "EventResourceARN": {
+      "@id": "aws:EventResourceARN",
+      "@type": "xsd:string"
+    },
+    "KubernetesVersion": {
+      "@id": "aws:KubernetesVersion",
+      "@type": "xsd:string"
+    },
+    "EKSAnywhereVersion": {
+      "@id": "aws:EKSAnywhereVersion",
+      "@type": "xsd:string"
+    },
+    "LongTermPricingEntries": {
+      "@id": "aws:LongTermPricingEntries",
+      "@type": "xsd:string"
+    },
+    "SubJobMetadata": {
+      "@id": "aws:SubJobMetadata",
+      "@type": "xsd:string"
+    },
+    "SnsTopicARN": {
+      "@id": "aws:SnsTopicARN",
+      "@type": "xsd:string"
+    },
+    "JobStatesToNotify": {
+      "@id": "aws:JobStatesToNotify",
+      "@type": "xsd:string"
+    },
+    "NotifyAll": {
+      "@id": "aws:NotifyAll",
+      "@type": "xsd:string"
+    },
+    "DevicePickupSnsTopicARN": {
+      "@id": "aws:DevicePickupSnsTopicARN",
+      "@type": "xsd:string"
+    },
+    "S3Resources": {
+      "@id": "aws:S3Resources",
+      "@type": "xsd:string"
+    },
+    "LambdaResources": {
+      "@id": "aws:LambdaResources",
+      "@type": "xsd:string"
+    },
+    "Ec2AmiResources": {
+      "@id": "aws:Ec2AmiResources",
+      "@type": "xsd:string"
+    }
+  }
+}

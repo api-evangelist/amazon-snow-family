@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-snowball-type-schema.json",
+  "title": "SnowballType",
+  "description": "SnowballType schema from Amazon Snow Family API",
+  "type": "string",
+  "enum": [
+    "STANDARD",
+    "EDGE",
+    "EDGE_C",
+    "EDGE_CG",
+    "EDGE_S",
+    "SNC1_HDD",
+    "SNC1_SSD",
+    "V3_5C",
+    "V3_5S",
+    "RACK_5U_C"
+  ]
+}

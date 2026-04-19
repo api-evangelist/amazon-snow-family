@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-get-software-updates-result-structure.json",
+  "name": "GetSoftwareUpdatesResult",
+  "description": "GetSoftwareUpdatesResult schema from Amazon Snow Family API",
+  "properties": {
+    "UpdatesURI": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>."
+        }
+      ]
+    }
+  }
+}

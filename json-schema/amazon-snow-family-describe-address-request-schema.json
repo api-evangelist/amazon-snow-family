@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-describe-address-request-schema.json",
+  "title": "DescribeAddressRequest",
+  "description": "DescribeAddressRequest schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "AddressId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressId"
+        },
+        {
+          "description": "The automatically generated ID for a specific address."
+        }
+      ]
+    }
+  },
+  "required": [
+    "AddressId"
+  ]
+}

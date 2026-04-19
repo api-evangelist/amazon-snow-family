@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-lambda-resource-schema.json",
+  "title": "LambdaResource",
+  "description": "Identifies ",
+  "type": "object",
+  "properties": {
+    "LambdaArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceARN"
+        },
+        {
+          "description": "An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource."
+        }
+      ]
+    },
+    "EventTriggers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventTriggerDefinitionList"
+        },
+        {
+          "description": "The array of ARNs for <a>S3Resource</a> objects to trigger the <a>LambdaResource</a> objects associated with this job."
+        }
+      ]
+    }
+  }
+}

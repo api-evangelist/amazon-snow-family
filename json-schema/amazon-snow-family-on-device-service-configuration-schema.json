@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-on-device-service-configuration-schema.json",
+  "title": "OnDeviceServiceConfiguration",
+  "description": "An object that represents the metadata and configuration settings for services on an Amazon Web Services Snow Family device.",
+  "type": "object",
+  "properties": {
+    "NFSOnDeviceService": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NFSOnDeviceServiceConfiguration"
+        },
+        {
+          "description": "Represents the NFS (Network File System) service on a Snow Family device."
+        }
+      ]
+    },
+    "TGWOnDeviceService": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TGWOnDeviceServiceConfiguration"
+        },
+        {
+          "description": "Represents the Storage Gateway service Tape Gateway type on a Snow Family device."
+        }
+      ]
+    },
+    "EKSOnDeviceService": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EKSOnDeviceServiceConfiguration"
+        },
+        {
+          "description": "The configuration of EKS Anywhere on the Snow Family device."
+        }
+      ]
+    },
+    "S3OnDeviceService": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3OnDeviceServiceConfiguration"
+        },
+        {
+          "description": "Configuration for Amazon S3 compatible storage on Snow family devices."
+        }
+      ]
+    }
+  }
+}

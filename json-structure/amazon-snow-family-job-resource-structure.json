@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-job-resource-structure.json",
+  "name": "JobResource",
+  "description": "Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.",
+  "properties": {
+    "S3Resources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3ResourceList"
+        },
+        {
+          "description": "An array of <code>S3Resource</code> objects."
+        }
+      ]
+    },
+    "LambdaResources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaResourceList"
+        },
+        {
+          "description": "The Python-language Lambda functions for this job."
+        }
+      ]
+    },
+    "Ec2AmiResources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Ec2AmiResourceList"
+        },
+        {
+          "description": "The Amazon Machine Images (AMIs) associated with this job."
+        }
+      ]
+    }
+  }
+}

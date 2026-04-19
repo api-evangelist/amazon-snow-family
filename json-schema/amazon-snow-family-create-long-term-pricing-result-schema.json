@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-create-long-term-pricing-result-schema.json",
+  "title": "CreateLongTermPricingResult",
+  "description": "CreateLongTermPricingResult schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "LongTermPricingId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongTermPricingId"
+        },
+        {
+          "description": "The ID of the long-term pricing type for the device."
+        }
+      ]
+    }
+  }
+}

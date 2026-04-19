@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-update-job-request-structure.json",
+  "name": "UpdateJobRequest",
+  "description": "UpdateJobRequest schema from Amazon Snow Family API",
+  "properties": {
+    "JobId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobId"
+        },
+        {
+          "description": "The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>."
+        }
+      ]
+    },
+    "RoleARN": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RoleARN"
+        },
+        {
+          "description": "The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href=\"https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html\">CreateRole</a>Identity and Access Management (IAM) API action."
+        }
+      ]
+    },
+    "Notification": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Notification"
+        },
+        {
+          "description": "The new or updated <a>Notification</a> object."
+        }
+      ]
+    },
+    "Resources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobResource"
+        },
+        {
+          "description": "The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. "
+        }
+      ]
+    },
+    "OnDeviceServiceConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OnDeviceServiceConfiguration"
+        },
+        {
+          "description": "Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type."
+        }
+      ]
+    },
+    "AddressId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressId"
+        },
+        {
+          "description": "The ID of the updated <a>Address</a> object."
+        }
+      ]
+    },
+    "ShippingOption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShippingOption"
+        },
+        {
+          "description": "The updated shipping option value of this job's <a>ShippingDetails</a> object."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The updated description of this job's <a>JobMetadata</a> object."
+        }
+      ]
+    },
+    "SnowballCapacityPreference": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SnowballCapacity"
+        },
+        {
+          "description": "<p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US regions.</p> <p>For more information, see \"https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html\" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or \"https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html\" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>"
+        }
+      ]
+    },
+    "ForwardingAddressId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressId"
+        },
+        {
+          "description": "The updated ID for the forwarding address for a job. This field is not supported in most regions."
+        }
+      ]
+    },
+    "PickupDetails": {
+      "$ref": "#/components/schemas/PickupDetails"
+    }
+  },
+  "required": [
+    "JobId"
+  ]
+}

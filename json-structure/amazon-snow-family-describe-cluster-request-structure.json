@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-describe-cluster-request-structure.json",
+  "name": "DescribeClusterRequest",
+  "description": "DescribeClusterRequest schema from Amazon Snow Family API",
+  "properties": {
+    "ClusterId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClusterId"
+        },
+        {
+          "description": "The automatically generated ID for a cluster."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ClusterId"
+  ]
+}

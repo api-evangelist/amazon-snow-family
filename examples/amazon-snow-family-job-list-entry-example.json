@@ -1,0 +1,9 @@
+{
+  "JobId": "example-value",
+  "JobState": "example-value",
+  "IsMaster": "example-value",
+  "JobType": "example-value",
+  "SnowballType": "example-value",
+  "CreationDate": "example-value",
+  "Description": "example-value"
+}

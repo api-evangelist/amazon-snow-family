@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-job-list-entry-schema.json",
+  "title": "JobListEntry",
+  "description": "Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.",
+  "type": "object",
+  "properties": {
+    "JobId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>."
+        }
+      ]
+    },
+    "JobState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobState"
+        },
+        {
+          "description": "The current state of this job."
+        }
+      ]
+    },
+    "IsMaster": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created."
+        }
+      ]
+    },
+    "JobType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobType"
+        },
+        {
+          "description": "The type of job."
+        }
+      ]
+    },
+    "SnowballType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SnowballType"
+        },
+        {
+          "description": "The type of device used with this job."
+        }
+      ]
+    },
+    "CreationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The creation date for this job."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>."
+        }
+      ]
+    }
+  }
+}

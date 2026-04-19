@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-device-service-name-structure.json",
+  "name": "DeviceServiceName",
+  "description": "DeviceServiceName schema from Amazon Snow Family API",
+  "enum": [
+    "NFS_ON_DEVICE_SERVICE",
+    "S3_ON_DEVICE_SERVICE"
+  ]
+}

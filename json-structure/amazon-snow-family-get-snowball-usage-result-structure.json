@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-get-snowball-usage-result-structure.json",
+  "name": "GetSnowballUsageResult",
+  "description": "GetSnowballUsageResult schema from Amazon Snow Family API",
+  "properties": {
+    "SnowballLimit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one)."
+        }
+      ]
+    },
+    "SnowballsInUse": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The number of Snow devices that this account is currently using."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "LongTermPricingId": "example-value",
+  "LongTermPricingEndDate": "example-value",
+  "LongTermPricingStartDate": "example-value",
+  "LongTermPricingType": "example-value",
+  "CurrentActiveJob": "example-value",
+  "ReplacementJob": "example-value",
+  "IsLongTermPricingAutoRenew": "example-value",
+  "LongTermPricingStatus": "Active",
+  "SnowballType": "example-value",
+  "JobIds": "example-value"
+}

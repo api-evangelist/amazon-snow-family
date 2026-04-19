@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-list-pickup-locations-result-structure.json",
+  "name": "ListPickupLocationsResult",
+  "description": "ListPickupLocationsResult schema from Amazon Snow Family API",
+  "properties": {
+    "Addresses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressList"
+        },
+        {
+          "description": "Information about the address of pickup locations."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "HTTP requests are stateless. To identify what object comes \"next\" in the list of <code>ListPickupLocationsResult</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list."
+        }
+      ]
+    }
+  }
+}

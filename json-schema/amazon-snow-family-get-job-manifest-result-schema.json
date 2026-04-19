@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-get-job-manifest-result-schema.json",
+  "title": "GetJobManifestResult",
+  "description": "GetJobManifestResult schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "ManifestURI": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value."
+        }
+      ]
+    }
+  }
+}

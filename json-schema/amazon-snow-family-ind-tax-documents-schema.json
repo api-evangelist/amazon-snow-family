@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-ind-tax-documents-schema.json",
+  "title": "INDTaxDocuments",
+  "description": "The tax documents required in Amazon Web Services Region in India.",
+  "type": "object",
+  "properties": {
+    "GSTIN": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GSTIN"
+        },
+        {
+          "description": "The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India."
+        }
+      ]
+    }
+  }
+}

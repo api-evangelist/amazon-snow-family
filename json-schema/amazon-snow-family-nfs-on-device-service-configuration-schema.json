@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-nfs-on-device-service-configuration-schema.json",
+  "title": "NFSOnDeviceServiceConfiguration",
+  "description": "An object that represents the metadata and configuration settings for the NFS (Network File System) service on an Amazon Web Services Snow Family device.",
+  "type": "object",
+  "properties": {
+    "StorageLimit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StorageLimit"
+        },
+        {
+          "description": "The maximum NFS storage for one Snow Family device."
+        }
+      ]
+    },
+    "StorageUnit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StorageUnit"
+        },
+        {
+          "description": "<p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>"
+        }
+      ]
+    }
+  }
+}

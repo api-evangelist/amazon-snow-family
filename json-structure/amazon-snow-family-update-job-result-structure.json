@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-update-job-result-structure.json",
+  "name": "UpdateJobResult",
+  "description": "UpdateJobResult schema from Amazon Snow Family API",
+  "properties": {}
+}

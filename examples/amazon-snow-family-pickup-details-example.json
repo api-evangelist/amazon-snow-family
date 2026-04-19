@@ -1,0 +1,9 @@
+{
+  "Name": "MyResource",
+  "PhoneNumber": "example-value",
+  "Email": "example-value",
+  "IdentificationNumber": "example-value",
+  "IdentificationExpirationDate": "example-value",
+  "IdentificationIssuingOrg": "example-value",
+  "DevicePickupId": "example-value"
+}

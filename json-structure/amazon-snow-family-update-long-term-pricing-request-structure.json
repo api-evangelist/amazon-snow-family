@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-update-long-term-pricing-request-structure.json",
+  "name": "UpdateLongTermPricingRequest",
+  "description": "UpdateLongTermPricingRequest schema from Amazon Snow Family API",
+  "properties": {
+    "LongTermPricingId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongTermPricingId"
+        },
+        {
+          "description": "The ID of the long-term pricing type for the device."
+        }
+      ]
+    },
+    "ReplacementJob": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobId"
+        },
+        {
+          "description": "Specifies that a device that is ordered with long-term pricing should be replaced with a new device."
+        }
+      ]
+    },
+    "IsLongTermPricingAutoRenew": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JavaBoolean"
+        },
+        {
+          "description": "If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires."
+        }
+      ]
+    }
+  },
+  "required": [
+    "LongTermPricingId"
+  ]
+}

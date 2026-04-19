@@ -1,0 +1,13 @@
+{
+  "type": "string",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-shipping-label-status-structure.json",
+  "name": "ShippingLabelStatus",
+  "description": "ShippingLabelStatus schema from Amazon Snow Family API",
+  "enum": [
+    "InProgress",
+    "TimedOut",
+    "Succeeded",
+    "Failed"
+  ]
+}

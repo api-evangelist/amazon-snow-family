@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-describe-return-shipping-label-request-structure.json",
+  "name": "DescribeReturnShippingLabelRequest",
+  "description": "DescribeReturnShippingLabelRequest schema from Amazon Snow Family API",
+  "properties": {
+    "JobId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobId"
+        },
+        {
+          "description": "The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "JobId"
+  ]
+}

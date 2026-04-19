@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-s3-on-device-service-configuration-schema.json",
+  "title": "S3OnDeviceServiceConfiguration",
+  "description": "Amazon S3 compatible storage on Snow family devices configuration items.",
+  "type": "object",
+  "properties": {
+    "StorageLimit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3StorageLimit"
+        },
+        {
+          "description": "If the specified storage limit value matches storage limit of one of the defined configurations, that configuration will be used. If the specified storage limit value does not match any defined configuration, the request will fail. If more than one configuration has the same storage limit as specified, the other input need to be provided."
+        }
+      ]
+    },
+    "StorageUnit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StorageUnit"
+        },
+        {
+          "description": "Storage unit. Currently the only supported unit is TB."
+        }
+      ]
+    },
+    "ServiceSize": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceSize"
+        },
+        {
+          "description": "Applicable when creating a cluster. Specifies how many nodes are needed for Amazon S3 compatible storage on Snow family devices. If specified, the other input can be omitted."
+        }
+      ]
+    },
+    "FaultTolerance": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NodeFaultTolerance"
+        },
+        {
+          "description": "&gt;Fault tolerance level of the cluster. This indicates the number of nodes that can go down without degrading the performance of the cluster. This additional input helps when the specified <code>StorageLimit</code> matches more than one Amazon S3 compatible storage on Snow family devices service configuration."
+        }
+      ]
+    }
+  }
+}

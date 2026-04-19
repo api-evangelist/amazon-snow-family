@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-update-cluster-request-schema.json",
+  "title": "UpdateClusterRequest",
+  "description": "UpdateClusterRequest schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "ClusterId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClusterId"
+        },
+        {
+          "description": "The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>."
+        }
+      ]
+    },
+    "RoleARN": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RoleARN"
+        },
+        {
+          "description": "The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href=\"https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html\">CreateRole</a> API action in Identity and Access Management (IAM)."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The updated description of this cluster."
+        }
+      ]
+    },
+    "Resources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobResource"
+        },
+        {
+          "description": "The updated arrays of <a>JobResource</a> objects that can include updated <a>S3Resource</a> objects or <a>LambdaResource</a> objects."
+        }
+      ]
+    },
+    "OnDeviceServiceConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OnDeviceServiceConfiguration"
+        },
+        {
+          "description": "Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System)."
+        }
+      ]
+    },
+    "AddressId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressId"
+        },
+        {
+          "description": "The ID of the updated <a>Address</a> object."
+        }
+      ]
+    },
+    "ShippingOption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShippingOption"
+        },
+        {
+          "description": "The updated shipping option value of this cluster's <a>ShippingDetails</a> object."
+        }
+      ]
+    },
+    "Notification": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Notification"
+        },
+        {
+          "description": "The new or updated <a>Notification</a> object."
+        }
+      ]
+    },
+    "ForwardingAddressId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddressId"
+        },
+        {
+          "description": "The updated ID for the forwarding address for a cluster. This field is not supported in most regions."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ClusterId"
+  ]
+}

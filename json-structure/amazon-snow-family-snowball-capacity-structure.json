@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-snowball-capacity-structure.json",
+  "name": "SnowballCapacity",
+  "description": "SnowballCapacity schema from Amazon Snow Family API",
+  "enum": [
+    "T50",
+    "T80",
+    "T100",
+    "T42",
+    "T98",
+    "T8",
+    "T14",
+    "T32",
+    "NoPreference",
+    "T240",
+    "T13"
+  ]
+}

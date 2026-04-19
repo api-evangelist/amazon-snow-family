@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-list-compatible-images-result-structure.json",
+  "name": "ListCompatibleImagesResult",
+  "description": "ListCompatibleImagesResult schema from Amazon Snow Family API",
+  "properties": {
+    "CompatibleImages": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CompatibleImageList"
+        },
+        {
+          "description": "A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Because HTTP requests are stateless, this is the starting point for your next list of returned images."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-dependent-service-structure.json",
+  "name": "DependentService",
+  "description": "The name and version of the service dependant on the requested service.",
+  "properties": {
+    "ServiceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceName"
+        },
+        {
+          "description": "The name of the dependent service."
+        }
+      ]
+    },
+    "ServiceVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceVersion"
+        },
+        {
+          "description": "The version of the dependent service."
+        }
+      ]
+    }
+  }
+}

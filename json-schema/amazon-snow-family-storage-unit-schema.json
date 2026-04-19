@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-storage-unit-schema.json",
+  "title": "StorageUnit",
+  "description": "StorageUnit schema from Amazon Snow Family API",
+  "type": "string",
+  "enum": [
+    "TB"
+  ]
+}

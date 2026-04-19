@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-list-clusters-result-structure.json",
+  "name": "ListClustersResult",
+  "description": "ListClustersResult schema from Amazon Snow Family API",
+  "properties": {
+    "ClusterListEntries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClusterListEntryList"
+        },
+        {
+          "description": "Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-get-job-unlock-code-request-schema.json",
+  "title": "GetJobUnlockCodeRequest",
+  "description": "GetJobUnlockCodeRequest schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "JobId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobId"
+        },
+        {
+          "description": "The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "JobId"
+  ]
+}

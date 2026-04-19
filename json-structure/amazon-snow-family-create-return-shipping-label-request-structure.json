@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-create-return-shipping-label-request-structure.json",
+  "name": "CreateReturnShippingLabelRequest",
+  "description": "CreateReturnShippingLabelRequest schema from Amazon Snow Family API",
+  "properties": {
+    "JobId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobId"
+        },
+        {
+          "description": "The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>."
+        }
+      ]
+    },
+    "ShippingOption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShippingOption"
+        },
+        {
+          "description": "The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:"
+        }
+      ]
+    }
+  },
+  "required": [
+    "JobId"
+  ]
+}

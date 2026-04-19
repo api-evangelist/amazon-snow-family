@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-get-job-manifest-result-structure.json",
+  "name": "GetJobManifestResult",
+  "description": "GetJobManifestResult schema from Amazon Snow Family API",
+  "properties": {
+    "ManifestURI": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "ServiceName": "MyResource",
+  "DependentServices": "example-value",
+  "MaxResults": "example-value",
+  "NextToken": "example-value"
+}

@@ -1,0 +1,6 @@
+{
+  "StorageLimit": "example-value",
+  "StorageUnit": "example-value",
+  "ServiceSize": "example-value",
+  "FaultTolerance": "example-value"
+}

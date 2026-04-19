@@ -1,0 +1,242 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon Snow Family API
+  description: Amazon Snow Family API for cloud resource management.
+  tags:
+  - AWS
+  - Edge Computing
+  - Data Transfer
+  - Data Migration
+  - Hybrid Cloud
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+    AWS_REGION: AWS_REGION
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-snow-family
+    baseUri: https://snowball.{region}.amazonaws.com
+    description: Amazon Snow Family REST API.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_SIGNATURE_V4}}'
+      placement: header
+    resources:
+    - name: jobs
+      path: /jobs
+      description: Jobs operations
+      operations:
+      - name: createjob
+        method: POST
+        description: CreateJob
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: describejob
+        method: POST
+        description: DescribeJob
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: listjobs
+        method: POST
+        description: ListJobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: canceljob
+        method: POST
+        description: CancelJob
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatejob
+        method: POST
+        description: UpdateJob
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: addresses
+      path: /addresses
+      description: Addresses operations
+      operations:
+      - name: createaddress
+        method: POST
+        description: CreateAddress
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: describeaddress
+        method: POST
+        description: DescribeAddress
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: listcompatibleimages
+        method: POST
+        description: ListCompatibleImages
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: clusters
+      path: /clusters
+      description: Clusters operations
+      operations:
+      - name: createcluster
+        method: POST
+        description: CreateCluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: describecluster
+        method: POST
+        description: DescribeCluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: listclusters
+        method: POST
+        description: ListClusters
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: cancelcluster
+        method: POST
+        description: CancelCluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatecluster
+        method: POST
+        description: UpdateCluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: amazon-snow-family-rest
+    resources:
+    - path: /v1/jobs
+      name: jobs
+      description: Jobs operations
+      operations:
+      - method: GET
+        name: list-jobs
+        description: List Jobs
+        call: amazon-snow-family.createjob
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/addresses
+      name: addresses
+      description: Addresses operations
+      operations:
+      - method: GET
+        name: list-addresses
+        description: List Addresses
+        call: amazon-snow-family.createaddress
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/clusters
+      name: clusters
+      description: Clusters operations
+      operations:
+      - method: GET
+        name: list-clusters
+        description: List Clusters
+        call: amazon-snow-family.createcluster
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: amazon-snow-family-mcp
+    transport: http
+    description: MCP server for AI-assisted Amazon Snow Family management.
+    tools:
+    - name: list-jobs
+      description: List Snow Family jobs
+      hints:
+        readOnly: true
+      call: amazon-snowfamily.listjobs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-job
+      description: Create a Snow Family job
+      hints:
+        readOnly: false
+        idempotent: false
+      call: amazon-snowfamily.createjob
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-job
+      description: Get job details
+      hints:
+        readOnly: true
+      call: amazon-snowfamily.describejob
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: cancel-job
+      description: Cancel a Snow Family job
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-snowfamily.canceljob
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-clusters
+      description: List Snow Family clusters
+      hints:
+        readOnly: true
+      call: amazon-snowfamily.listclusters
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-cluster
+      description: Create a Snow Family cluster
+      hints:
+        readOnly: false
+        idempotent: false
+      call: amazon-snowfamily.createcluster
+      outputParameters:
+      - type: object
+        mapping: $.

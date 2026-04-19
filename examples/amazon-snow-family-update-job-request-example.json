@@ -1,0 +1,13 @@
+{
+  "JobId": "example-value",
+  "RoleARN": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "Notification": "example-value",
+  "Resources": "example-value",
+  "OnDeviceServiceConfiguration": "example-value",
+  "AddressId": "example-value",
+  "ShippingOption": "example-value",
+  "Description": "example-value",
+  "SnowballCapacityPreference": "example-value",
+  "ForwardingAddressId": "example-value",
+  "PickupDetails": "example-value"
+}

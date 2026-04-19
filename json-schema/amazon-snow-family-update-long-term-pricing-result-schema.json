@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-update-long-term-pricing-result-schema.json",
+  "title": "UpdateLongTermPricingResult",
+  "description": "UpdateLongTermPricingResult schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {}
+}

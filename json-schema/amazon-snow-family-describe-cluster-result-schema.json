@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-describe-cluster-result-schema.json",
+  "title": "DescribeClusterResult",
+  "description": "DescribeClusterResult schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "ClusterMetadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClusterMetadata"
+        },
+        {
+          "description": "Information about a specific cluster, including shipping information, cluster status, and other important metadata."
+        }
+      ]
+    }
+  }
+}

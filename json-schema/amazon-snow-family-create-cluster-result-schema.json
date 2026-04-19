@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-create-cluster-result-schema.json",
+  "title": "CreateClusterResult",
+  "description": "CreateClusterResult schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "ClusterId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClusterId"
+        },
+        {
+          "description": "The automatically generated ID for a cluster."
+        }
+      ]
+    },
+    "JobListEntries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobListEntryList"
+        },
+        {
+          "description": "List of jobs created for this cluster. For syntax, see <a href=\"http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax\">ListJobsResult$JobListEntries</a> in this guide."
+        }
+      ]
+    }
+  }
+}

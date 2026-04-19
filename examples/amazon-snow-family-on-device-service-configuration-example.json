@@ -1,0 +1,6 @@
+{
+  "NFSOnDeviceService": "example-value",
+  "TGWOnDeviceService": "example-value",
+  "EKSOnDeviceService": "example-value",
+  "S3OnDeviceService": "example-value"
+}

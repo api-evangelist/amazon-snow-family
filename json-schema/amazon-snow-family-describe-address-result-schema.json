@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-describe-address-result-schema.json",
+  "title": "DescribeAddressResult",
+  "description": "DescribeAddressResult schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "Address": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Address"
+        },
+        {
+          "description": "The address that you want the Snow device(s) associated with a specific job to be shipped to."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "AddressId": "example-value",
+  "Name": "MyResource",
+  "Company": "example-value",
+  "Street1": "example-value",
+  "Street2": "example-value",
+  "Street3": "example-value",
+  "City": "example-value",
+  "StateOrProvince": "example-value",
+  "PrefectureOrDistrict": "example-value",
+  "Landmark": "example-value",
+  "Country": "example-value",
+  "PostalCode": "example-value",
+  "PhoneNumber": "example-value",
+  "IsRestricted": "example-value",
+  "Type": "example-value"
+}

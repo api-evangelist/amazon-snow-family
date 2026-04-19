@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-create-address-result-structure.json",
+  "name": "CreateAddressResult",
+  "description": "CreateAddressResult schema from Amazon Snow Family API",
+  "properties": {
+    "AddressId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to."
+        }
+      ]
+    }
+  }
+}

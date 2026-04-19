@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-snowcone-device-configuration-structure.json",
+  "name": "SnowconeDeviceConfiguration",
+  "description": "Specifies the device configuration for an Snowcone job.",
+  "properties": {
+    "WirelessConnection": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WirelessConnection"
+        },
+        {
+          "description": "Configures the wireless connection for the Snowcone device."
+        }
+      ]
+    }
+  }
+}

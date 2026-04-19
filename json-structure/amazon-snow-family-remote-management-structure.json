@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-remote-management-structure.json",
+  "name": "RemoteManagement",
+  "description": "RemoteManagement schema from Amazon Snow Family API",
+  "enum": [
+    "INSTALLED_ONLY",
+    "INSTALLED_AUTOSTART",
+    "NOT_INSTALLED"
+  ]
+}

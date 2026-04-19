@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-list-long-term-pricing-request-structure.json",
+  "name": "ListLongTermPricingRequest",
+  "description": "ListLongTermPricingRequest schema from Amazon Snow Family API",
+  "properties": {
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListLimit"
+        },
+        {
+          "description": "The maximum number of <code>ListLongTermPricing</code> objects to return."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return."
+        }
+      ]
+    }
+  }
+}

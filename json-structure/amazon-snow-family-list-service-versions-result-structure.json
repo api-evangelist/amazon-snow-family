@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-list-service-versions-result-structure.json",
+  "name": "ListServiceVersionsResult",
+  "description": "ListServiceVersionsResult schema from Amazon Snow Family API",
+  "properties": {
+    "ServiceVersions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceVersionList"
+        },
+        {
+          "description": "A list of supported versions."
+        }
+      ]
+    },
+    "ServiceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceName"
+        },
+        {
+          "description": "The name of the service for which the system provided supported versions."
+        }
+      ]
+    },
+    "DependentServices": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DependentServiceList"
+        },
+        {
+          "description": "A list of names and versions of dependant services of the service for which the system provided supported versions."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ServiceVersions",
+    "ServiceName"
+  ]
+}

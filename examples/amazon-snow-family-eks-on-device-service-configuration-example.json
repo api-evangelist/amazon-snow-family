@@ -1,0 +1,4 @@
+{
+  "KubernetesVersion": "example-value",
+  "EKSAnywhereVersion": "example-value"
+}

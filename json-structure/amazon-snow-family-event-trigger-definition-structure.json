@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-event-trigger-definition-structure.json",
+  "name": "EventTriggerDefinition",
+  "description": "The container for the <a>EventTriggerDefinition$EventResourceARN</a>.",
+  "properties": {
+    "EventResourceARN": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceARN"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-tax-documents-schema.json",
+  "title": "TaxDocuments",
+  "description": "The tax documents required in your Amazon Web Services Region.",
+  "type": "object",
+  "properties": {
+    "IND": {
+      "$ref": "#/components/schemas/INDTaxDocuments"
+    }
+  }
+}

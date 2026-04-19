@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-structure/amazon-snow-family-long-term-pricing-type-structure.json",
+  "name": "LongTermPricingType",
+  "description": "LongTermPricingType schema from Amazon Snow Family API",
+  "enum": [
+    "OneYear",
+    "ThreeYear",
+    "OneMonth"
+  ]
+}

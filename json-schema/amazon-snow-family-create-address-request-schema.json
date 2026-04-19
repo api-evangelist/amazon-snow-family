@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/json-schema/amazon-snow-family-create-address-request-schema.json",
+  "title": "CreateAddressRequest",
+  "description": "CreateAddressRequest schema from Amazon Snow Family API",
+  "type": "object",
+  "properties": {
+    "Address": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Address"
+        },
+        {
+          "description": "The address that you want the Snow device shipped to."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Address"
+  ]
+}
