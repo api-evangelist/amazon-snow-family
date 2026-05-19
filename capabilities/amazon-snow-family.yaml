@@ -1,0 +1,1420 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Import/Export Snowball
+  description: 'Amazon Import/Export Snowball. 27 operations. Lead operation: Amazon Cancel Cluster. Self-contained Naftiko
+    capability covering one Amazon Snow Family business surface.'
+  tags:
+  - Amazon Snow Family
+  - Amazon Import/Export Snowball
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_SNOW_FAMILY_API_KEY: AMAZON_SNOW_FAMILY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-snow-family
+    baseUri: http://snowball.{region}.amazonaws.com
+    description: Amazon Import/Export Snowball business capability. Self-contained, no shared references.
+    resources:
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.CancelCluster'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.CancelCluster
+      operations:
+      - name: cancelcluster
+        method: POST
+        description: Amazon Cancel Cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.CancelJob'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.CancelJob
+      operations:
+      - name: canceljob
+        method: POST
+        description: Amazon Cancel Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.CreateAddress'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.CreateAddress
+      operations:
+      - name: createaddress
+        method: POST
+        description: Amazon Create Address
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster
+      operations:
+      - name: createcluster
+        method: POST
+        description: Amazon Create Cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.CreateJob'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.CreateJob
+      operations:
+      - name: createjob
+        method: POST
+        description: Amazon Create Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.CreateLongTermPricing'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.CreateLongTermPricing
+      operations:
+      - name: createlongtermpricing
+        method: POST
+        description: Amazon Create Long Term Pricing
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel
+      operations:
+      - name: createreturnshippinglabel
+        method: POST
+        description: Amazon Create Return Shipping Label
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddress'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddress
+      operations:
+      - name: describeaddress
+        method: POST
+        description: Amazon Describe Address
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddresses'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddresses
+      operations:
+      - name: describeaddresses
+        method: POST
+        description: Amazon Describe Addresses
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.DescribeCluster'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.DescribeCluster
+      operations:
+      - name: describecluster
+        method: POST
+        description: Amazon Describe Cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.DescribeJob'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.DescribeJob
+      operations:
+      - name: describejob
+        method: POST
+        description: Amazon Describe Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.DescribeReturnShippingLabel'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.DescribeReturnShippingLabel
+      operations:
+      - name: describereturnshippinglabel
+        method: POST
+        description: Amazon Describe Return Shipping Label
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.GetJobManifest'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.GetJobManifest
+      operations:
+      - name: getjobmanifest
+        method: POST
+        description: Amazon Get Job Manifest
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.GetJobUnlockCode'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.GetJobUnlockCode
+      operations:
+      - name: getjobunlockcode
+        method: POST
+        description: Amazon Get Job Unlock Code
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.GetSnowballUsage'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.GetSnowballUsage
+      operations:
+      - name: getsnowballusage
+        method: POST
+        description: Amazon Get Snowball Usage
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.GetSoftwareUpdates'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.GetSoftwareUpdates
+      operations:
+      - name: getsoftwareupdates
+        method: POST
+        description: Amazon Get Software Updates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.ListClusterJobs'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.ListClusterJobs
+      operations:
+      - name: listclusterjobs
+        method: POST
+        description: Amazon List Cluster Jobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.ListClusters'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.ListClusters
+      operations:
+      - name: listclusters
+        method: POST
+        description: Amazon List Clusters
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.ListCompatibleImages'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.ListCompatibleImages
+      operations:
+      - name: listcompatibleimages
+        method: POST
+        description: Amazon List Compatible Images
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.ListJobs'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.ListJobs
+      operations:
+      - name: listjobs
+        method: POST
+        description: Amazon List Jobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.ListLongTermPricing'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.ListLongTermPricing
+      operations:
+      - name: listlongtermpricing
+        method: POST
+        description: Amazon List Long Term Pricing
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.ListPickupLocations'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.ListPickupLocations
+      operations:
+      - name: listpickuplocations
+        method: POST
+        description: Amazon List Pickup Locations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.ListServiceVersions'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.ListServiceVersions
+      operations:
+      - name: listserviceversions
+        method: POST
+        description: Amazon List Service Versions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.UpdateCluster'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.UpdateCluster
+      operations:
+      - name: updatecluster
+        method: POST
+        description: Amazon Update Cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.UpdateJob'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.UpdateJob
+      operations:
+      - name: updatejob
+        method: POST
+        description: Amazon Update Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.UpdateJobShipmentState'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.UpdateJobShipmentState
+      operations:
+      - name: updatejobshipmentstate
+        method: POST
+        description: Amazon Update Job Shipment State
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=AWSIESnowballJobManagementService.UpdateLongTermPricing'
+      path: /#X-Amz-Target=AWSIESnowballJobManagementService.UpdateLongTermPricing
+      operations:
+      - name: updatelongtermpricing
+        method: POST
+        description: Amazon Update Long Term Pricing
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_SNOW_FAMILY_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-snow-family-rest
+    port: 8080
+    description: REST adapter for Amazon Import/Export Snowball. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-cancelcluster
+      name: x-amz-target-awsiesnowballjobmanagementservice-cancelcluster
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.CancelCluster.'
+      operations:
+      - method: POST
+        name: cancelcluster
+        description: Amazon Cancel Cluster
+        call: amazon-snow-family.cancelcluster
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-canceljob
+      name: x-amz-target-awsiesnowballjobmanagementservice-canceljob
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.CancelJob.'
+      operations:
+      - method: POST
+        name: canceljob
+        description: Amazon Cancel Job
+        call: amazon-snow-family.canceljob
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-createaddress
+      name: x-amz-target-awsiesnowballjobmanagementservice-createaddress
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.CreateAddress.'
+      operations:
+      - method: POST
+        name: createaddress
+        description: Amazon Create Address
+        call: amazon-snow-family.createaddress
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-createcluster
+      name: x-amz-target-awsiesnowballjobmanagementservice-createcluster
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster.'
+      operations:
+      - method: POST
+        name: createcluster
+        description: Amazon Create Cluster
+        call: amazon-snow-family.createcluster
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-createjob
+      name: x-amz-target-awsiesnowballjobmanagementservice-createjob
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.CreateJob.'
+      operations:
+      - method: POST
+        name: createjob
+        description: Amazon Create Job
+        call: amazon-snow-family.createjob
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing
+      name: x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.CreateLongTermPricing.'
+      operations:
+      - method: POST
+        name: createlongtermpricing
+        description: Amazon Create Long Term Pricing
+        call: amazon-snow-family.createlongtermpricing
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel
+      name: x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel.'
+      operations:
+      - method: POST
+        name: createreturnshippinglabel
+        description: Amazon Create Return Shipping Label
+        call: amazon-snow-family.createreturnshippinglabel
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-describeaddress
+      name: x-amz-target-awsiesnowballjobmanagementservice-describeaddress
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddress.'
+      operations:
+      - method: POST
+        name: describeaddress
+        description: Amazon Describe Address
+        call: amazon-snow-family.describeaddress
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-describeaddresses
+      name: x-amz-target-awsiesnowballjobmanagementservice-describeaddresses
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddresses.'
+      operations:
+      - method: POST
+        name: describeaddresses
+        description: Amazon Describe Addresses
+        call: amazon-snow-family.describeaddresses
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-describecluster
+      name: x-amz-target-awsiesnowballjobmanagementservice-describecluster
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.DescribeCluster.'
+      operations:
+      - method: POST
+        name: describecluster
+        description: Amazon Describe Cluster
+        call: amazon-snow-family.describecluster
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-describejob
+      name: x-amz-target-awsiesnowballjobmanagementservice-describejob
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.DescribeJob.'
+      operations:
+      - method: POST
+        name: describejob
+        description: Amazon Describe Job
+        call: amazon-snow-family.describejob
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel
+      name: x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.DescribeReturnShippingLabel.'
+      operations:
+      - method: POST
+        name: describereturnshippinglabel
+        description: Amazon Describe Return Shipping Label
+        call: amazon-snow-family.describereturnshippinglabel
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest
+      name: x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.GetJobManifest.'
+      operations:
+      - method: POST
+        name: getjobmanifest
+        description: Amazon Get Job Manifest
+        call: amazon-snow-family.getjobmanifest
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode
+      name: x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.GetJobUnlockCode.'
+      operations:
+      - method: POST
+        name: getjobunlockcode
+        description: Amazon Get Job Unlock Code
+        call: amazon-snow-family.getjobunlockcode
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage
+      name: x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.GetSnowballUsage.'
+      operations:
+      - method: POST
+        name: getsnowballusage
+        description: Amazon Get Snowball Usage
+        call: amazon-snow-family.getsnowballusage
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates
+      name: x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.GetSoftwareUpdates.'
+      operations:
+      - method: POST
+        name: getsoftwareupdates
+        description: Amazon Get Software Updates
+        call: amazon-snow-family.getsoftwareupdates
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs
+      name: x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.ListClusterJobs.'
+      operations:
+      - method: POST
+        name: listclusterjobs
+        description: Amazon List Cluster Jobs
+        call: amazon-snow-family.listclusterjobs
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-listclusters
+      name: x-amz-target-awsiesnowballjobmanagementservice-listclusters
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.ListClusters.'
+      operations:
+      - method: POST
+        name: listclusters
+        description: Amazon List Clusters
+        call: amazon-snow-family.listclusters
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages
+      name: x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.ListCompatibleImages.'
+      operations:
+      - method: POST
+        name: listcompatibleimages
+        description: Amazon List Compatible Images
+        call: amazon-snow-family.listcompatibleimages
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-listjobs
+      name: x-amz-target-awsiesnowballjobmanagementservice-listjobs
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.ListJobs.'
+      operations:
+      - method: POST
+        name: listjobs
+        description: Amazon List Jobs
+        call: amazon-snow-family.listjobs
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing
+      name: x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.ListLongTermPricing.'
+      operations:
+      - method: POST
+        name: listlongtermpricing
+        description: Amazon List Long Term Pricing
+        call: amazon-snow-family.listlongtermpricing
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations
+      name: x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.ListPickupLocations.'
+      operations:
+      - method: POST
+        name: listpickuplocations
+        description: Amazon List Pickup Locations
+        call: amazon-snow-family.listpickuplocations
+        with:
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-listserviceversions
+      name: x-amz-target-awsiesnowballjobmanagementservice-listserviceversions
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.ListServiceVersions.'
+      operations:
+      - method: POST
+        name: listserviceversions
+        description: Amazon List Service Versions
+        call: amazon-snow-family.listserviceversions
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-updatecluster
+      name: x-amz-target-awsiesnowballjobmanagementservice-updatecluster
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.UpdateCluster.'
+      operations:
+      - method: POST
+        name: updatecluster
+        description: Amazon Update Cluster
+        call: amazon-snow-family.updatecluster
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-updatejob
+      name: x-amz-target-awsiesnowballjobmanagementservice-updatejob
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.UpdateJob.'
+      operations:
+      - method: POST
+        name: updatejob
+        description: Amazon Update Job
+        call: amazon-snow-family.updatejob
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate
+      name: x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.UpdateJobShipmentState.'
+      operations:
+      - method: POST
+        name: updatejobshipmentstate
+        description: Amazon Update Job Shipment State
+        call: amazon-snow-family.updatejobshipmentstate
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing
+      name: x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing
+      description: 'REST surface for #X-Amz-Target=AWSIESnowballJobManagementService.UpdateLongTermPricing.'
+      operations:
+      - method: POST
+        name: updatelongtermpricing
+        description: Amazon Update Long Term Pricing
+        call: amazon-snow-family.updatelongtermpricing
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-snow-family-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Import/Export Snowball. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: amazon-cancel-cluster
+      description: Amazon Cancel Cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.cancelcluster
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-cancel-job
+      description: Amazon Cancel Job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.canceljob
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-create-address
+      description: Amazon Create Address
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.createaddress
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-create-cluster
+      description: Amazon Create Cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.createcluster
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-create-job
+      description: Amazon Create Job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.createjob
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-create-long-term-pricing
+      description: Amazon Create Long Term Pricing
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.createlongtermpricing
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-create-return-shipping-label
+      description: Amazon Create Return Shipping Label
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.createreturnshippinglabel
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-describe-address
+      description: Amazon Describe Address
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.describeaddress
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-describe-addresses
+      description: Amazon Describe Addresses
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.describeaddresses
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-describe-cluster
+      description: Amazon Describe Cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.describecluster
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-describe-job
+      description: Amazon Describe Job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.describejob
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-describe-return-shipping-label
+      description: Amazon Describe Return Shipping Label
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.describereturnshippinglabel
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-get-job-manifest
+      description: Amazon Get Job Manifest
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.getjobmanifest
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-get-job-unlock-code
+      description: Amazon Get Job Unlock Code
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.getjobunlockcode
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-get-snowball-usage
+      description: Amazon Get Snowball Usage
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.getsnowballusage
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-get-software-updates
+      description: Amazon Get Software Updates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.getsoftwareupdates
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-list-cluster-jobs
+      description: Amazon List Cluster Jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.listclusterjobs
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-list-clusters
+      description: Amazon List Clusters
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.listclusters
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-list-compatible-images
+      description: Amazon List Compatible Images
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.listcompatibleimages
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-list-jobs
+      description: Amazon List Jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.listjobs
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-list-long-term-pricing
+      description: Amazon List Long Term Pricing
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.listlongtermpricing
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-list-pickup-locations
+      description: Amazon List Pickup Locations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.listpickuplocations
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-list-service-versions
+      description: Amazon List Service Versions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.listserviceversions
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-update-cluster
+      description: Amazon Update Cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.updatecluster
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-update-job
+      description: Amazon Update Job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.updatejob
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-update-job-shipment-state
+      description: Amazon Update Job Shipment State
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.updatejobshipmentstate
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-update-long-term-pricing
+      description: Amazon Update Long Term Pricing
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-snow-family.updatelongtermpricing
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

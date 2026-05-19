@@ -1,10 +1,8 @@
 aid: amazon-snow-family
 name: Amazon Snow Family
-description: >-
-  AWS Snow Family is a collection of physical devices and capacity points that
-  help customers with data transfers in and out of AWS when network capacity is
-  limited or unavailable. It includes Snowcone, Snowball, and Snowmobile
-  devices for edge computing and offline data migration.
+description: AWS Snow Family is a collection of physical devices and capacity points that help customers with data transfers
+  in and out of AWS when network capacity is limited or unavailable. It includes Snowcone, Snowball, and Snowmobile devices
+  for edge computing and offline data migration.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
@@ -13,18 +11,15 @@ tags:
 - Edge Computing
 - Offline Transfer
 - Physical Appliance
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/amazon-snow-family/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-04-19'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
 - aid: amazon-snow-family:aws-snow-device-management-api
   name: AWS Snow Device Management API
-  description: >-
-    The AWS Snow Device Management API provides programmatic access to manage
-    Snow device jobs, tasks, device resources, and network configurations
-    for edge computing and data transfer operations.
+  description: The AWS Snow Device Management API provides programmatic access to manage Snow device jobs, tasks, device resources,
+    and network configurations for edge computing and data transfer operations.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
   tags:
@@ -42,6 +37,8 @@ apis:
     url: https://aws.amazon.com/snowball/pricing/
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
+  - type: NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/snowball/
@@ -71,8 +68,6 @@ common:
   url: rules/amazon-snow-family-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/amazon-snow-family-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/shared/amazon-snow-family.yaml
 - type: Features
   data:
   - name: Petabyte-scale Data Transfer
@@ -104,14 +99,14 @@ common:
 - type: Integrations
   url: https://aws.amazon.com/partners/
 integrations:
-  - name: Partner Programs
-  - name: Resources
-  - name: Success Stories
-  - name: Work with an AWS Partner
-  - name: AWS Marketplace
-  - name: AWS Partner Central
-  - name: Partner Paths
-  - name: co-sell with AWS
+- name: Partner Programs
+- name: Resources
+- name: Success Stories
+- name: Work with an AWS Partner
+- name: AWS Marketplace
+- name: AWS Partner Central
+- name: Partner Paths
+- name: co-sell with AWS
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
