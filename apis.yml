@@ -40,6 +40,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-snow-family.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-snow-family-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-snow-family-trust-center.yml
 - type: VulnerabilityDisclosure
