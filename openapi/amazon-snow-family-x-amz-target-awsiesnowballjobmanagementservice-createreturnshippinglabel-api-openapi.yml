@@ -1,0 +1,324 @@
+openapi: 3.0.0
+info:
+  version: '2016-06-30'
+  x-release: v4
+  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel API'
+  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: snowball
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/snowball-2016-06-30.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://snowball.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon Snowball multi-region endpoint
+- url: https://snowball.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon Snowball multi-region endpoint
+- url: http://snowball.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon Snowball endpoint for China (Beijing) and China (Ningxia)
+- url: https://snowball.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon Snowball endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel'
+paths:
+  /#X-Amz-Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateReturnShippingLabel
+      description: Creates a shipping label that will be used to return the Snow device to Amazon Web Services.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateReturnShippingLabelResult'
+              examples:
+                CreateReturnShippingLabel200Example:
+                  summary: Default CreateReturnShippingLabel 200
+                  x-microcks-default: true
+                  value:
+                    Status: Active
+        '480':
+          description: InvalidResourceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidResourceException'
+              examples:
+                CreateReturnShippingLabel480Example:
+                  summary: Default CreateReturnShippingLabel 480
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: InvalidJobStateException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidJobStateException'
+              examples:
+                CreateReturnShippingLabel481Example:
+                  summary: Default CreateReturnShippingLabel 481
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: InvalidInputCombinationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputCombinationException'
+              examples:
+                CreateReturnShippingLabel482Example:
+                  summary: Default CreateReturnShippingLabel 482
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                CreateReturnShippingLabel483Example:
+                  summary: Default CreateReturnShippingLabel 483
+                  x-microcks-default: true
+                  value: example-value
+        '484':
+          description: ReturnShippingLabelAlreadyExistsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnShippingLabelAlreadyExistsException'
+              examples:
+                CreateReturnShippingLabel484Example:
+                  summary: Default CreateReturnShippingLabel 484
+                  x-microcks-default: true
+                  value: example-value
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReturnShippingLabelRequest'
+            examples:
+              CreateReturnShippingLabelRequestExample:
+                summary: Default CreateReturnShippingLabel request
+                x-microcks-default: true
+                value:
+                  JobId: example-value
+                  ShippingOption: example-value
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSIESnowballJobManagementService.CreateReturnShippingLabel
+      summary: Amazon Create Return Shipping Label
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel'
+components:
+  schemas:
+    ConflictException: {}
+    CreateReturnShippingLabelRequest:
+      type: object
+      required:
+      - JobId
+      title: CreateReturnShippingLabelRequest
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        ShippingOption:
+          allOf:
+          - $ref: '#/components/schemas/ShippingOption'
+          - description: 'The shipping speed for a particular job. This speed doesn''t dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:'
+    ReturnShippingLabelAlreadyExistsException: {}
+    ShippingLabelStatus:
+      type: string
+      enum:
+      - InProgress
+      - TimedOut
+      - Succeeded
+      - Failed
+    CreateReturnShippingLabelResult:
+      type: object
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/ShippingLabelStatus'
+          - description: The status information of the task on a Snow device that is being returned to Amazon Web Services.
+    InvalidJobStateException: {}
+    JobId:
+      type: string
+      pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 39
+      maxLength: 39
+    ShippingOption:
+      type: string
+      enum:
+      - SECOND_DAY
+      - NEXT_DAY
+      - EXPRESS
+      - STANDARD
+    InvalidResourceException: {}
+    InvalidInputCombinationException: {}
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/snowball/
+x-hasEquivalentPaths: true

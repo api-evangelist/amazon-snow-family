@@ -1,0 +1,418 @@
+openapi: 3.0.0
+info:
+  version: '2016-06-30'
+  x-release: v4
+  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs API'
+  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: snowball
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/snowball-2016-06-30.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://snowball.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon Snowball multi-region endpoint
+- url: https://snowball.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon Snowball multi-region endpoint
+- url: http://snowball.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon Snowball endpoint for China (Beijing) and China (Ningxia)
+- url: https://snowball.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon Snowball endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs'
+paths:
+  /#X-Amz-Target=AWSIESnowballJobManagementService.ListClusterJobs:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListClusterJobs
+      description: Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code> object is for a job in the specified cluster and contains a job's state, a job's ID, and other information.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListClusterJobsResult'
+              examples:
+                ListClusterJobs200Example:
+                  summary: Default ListClusterJobs 200
+                  x-microcks-default: true
+                  value:
+                    JobListEntries: example-value
+                    NextToken: example-value
+        '480':
+          description: InvalidResourceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidResourceException'
+              examples:
+                ListClusterJobs480Example:
+                  summary: Default ListClusterJobs 480
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: InvalidNextTokenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidNextTokenException'
+              examples:
+                ListClusterJobs481Example:
+                  summary: Default ListClusterJobs 481
+                  x-microcks-default: true
+                  value: example-value
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListClusterJobsRequest'
+            examples:
+              ListClusterJobsRequestExample:
+                summary: Default ListClusterJobs request
+                x-microcks-default: true
+                value:
+                  ClusterId: example-value
+                  MaxResults: example-value
+                  NextToken: example-value
+      parameters:
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSIESnowballJobManagementService.ListClusterJobs
+      summary: Amazon List Cluster Jobs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs'
+components:
+  schemas:
+    ListClusterJobsResult:
+      type: object
+      example:
+        JobListEntries:
+        - CreationDate: '1480475524.0'
+          Description: MyClustrer-node-001
+          IsMaster: false
+          JobId: JID123e4567-e89b-12d3-a456-426655440000
+          JobState: New
+          JobType: LOCAL_USE
+          SnowballType: EDGE
+        - CreationDate: '1480475525.0'
+          Description: MyClustrer-node-002
+          IsMaster: false
+          JobId: JID123e4567-e89b-12d3-a456-426655440001
+          JobState: New
+          JobType: LOCAL_USE
+          SnowballType: EDGE
+        - CreationDate: '1480475525.0'
+          Description: MyClustrer-node-003
+          IsMaster: false
+          JobId: JID123e4567-e89b-12d3-a456-426655440002
+          JobState: New
+          JobType: LOCAL_USE
+          SnowballType: EDGE
+        - CreationDate: '1480475525.0'
+          Description: MyClustrer-node-004
+          IsMaster: false
+          JobId: JID123e4567-e89b-12d3-a456-426655440003
+          JobState: New
+          JobType: LOCAL_USE
+          SnowballType: EDGE
+        - CreationDate: '1480475525.0'
+          Description: MyClustrer-node-005
+          IsMaster: false
+          JobId: JID123e4567-e89b-12d3-a456-426655440004
+          JobState: New
+          JobType: LOCAL_USE
+          SnowballType: EDGE
+      properties:
+        JobListEntries:
+          allOf:
+          - $ref: '#/components/schemas/JobListEntryList'
+          - description: 'Each <code>JobListEntry</code> object contains a job''s state, a job''s ID, and a value that indicates whether the job is a job part, in the case of export jobs. '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.
+    String:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1024
+    InvalidNextTokenException: {}
+    JobType:
+      type: string
+      enum:
+      - IMPORT
+      - EXPORT
+      - LOCAL_USE
+    ListLimit:
+      type: integer
+      minimum: 0
+      maximum: 100
+    Boolean:
+      type: boolean
+    ClusterId:
+      type: string
+      pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 39
+      maxLength: 39
+    InvalidResourceException: {}
+    SnowballType:
+      type: string
+      enum:
+      - STANDARD
+      - EDGE
+      - EDGE_C
+      - EDGE_CG
+      - EDGE_S
+      - SNC1_HDD
+      - SNC1_SSD
+      - V3_5C
+      - V3_5S
+      - RACK_5U_C
+    JobState:
+      type: string
+      enum:
+      - New
+      - PreparingAppliance
+      - PreparingShipment
+      - InTransitToCustomer
+      - WithCustomer
+      - InTransitToAWS
+      - WithAWSSortingFacility
+      - WithAWS
+      - InProgress
+      - Complete
+      - Cancelled
+      - Listing
+      - Pending
+    JobListEntry:
+      type: object
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        JobState:
+          allOf:
+          - $ref: '#/components/schemas/JobState'
+          - description: The current state of this job.
+        IsMaster:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.
+        JobType:
+          allOf:
+          - $ref: '#/components/schemas/JobType'
+          - description: The type of job.
+        SnowballType:
+          allOf:
+          - $ref: '#/components/schemas/SnowballType'
+          - description: The type of device used with this job.
+        CreationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The creation date for this job.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
+      description: Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
+    JobListEntryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobListEntry'
+    Timestamp:
+      type: string
+      format: date-time
+    ListClusterJobsRequest:
+      type: object
+      required:
+      - ClusterId
+      title: ListClusterJobsRequest
+      properties:
+        ClusterId:
+          allOf:
+          - $ref: '#/components/schemas/ClusterId'
+          - description: The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/ListLimit'
+          - description: The number of <code>JobListEntry</code> objects to return.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/snowball/
+x-hasEquivalentPaths: true

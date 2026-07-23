@@ -1,0 +1,322 @@
+openapi: 3.0.0
+info:
+  version: '2016-06-30'
+  x-release: v4
+  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListClusters API'
+  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: snowball
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/snowball-2016-06-30.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://snowball.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon Snowball multi-region endpoint
+- url: https://snowball.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon Snowball multi-region endpoint
+- url: http://snowball.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon Snowball endpoint for China (Beijing) and China (Ningxia)
+- url: https://snowball.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon Snowball endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSIESnowballJobManagementService.ListClusters'
+paths:
+  /#X-Amz-Target=AWSIESnowballJobManagementService.ListClusters:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListClusters
+      description: Returns an array of <code>ClusterListEntry</code> objects of the specified length. Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListClustersResult'
+              examples:
+                ListClusters200Example:
+                  summary: Default ListClusters 200
+                  x-microcks-default: true
+                  value:
+                    ClusterListEntries: example-value
+                    NextToken: example-value
+        '480':
+          description: InvalidNextTokenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidNextTokenException'
+              examples:
+                ListClusters480Example:
+                  summary: Default ListClusters 480
+                  x-microcks-default: true
+                  value: example-value
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListClustersRequest'
+            examples:
+              ListClustersRequestExample:
+                summary: Default ListClusters request
+                x-microcks-default: true
+                value:
+                  MaxResults: example-value
+                  NextToken: example-value
+      parameters:
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSIESnowballJobManagementService.ListClusters
+      summary: Amazon List Clusters
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSIESnowballJobManagementService.ListClusters'
+components:
+  schemas:
+    ListLimit:
+      type: integer
+      minimum: 0
+      maximum: 100
+    String:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1024
+    Timestamp:
+      type: string
+      format: date-time
+    ClusterState:
+      type: string
+      enum:
+      - AwaitingQuorum
+      - Pending
+      - InUse
+      - Complete
+      - Cancelled
+    ClusterListEntry:
+      type: object
+      properties:
+        ClusterId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        ClusterState:
+          allOf:
+          - $ref: '#/components/schemas/ClusterState'
+          - description: The current state of this cluster. For information about the state of a specific node, see <a>JobListEntry$JobState</a>.
+        CreationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The creation date for this cluster.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.
+      description: Contains a cluster's state, a cluster's ID, and other important information.
+    InvalidNextTokenException: {}
+    ListClustersResult:
+      type: object
+      example:
+        ClusterListEntries:
+        - ClusterId: CID123e4567-e89b-12d3-a456-426655440000
+          ClusterState: Pending
+          CreationDate: '1480475517.0'
+          Description: MyCluster
+      properties:
+        ClusterListEntries:
+          allOf:
+          - $ref: '#/components/schemas/ClusterListEntryList'
+          - description: Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.
+    ListClustersRequest:
+      type: object
+      title: ListClustersRequest
+      properties:
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/ListLimit'
+          - description: The number of <code>ClusterListEntry</code> objects to return.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
+    ClusterListEntryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ClusterListEntry'
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/snowball/
+x-hasEquivalentPaths: true
