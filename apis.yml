@@ -4,7 +4,20 @@ description: AWS Snow Family is a collection of physical devices and capacity po
   in and out of AWS when network capacity is limited or unavailable. It includes Snowcone, Snowball, and Snowmobile devices
   for edge computing and offline data migration.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-snow-family.png
 tags:
 - AWS
 - Data Migration
@@ -16,21 +29,656 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-snow-family:aws-snow-device-management-api
-  name: AWS Snow Device Management API
-  description: The AWS Snow Device Management API provides programmatic access to manage Snow device jobs, tasks, device resources,
-    and network configurations for edge computing and data transfer operations.
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CancelCluster API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.CancelCluster API from Amazon Snow Family — 1
+    operation(s) for #x amz target=awsiesnowballjobmanagementservice.cancelcluster.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
   tags:
-  - Data Migration
-  - Edge Computing
-  - Physical Appliance
+  - '#X Amz Target=AWSIESnowballJobManagementService.CancelCluster'
   properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CancelJob API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.CancelJob API from Amazon Snow Family — 1 operation(s)
+    for #x amz target=awsiesnowballjobmanagementservice.canceljob.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.CancelJob'
+  properties:
   - type: OpenAPI
-    url: openapi/amazon-snow-family.yaml
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CreateAddress API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.CreateAddress API from Amazon Snow Family — 1
+    operation(s) for #x amz target=awsiesnowballjobmanagementservice.createaddress.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.CreateAddress'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CreateCluster API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.CreateCluster API from Amazon Snow Family — 1
+    operation(s) for #x amz target=awsiesnowballjobmanagementservice.createcluster.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.CreateCluster'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CreateJob API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.CreateJob API from Amazon Snow Family — 1 operation(s)
+    for #x amz target=awsiesnowballjobmanagementservice.createjob.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.CreateJob'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api
+  name: >-
+    Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing API
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing API from Amazon Snow Family
+    — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.createlongtermpricing.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api
+  name: >-
+    Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel API
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel API from Amazon Snow
+    Family — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.createreturnshippinglabel.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.DescribeAddress API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.DescribeAddress API from Amazon Snow Family —
+    1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.describeaddress.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.DescribeAddress'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.DescribeAddresses API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.DescribeAddresses API from Amazon Snow Family
+    — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.describeaddresses.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.DescribeAddresses'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.DescribeCluster API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.DescribeCluster API from Amazon Snow Family —
+    1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.describecluster.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.DescribeCluster'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.DescribeJob API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.DescribeJob API from Amazon Snow Family — 1 operation(s)
+    for #x amz target=awsiesnowballjobmanagementservice.describejob.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.DescribeJob'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api
+  name: >-
+    Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.DescribeReturnShippingLabel API
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.DescribeReturnShippingLabel API from Amazon Snow
+    Family — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.describereturnshippinglabel.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.DescribeReturnShippingLabel'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.GetJobManifest API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.GetJobManifest API from Amazon Snow Family — 1
+    operation(s) for #x amz target=awsiesnowballjobmanagementservice.getjobmanifest.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.GetJobManifest'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.GetJobUnlockCode API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.GetJobUnlockCode API from Amazon Snow Family —
+    1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.getjobunlockcode.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.GetJobUnlockCode'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.GetSnowballUsage API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.GetSnowballUsage API from Amazon Snow Family —
+    1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.getsnowballusage.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.GetSnowballUsage'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api
+  name: >-
+    Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.GetSoftwareUpdates API
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.GetSoftwareUpdates API from Amazon Snow Family
+    — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.getsoftwareupdates.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.GetSoftwareUpdates'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs API from Amazon Snow Family —
+    1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.listclusterjobs.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.ListClusters API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.ListClusters API from Amazon Snow Family — 1 operation(s)
+    for #x amz target=awsiesnowballjobmanagementservice.listclusters.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.ListClusters'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api
+  name: >-
+    Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.ListCompatibleImages API
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.ListCompatibleImages API from Amazon Snow Family
+    — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.listcompatibleimages.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.ListCompatibleImages'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.ListJobs API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.ListJobs API from Amazon Snow Family — 1 operation(s)
+    for #x amz target=awsiesnowballjobmanagementservice.listjobs.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.ListJobs'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api
+  name: >-
+    Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.ListLongTermPricing API
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.ListLongTermPricing API from Amazon Snow Family
+    — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.listlongtermpricing.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.ListLongTermPricing'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api
+  name: >-
+    Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.ListPickupLocations API
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.ListPickupLocations API from Amazon Snow Family
+    — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.listpickuplocations.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.ListPickupLocations'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api
+  name: >-
+    Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.ListServiceVersions API
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.ListServiceVersions API from Amazon Snow Family
+    — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.listserviceversions.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.ListServiceVersions'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.UpdateCluster API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.UpdateCluster API from Amazon Snow Family — 1
+    operation(s) for #x amz target=awsiesnowballjobmanagementservice.updatecluster.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.UpdateCluster'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api
+  name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.UpdateJob API'
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.UpdateJob API from Amazon Snow Family — 1 operation(s)
+    for #x amz target=awsiesnowballjobmanagementservice.updatejob.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.UpdateJob'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api
+  name: >-
+    Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.UpdateJobShipmentState API
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.UpdateJobShipmentState API from Amazon Snow Family
+    — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.updatejobshipmentstate.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.UpdateJobShipmentState'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/snowball/
+  - type: Pricing
+    url: https://aws.amazon.com/snowball/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/snowball/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-snow-family.yaml
+- aid: >-
+    amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api
+  name: >-
+    Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.UpdateLongTermPricing API
+  description: >-
+    The #X Amz Target=AWSIESnowballJobManagementService.UpdateLongTermPricing API from Amazon Snow Family
+    — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.updatelongtermpricing.
+  humanURL: https://aws.amazon.com/snow/
+  baseURL: https://snow-device-management.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSIESnowballJobManagementService.UpdateLongTermPricing'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html
   - type: GettingStarted
     url: https://aws.amazon.com/snowball/
   - type: Pricing
@@ -40,6 +688,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-snow-family.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-snow-family/overview
 - type: AgenticAccess
   url: agentic-access/amazon-snow-family-agentic-access.yml
 - type: TrustCenter
