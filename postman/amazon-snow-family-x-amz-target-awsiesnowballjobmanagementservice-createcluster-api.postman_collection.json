@@ -1,0 +1,574 @@
+{
+  "info": {
+    "_postman_id": "cde3213a-def6-4a67-ab19-f1318e99c6ac",
+    "name": "Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateCluster API",
+    "description": "The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href=\"https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html\">User Guide</a>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:46:38.000Z",
+    "updatedAt": "2026-07-28T10:46:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cde3213a-def6-4a67-ab19-f1318e99c6ac"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster",
+      "item": [
+        {
+          "name": "Amazon Create Cluster",
+          "id": "adaa7d7f-2d26-47c2-9e6d-e4ed38910b69",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSIESnowballJobManagementService.CreateCluster"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"JobType\": \"IMPORT\",\n  \"AddressId\": \"ADIDb0da1298-1db1-d0e9-2b3f-f89b07ef6d94\",\n  \"SnowballType\": \"V3_5C\",\n  \"ShippingOption\": \"EXPRESS\",\n  \"Resources\": {\n    \"S3Resources\": [\n      {\n        \"BucketArn\": \"arn:aws'qNk@:::::\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"5Lo4WR\",\n          \"EndMarker\": \"~BgsGJeB`9\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          },\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          }\n        ]\n      },\n      {\n        \"BucketArn\": \"arn:aws5rMLHJY\\\\':\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"e/P/:5\",\n          \"EndMarker\": \"Mi RZe\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          },\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          }\n        ]\n      }\n    ],\n    \"LambdaResources\": [\n      {\n        \"LambdaArn\": \"arn:aws-`r:::::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws<\\\"q::XUN::::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:awsz,P8Jn'.:::\"\n          }\n        ]\n      },\n      {\n        \"LambdaArn\": \"arn:aws^W}?iGM:::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws!\\\"3L>YC45:::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:aws:::::\"\n          }\n        ]\n      }\n    ],\n    \"Ec2AmiResources\": [\n      {\n        \"AmiId\": \"ami-16abbd97\",\n        \"SnowballAmiId\": \"O_]jo?t}u\"\n      },\n      {\n        \"AmiId\": \"ami-89017140dac08f706\",\n        \"SnowballAmiId\": \"<g>\"\n      }\n    ]\n  },\n  \"OnDeviceServiceConfiguration\": {\n    \"NFSOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"TGWOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"EKSOnDeviceService\": {\n      \"KubernetesVersion\": \")7Z\",\n      \"EKSAnywhereVersion\": \"'XyUMo\"\n    },\n    \"S3OnDeviceService\": {\n      \"StorageLimit\": \"<double>\",\n      \"StorageUnit\": \"TB\",\n      \"ServiceSize\": \"<integer>\",\n      \"FaultTolerance\": \"<integer>\"\n    }\n  },\n  \"Description\": \"|])'3jC\",\n  \"KmsKeyARN\": \"arn:aws]'M~BjxdP_:kms:TMkv`C,0:145838568113:key/[Ic0qOh@\",\n  \"RoleARN\": \"arn:awsmvP,e:iam::214107182821:role/e#RodqU$A\",\n  \"Notification\": {\n    \"SnsTopicARN\": \"arn:awsJ:sns:)o1`YE(vB>:094982486856:>[wWC;5@\",\n    \"JobStatesToNotify\": [\n      \"InProgress\",\n      \"WithCustomer\"\n    ],\n    \"NotifyAll\": \"<boolean>\",\n    \"DevicePickupSnsTopicARN\": \"arn:aws5\\\\e:sns:aG$^:044975310533:$#E\"\n  },\n  \"ForwardingAddressId\": \"ADIDfec08a7a-7bbe-bcd0-b6d0-9a1b0c11cdaa\",\n  \"TaxDocuments\": {\n    \"IND\": {\n      \"GSTIN\": \"26LMMKL8695POZI\"\n    }\n  },\n  \"RemoteManagement\": \"NOT_INSTALLED\",\n  \"InitialClusterSize\": \"<integer>\",\n  \"ForceCreateJobs\": \"<boolean>\",\n  \"LongTermPricingIds\": [\n    \"LTPID0b95f452-fa73-b727-39f1-6870a9e39be0\",\n    \"LTPIDf56e4398-41f7-f277-0089-993dbe12fb57\"\n  ],\n  \"SnowballCapacityPreference\": \"T98\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster"
+            },
+            "description": "Creates an empty cluster. Each cluster supports five nodes. You use the <a>CreateJob</a> action separately to create the jobs for each of these nodes. The cluster does not ship until these five node jobs have been created."
+          },
+          "response": [
+            {
+              "id": "345ae533-43d7-4942-9cb3-6a2d854680a6",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIESnowballJobManagementService.CreateCluster"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobType\": \"IMPORT\",\n  \"AddressId\": \"ADIDb0da1298-1db1-d0e9-2b3f-f89b07ef6d94\",\n  \"SnowballType\": \"V3_5C\",\n  \"ShippingOption\": \"EXPRESS\",\n  \"Resources\": {\n    \"S3Resources\": [\n      {\n        \"BucketArn\": \"arn:aws'qNk@:::::\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"5Lo4WR\",\n          \"EndMarker\": \"~BgsGJeB`9\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          },\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          }\n        ]\n      },\n      {\n        \"BucketArn\": \"arn:aws5rMLHJY\\\\':\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"e/P/:5\",\n          \"EndMarker\": \"Mi RZe\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          },\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          }\n        ]\n      }\n    ],\n    \"LambdaResources\": [\n      {\n        \"LambdaArn\": \"arn:aws-`r:::::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws<\\\"q::XUN::::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:awsz,P8Jn'.:::\"\n          }\n        ]\n      },\n      {\n        \"LambdaArn\": \"arn:aws^W}?iGM:::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws!\\\"3L>YC45:::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:aws:::::\"\n          }\n        ]\n      }\n    ],\n    \"Ec2AmiResources\": [\n      {\n        \"AmiId\": \"ami-16abbd97\",\n        \"SnowballAmiId\": \"O_]jo?t}u\"\n      },\n      {\n        \"AmiId\": \"ami-89017140dac08f706\",\n        \"SnowballAmiId\": \"<g>\"\n      }\n    ]\n  },\n  \"OnDeviceServiceConfiguration\": {\n    \"NFSOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"TGWOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"EKSOnDeviceService\": {\n      \"KubernetesVersion\": \")7Z\",\n      \"EKSAnywhereVersion\": \"'XyUMo\"\n    },\n    \"S3OnDeviceService\": {\n      \"StorageLimit\": \"<double>\",\n      \"StorageUnit\": \"TB\",\n      \"ServiceSize\": \"<integer>\",\n      \"FaultTolerance\": \"<integer>\"\n    }\n  },\n  \"Description\": \"|])'3jC\",\n  \"KmsKeyARN\": \"arn:aws]'M~BjxdP_:kms:TMkv`C,0:145838568113:key/[Ic0qOh@\",\n  \"RoleARN\": \"arn:awsmvP,e:iam::214107182821:role/e#RodqU$A\",\n  \"Notification\": {\n    \"SnsTopicARN\": \"arn:awsJ:sns:)o1`YE(vB>:094982486856:>[wWC;5@\",\n    \"JobStatesToNotify\": [\n      \"InProgress\",\n      \"WithCustomer\"\n    ],\n    \"NotifyAll\": \"<boolean>\",\n    \"DevicePickupSnsTopicARN\": \"arn:aws5\\\\e:sns:aG$^:044975310533:$#E\"\n  },\n  \"ForwardingAddressId\": \"ADIDfec08a7a-7bbe-bcd0-b6d0-9a1b0c11cdaa\",\n  \"TaxDocuments\": {\n    \"IND\": {\n      \"GSTIN\": \"26LMMKL8695POZI\"\n    }\n  },\n  \"RemoteManagement\": \"NOT_INSTALLED\",\n  \"InitialClusterSize\": \"<integer>\",\n  \"ForceCreateJobs\": \"<boolean>\",\n  \"LongTermPricingIds\": [\n    \"LTPID0b95f452-fa73-b727-39f1-6870a9e39be0\",\n    \"LTPIDf56e4398-41f7-f277-0089-993dbe12fb57\"\n  ],\n  \"SnowballCapacityPreference\": \"T98\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"ClusterId\": \"CID7f8b7410-98fa-c59b-cdbf-001856bfaee2\",\n  \"JobListEntries\": [\n    {\n      \"JobId\": \"BT_U9|S\",\n      \"JobState\": \"New\",\n      \"IsMaster\": \"<boolean>\",\n      \"JobType\": \"IMPORT\",\n      \"SnowballType\": \"RACK_5U_C\",\n      \"CreationDate\": \"<dateTime>\",\n      \"Description\": \")+I\"\n    },\n    {\n      \"JobId\": \"H:@p_%&Zo\",\n      \"JobState\": \"Cancelled\",\n      \"IsMaster\": \"<boolean>\",\n      \"JobType\": \"LOCAL_USE\",\n      \"SnowballType\": \"RACK_5U_C\",\n      \"CreationDate\": \"<dateTime>\",\n      \"Description\": \"RC\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:46:39.000Z",
+              "updatedAt": "2026-07-28T10:46:39.000Z",
+              "uid": "35240-345ae533-43d7-4942-9cb3-6a2d854680a6"
+            },
+            {
+              "id": "7ec3c811-df77-429b-8940-7dbc77253b93",
+              "name": "InvalidResourceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIESnowballJobManagementService.CreateCluster"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobType\": \"IMPORT\",\n  \"AddressId\": \"ADIDb0da1298-1db1-d0e9-2b3f-f89b07ef6d94\",\n  \"SnowballType\": \"V3_5C\",\n  \"ShippingOption\": \"EXPRESS\",\n  \"Resources\": {\n    \"S3Resources\": [\n      {\n        \"BucketArn\": \"arn:aws'qNk@:::::\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"5Lo4WR\",\n          \"EndMarker\": \"~BgsGJeB`9\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          },\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          }\n        ]\n      },\n      {\n        \"BucketArn\": \"arn:aws5rMLHJY\\\\':\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"e/P/:5\",\n          \"EndMarker\": \"Mi RZe\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          },\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          }\n        ]\n      }\n    ],\n    \"LambdaResources\": [\n      {\n        \"LambdaArn\": \"arn:aws-`r:::::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws<\\\"q::XUN::::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:awsz,P8Jn'.:::\"\n          }\n        ]\n      },\n      {\n        \"LambdaArn\": \"arn:aws^W}?iGM:::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws!\\\"3L>YC45:::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:aws:::::\"\n          }\n        ]\n      }\n    ],\n    \"Ec2AmiResources\": [\n      {\n        \"AmiId\": \"ami-16abbd97\",\n        \"SnowballAmiId\": \"O_]jo?t}u\"\n      },\n      {\n        \"AmiId\": \"ami-89017140dac08f706\",\n        \"SnowballAmiId\": \"<g>\"\n      }\n    ]\n  },\n  \"OnDeviceServiceConfiguration\": {\n    \"NFSOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"TGWOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"EKSOnDeviceService\": {\n      \"KubernetesVersion\": \")7Z\",\n      \"EKSAnywhereVersion\": \"'XyUMo\"\n    },\n    \"S3OnDeviceService\": {\n      \"StorageLimit\": \"<double>\",\n      \"StorageUnit\": \"TB\",\n      \"ServiceSize\": \"<integer>\",\n      \"FaultTolerance\": \"<integer>\"\n    }\n  },\n  \"Description\": \"|])'3jC\",\n  \"KmsKeyARN\": \"arn:aws]'M~BjxdP_:kms:TMkv`C,0:145838568113:key/[Ic0qOh@\",\n  \"RoleARN\": \"arn:awsmvP,e:iam::214107182821:role/e#RodqU$A\",\n  \"Notification\": {\n    \"SnsTopicARN\": \"arn:awsJ:sns:)o1`YE(vB>:094982486856:>[wWC;5@\",\n    \"JobStatesToNotify\": [\n      \"InProgress\",\n      \"WithCustomer\"\n    ],\n    \"NotifyAll\": \"<boolean>\",\n    \"DevicePickupSnsTopicARN\": \"arn:aws5\\\\e:sns:aG$^:044975310533:$#E\"\n  },\n  \"ForwardingAddressId\": \"ADIDfec08a7a-7bbe-bcd0-b6d0-9a1b0c11cdaa\",\n  \"TaxDocuments\": {\n    \"IND\": {\n      \"GSTIN\": \"26LMMKL8695POZI\"\n    }\n  },\n  \"RemoteManagement\": \"NOT_INSTALLED\",\n  \"InitialClusterSize\": \"<integer>\",\n  \"ForceCreateJobs\": \"<boolean>\",\n  \"LongTermPricingIds\": [\n    \"LTPID0b95f452-fa73-b727-39f1-6870a9e39be0\",\n    \"LTPIDf56e4398-41f7-f277-0089-993dbe12fb57\"\n  ],\n  \"SnowballCapacityPreference\": \"T98\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:46:39.000Z",
+              "updatedAt": "2026-07-28T10:46:39.000Z",
+              "uid": "35240-7ec3c811-df77-429b-8940-7dbc77253b93"
+            },
+            {
+              "id": "72856fee-2cdc-4562-a7ab-061751e9f77c",
+              "name": "KMSRequestFailedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIESnowballJobManagementService.CreateCluster"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobType\": \"IMPORT\",\n  \"AddressId\": \"ADIDb0da1298-1db1-d0e9-2b3f-f89b07ef6d94\",\n  \"SnowballType\": \"V3_5C\",\n  \"ShippingOption\": \"EXPRESS\",\n  \"Resources\": {\n    \"S3Resources\": [\n      {\n        \"BucketArn\": \"arn:aws'qNk@:::::\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"5Lo4WR\",\n          \"EndMarker\": \"~BgsGJeB`9\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          },\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          }\n        ]\n      },\n      {\n        \"BucketArn\": \"arn:aws5rMLHJY\\\\':\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"e/P/:5\",\n          \"EndMarker\": \"Mi RZe\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          },\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          }\n        ]\n      }\n    ],\n    \"LambdaResources\": [\n      {\n        \"LambdaArn\": \"arn:aws-`r:::::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws<\\\"q::XUN::::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:awsz,P8Jn'.:::\"\n          }\n        ]\n      },\n      {\n        \"LambdaArn\": \"arn:aws^W}?iGM:::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws!\\\"3L>YC45:::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:aws:::::\"\n          }\n        ]\n      }\n    ],\n    \"Ec2AmiResources\": [\n      {\n        \"AmiId\": \"ami-16abbd97\",\n        \"SnowballAmiId\": \"O_]jo?t}u\"\n      },\n      {\n        \"AmiId\": \"ami-89017140dac08f706\",\n        \"SnowballAmiId\": \"<g>\"\n      }\n    ]\n  },\n  \"OnDeviceServiceConfiguration\": {\n    \"NFSOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"TGWOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"EKSOnDeviceService\": {\n      \"KubernetesVersion\": \")7Z\",\n      \"EKSAnywhereVersion\": \"'XyUMo\"\n    },\n    \"S3OnDeviceService\": {\n      \"StorageLimit\": \"<double>\",\n      \"StorageUnit\": \"TB\",\n      \"ServiceSize\": \"<integer>\",\n      \"FaultTolerance\": \"<integer>\"\n    }\n  },\n  \"Description\": \"|])'3jC\",\n  \"KmsKeyARN\": \"arn:aws]'M~BjxdP_:kms:TMkv`C,0:145838568113:key/[Ic0qOh@\",\n  \"RoleARN\": \"arn:awsmvP,e:iam::214107182821:role/e#RodqU$A\",\n  \"Notification\": {\n    \"SnsTopicARN\": \"arn:awsJ:sns:)o1`YE(vB>:094982486856:>[wWC;5@\",\n    \"JobStatesToNotify\": [\n      \"InProgress\",\n      \"WithCustomer\"\n    ],\n    \"NotifyAll\": \"<boolean>\",\n    \"DevicePickupSnsTopicARN\": \"arn:aws5\\\\e:sns:aG$^:044975310533:$#E\"\n  },\n  \"ForwardingAddressId\": \"ADIDfec08a7a-7bbe-bcd0-b6d0-9a1b0c11cdaa\",\n  \"TaxDocuments\": {\n    \"IND\": {\n      \"GSTIN\": \"26LMMKL8695POZI\"\n    }\n  },\n  \"RemoteManagement\": \"NOT_INSTALLED\",\n  \"InitialClusterSize\": \"<integer>\",\n  \"ForceCreateJobs\": \"<boolean>\",\n  \"LongTermPricingIds\": [\n    \"LTPID0b95f452-fa73-b727-39f1-6870a9e39be0\",\n    \"LTPIDf56e4398-41f7-f277-0089-993dbe12fb57\"\n  ],\n  \"SnowballCapacityPreference\": \"T98\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:46:39.000Z",
+              "updatedAt": "2026-07-28T10:46:39.000Z",
+              "uid": "35240-72856fee-2cdc-4562-a7ab-061751e9f77c"
+            },
+            {
+              "id": "d263e89d-e94f-4764-be4f-d3ba8bd430f3",
+              "name": "InvalidInputCombinationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIESnowballJobManagementService.CreateCluster"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobType\": \"IMPORT\",\n  \"AddressId\": \"ADIDb0da1298-1db1-d0e9-2b3f-f89b07ef6d94\",\n  \"SnowballType\": \"V3_5C\",\n  \"ShippingOption\": \"EXPRESS\",\n  \"Resources\": {\n    \"S3Resources\": [\n      {\n        \"BucketArn\": \"arn:aws'qNk@:::::\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"5Lo4WR\",\n          \"EndMarker\": \"~BgsGJeB`9\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          },\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          }\n        ]\n      },\n      {\n        \"BucketArn\": \"arn:aws5rMLHJY\\\\':\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"e/P/:5\",\n          \"EndMarker\": \"Mi RZe\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          },\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          }\n        ]\n      }\n    ],\n    \"LambdaResources\": [\n      {\n        \"LambdaArn\": \"arn:aws-`r:::::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws<\\\"q::XUN::::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:awsz,P8Jn'.:::\"\n          }\n        ]\n      },\n      {\n        \"LambdaArn\": \"arn:aws^W}?iGM:::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws!\\\"3L>YC45:::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:aws:::::\"\n          }\n        ]\n      }\n    ],\n    \"Ec2AmiResources\": [\n      {\n        \"AmiId\": \"ami-16abbd97\",\n        \"SnowballAmiId\": \"O_]jo?t}u\"\n      },\n      {\n        \"AmiId\": \"ami-89017140dac08f706\",\n        \"SnowballAmiId\": \"<g>\"\n      }\n    ]\n  },\n  \"OnDeviceServiceConfiguration\": {\n    \"NFSOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"TGWOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"EKSOnDeviceService\": {\n      \"KubernetesVersion\": \")7Z\",\n      \"EKSAnywhereVersion\": \"'XyUMo\"\n    },\n    \"S3OnDeviceService\": {\n      \"StorageLimit\": \"<double>\",\n      \"StorageUnit\": \"TB\",\n      \"ServiceSize\": \"<integer>\",\n      \"FaultTolerance\": \"<integer>\"\n    }\n  },\n  \"Description\": \"|])'3jC\",\n  \"KmsKeyARN\": \"arn:aws]'M~BjxdP_:kms:TMkv`C,0:145838568113:key/[Ic0qOh@\",\n  \"RoleARN\": \"arn:awsmvP,e:iam::214107182821:role/e#RodqU$A\",\n  \"Notification\": {\n    \"SnsTopicARN\": \"arn:awsJ:sns:)o1`YE(vB>:094982486856:>[wWC;5@\",\n    \"JobStatesToNotify\": [\n      \"InProgress\",\n      \"WithCustomer\"\n    ],\n    \"NotifyAll\": \"<boolean>\",\n    \"DevicePickupSnsTopicARN\": \"arn:aws5\\\\e:sns:aG$^:044975310533:$#E\"\n  },\n  \"ForwardingAddressId\": \"ADIDfec08a7a-7bbe-bcd0-b6d0-9a1b0c11cdaa\",\n  \"TaxDocuments\": {\n    \"IND\": {\n      \"GSTIN\": \"26LMMKL8695POZI\"\n    }\n  },\n  \"RemoteManagement\": \"NOT_INSTALLED\",\n  \"InitialClusterSize\": \"<integer>\",\n  \"ForceCreateJobs\": \"<boolean>\",\n  \"LongTermPricingIds\": [\n    \"LTPID0b95f452-fa73-b727-39f1-6870a9e39be0\",\n    \"LTPIDf56e4398-41f7-f277-0089-993dbe12fb57\"\n  ],\n  \"SnowballCapacityPreference\": \"T98\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:46:39.000Z",
+              "updatedAt": "2026-07-28T10:46:39.000Z",
+              "uid": "35240-d263e89d-e94f-4764-be4f-d3ba8bd430f3"
+            },
+            {
+              "id": "e70ae977-c1ac-440c-9fb4-22785c8fab15",
+              "name": "Ec2RequestFailedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIESnowballJobManagementService.CreateCluster"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobType\": \"IMPORT\",\n  \"AddressId\": \"ADIDb0da1298-1db1-d0e9-2b3f-f89b07ef6d94\",\n  \"SnowballType\": \"V3_5C\",\n  \"ShippingOption\": \"EXPRESS\",\n  \"Resources\": {\n    \"S3Resources\": [\n      {\n        \"BucketArn\": \"arn:aws'qNk@:::::\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"5Lo4WR\",\n          \"EndMarker\": \"~BgsGJeB`9\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          },\n          {\n            \"ServiceName\": \"NFS_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"IMPORT\"\n          }\n        ]\n      },\n      {\n        \"BucketArn\": \"arn:aws5rMLHJY\\\\':\",\n        \"KeyRange\": {\n          \"BeginMarker\": \"e/P/:5\",\n          \"EndMarker\": \"Mi RZe\"\n        },\n        \"TargetOnDeviceServices\": [\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          },\n          {\n            \"ServiceName\": \"S3_ON_DEVICE_SERVICE\",\n            \"TransferOption\": \"LOCAL_USE\"\n          }\n        ]\n      }\n    ],\n    \"LambdaResources\": [\n      {\n        \"LambdaArn\": \"arn:aws-`r:::::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws<\\\"q::XUN::::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:awsz,P8Jn'.:::\"\n          }\n        ]\n      },\n      {\n        \"LambdaArn\": \"arn:aws^W}?iGM:::::\",\n        \"EventTriggers\": [\n          {\n            \"EventResourceARN\": \"arn:aws!\\\"3L>YC45:::\"\n          },\n          {\n            \"EventResourceARN\": \"arn:aws:::::\"\n          }\n        ]\n      }\n    ],\n    \"Ec2AmiResources\": [\n      {\n        \"AmiId\": \"ami-16abbd97\",\n        \"SnowballAmiId\": \"O_]jo?t}u\"\n      },\n      {\n        \"AmiId\": \"ami-89017140dac08f706\",\n        \"SnowballAmiId\": \"<g>\"\n      }\n    ]\n  },\n  \"OnDeviceServiceConfiguration\": {\n    \"NFSOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"TGWOnDeviceService\": {\n      \"StorageLimit\": \"<integer>\",\n      \"StorageUnit\": \"TB\"\n    },\n    \"EKSOnDeviceService\": {\n      \"KubernetesVersion\": \")7Z\",\n      \"EKSAnywhereVersion\": \"'XyUMo\"\n    },\n    \"S3OnDeviceService\": {\n      \"StorageLimit\": \"<double>\",\n      \"StorageUnit\": \"TB\",\n      \"ServiceSize\": \"<integer>\",\n      \"FaultTolerance\": \"<integer>\"\n    }\n  },\n  \"Description\": \"|])'3jC\",\n  \"KmsKeyARN\": \"arn:aws]'M~BjxdP_:kms:TMkv`C,0:145838568113:key/[Ic0qOh@\",\n  \"RoleARN\": \"arn:awsmvP,e:iam::214107182821:role/e#RodqU$A\",\n  \"Notification\": {\n    \"SnsTopicARN\": \"arn:awsJ:sns:)o1`YE(vB>:094982486856:>[wWC;5@\",\n    \"JobStatesToNotify\": [\n      \"InProgress\",\n      \"WithCustomer\"\n    ],\n    \"NotifyAll\": \"<boolean>\",\n    \"DevicePickupSnsTopicARN\": \"arn:aws5\\\\e:sns:aG$^:044975310533:$#E\"\n  },\n  \"ForwardingAddressId\": \"ADIDfec08a7a-7bbe-bcd0-b6d0-9a1b0c11cdaa\",\n  \"TaxDocuments\": {\n    \"IND\": {\n      \"GSTIN\": \"26LMMKL8695POZI\"\n    }\n  },\n  \"RemoteManagement\": \"NOT_INSTALLED\",\n  \"InitialClusterSize\": \"<integer>\",\n  \"ForceCreateJobs\": \"<boolean>\",\n  \"LongTermPricingIds\": [\n    \"LTPID0b95f452-fa73-b727-39f1-6870a9e39be0\",\n    \"LTPIDf56e4398-41f7-f277-0089-993dbe12fb57\"\n  ],\n  \"SnowballCapacityPreference\": \"T98\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIESnowballJobManagementService.CreateCluster"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:46:39.000Z",
+              "updatedAt": "2026-07-28T10:46:39.000Z",
+              "uid": "35240-e70ae977-c1ac-440c-9fb4-22785c8fab15"
+            }
+          ],
+          "createdAt": "2026-07-28T10:46:39.000Z",
+          "updatedAt": "2026-07-28T10:46:39.000Z",
+          "uid": "35240-adaa7d7f-2d26-47c2-9e6d-e4ed38910b69"
+        }
+      ],
+      "id": "a8aab112-af6e-4a5e-839e-4f214c0df41c",
+      "createdAt": "2026-07-28T10:46:39.000Z",
+      "updatedAt": "2026-07-28T10:46:39.000Z",
+      "uid": "35240-a8aab112-af6e-4a5e-839e-4f214c0df41c"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://snowball.{{region}}.amazonaws.com"
+    }
+  ]
+}

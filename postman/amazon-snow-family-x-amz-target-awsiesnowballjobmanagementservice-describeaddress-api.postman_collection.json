@@ -1,0 +1,310 @@
+{
+  "info": {
+    "_postman_id": "3b3202c0-b02f-4ffe-b170-772378db317b",
+    "name": "Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.DescribeAddress API",
+    "description": "The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href=\"https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html\">User Guide</a>.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:46:42.000Z",
+    "updatedAt": "2026-07-28T10:46:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3b3202c0-b02f-4ffe-b170-772378db317b"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddress",
+      "item": [
+        {
+          "name": "Amazon Describe Address",
+          "id": "f588dd93-01f5-40ff-93e8-1ce497a9a755",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSIESnowballJobManagementService.DescribeAddress"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AddressId\": \"ADID0f7f6f4c-4b0a-daad-e0d1-0e3830ad6287\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddress",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddress"
+            },
+            "description": "Takes an <code>AddressId</code> and returns specific details about that address in the form of an <code>Address</code> object."
+          },
+          "response": [
+            {
+              "id": "773a6544-48e4-487f-9e61-f23ed031e597",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIESnowballJobManagementService.DescribeAddress"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AddressId\": \"ADID0f7f6f4c-4b0a-daad-e0d1-0e3830ad6287\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddress"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Address\": {\n    \"AddressId\": \"ADIDa7172d8a-02cc-1afb-7c97-f207efe60cb0\",\n    \"Name\": \"+&v$~z\",\n    \"Company\": \"=S&N6xJ}`\",\n    \"Street1\": \"fDd5*8N_dA\",\n    \"Street2\": \"$\",\n    \"Street3\": \"w6;\",\n    \"City\": \"_\",\n    \"StateOrProvince\": \"O]a\",\n    \"PrefectureOrDistrict\": \"P&V%8\",\n    \"Landmark\": \"R.*37c\",\n    \"Country\": \"qp7I\\\\~\",\n    \"PostalCode\": \"'g-z99tK\",\n    \"PhoneNumber\": \"o*F\",\n    \"IsRestricted\": \"<boolean>\",\n    \"Type\": \"AWS_SHIP\"\n  }\n}",
+              "createdAt": "2026-07-28T10:46:43.000Z",
+              "updatedAt": "2026-07-28T10:46:43.000Z",
+              "uid": "35240-773a6544-48e4-487f-9e61-f23ed031e597"
+            },
+            {
+              "id": "e5266869-363a-46a4-8464-fee1528bafee",
+              "name": "InvalidResourceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSIESnowballJobManagementService.DescribeAddress"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AddressId\": \"ADID0f7f6f4c-4b0a-daad-e0d1-0e3830ad6287\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddress"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:46:43.000Z",
+              "updatedAt": "2026-07-28T10:46:43.000Z",
+              "uid": "35240-e5266869-363a-46a4-8464-fee1528bafee"
+            }
+          ],
+          "createdAt": "2026-07-28T10:46:43.000Z",
+          "updatedAt": "2026-07-28T10:46:43.000Z",
+          "uid": "35240-f588dd93-01f5-40ff-93e8-1ce497a9a755"
+        }
+      ],
+      "id": "7e434c9c-da47-4d5a-97c1-74c12709b581",
+      "createdAt": "2026-07-28T10:46:43.000Z",
+      "updatedAt": "2026-07-28T10:46:43.000Z",
+      "uid": "35240-7e434c9c-da47-4d5a-97c1-74c12709b581"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://snowball.{{region}}.amazonaws.com"
+    }
+  ]
+}
