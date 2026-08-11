@@ -52,7 +52,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CancelJob API'
@@ -76,7 +76,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CreateAddress API'
@@ -100,7 +100,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CreateCluster API'
@@ -124,7 +124,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.CreateJob API'
@@ -148,7 +148,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api
   name: >-
@@ -173,7 +173,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api
   name: >-
@@ -198,7 +198,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.DescribeAddress API'
@@ -222,7 +222,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.DescribeAddresses API'
@@ -246,7 +246,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.DescribeCluster API'
@@ -270,7 +270,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.DescribeJob API'
@@ -294,7 +294,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api
   name: >-
@@ -319,7 +319,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.GetJobManifest API'
@@ -343,7 +343,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.GetJobUnlockCode API'
@@ -367,7 +367,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.GetSnowballUsage API'
@@ -391,7 +391,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api
   name: >-
@@ -416,7 +416,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs API'
@@ -440,7 +440,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.ListClusters API'
@@ -464,7 +464,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api
   name: >-
@@ -489,7 +489,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.ListJobs API'
@@ -513,7 +513,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api
   name: >-
@@ -538,7 +538,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api
   name: >-
@@ -563,7 +563,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api
   name: >-
@@ -588,7 +588,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.UpdateCluster API'
@@ -612,7 +612,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api
   name: 'Amazon Snow Family #X Amz Target=AWSIESnowballJobManagementService.UpdateJob API'
@@ -636,7 +636,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api
   name: >-
@@ -661,7 +661,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 - aid: >-
     amazon-snow-family:amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api
   name: >-
@@ -686,7 +686,7 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/snowball/faqs/
   - type: X-NaftikoCapability
-    url: capabilities/amazon-snow-family.yaml
+    url: openapi/_original/amazon-snow-family.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-snow-family/overview
