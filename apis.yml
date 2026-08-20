@@ -37,7 +37,8 @@ apis:
     operation(s) for #x amz target=awsiesnowballjobmanagementservice.cancelcluster.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.CancelCluster'
   properties:
   - type: OpenAPI
@@ -85,7 +86,8 @@ apis:
     operation(s) for #x amz target=awsiesnowballjobmanagementservice.createaddress.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.CreateAddress'
   properties:
   - type: OpenAPI
@@ -109,7 +111,8 @@ apis:
     operation(s) for #x amz target=awsiesnowballjobmanagementservice.createcluster.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.CreateCluster'
   properties:
   - type: OpenAPI
@@ -158,7 +161,8 @@ apis:
     — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.createlongtermpricing.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing'
   properties:
   - type: OpenAPI
@@ -183,7 +187,8 @@ apis:
     Family — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.createreturnshippinglabel.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel'
   properties:
   - type: OpenAPI
@@ -207,7 +212,8 @@ apis:
     1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.describeaddress.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.DescribeAddress'
   properties:
   - type: OpenAPI
@@ -231,7 +237,8 @@ apis:
     — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.describeaddresses.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.DescribeAddresses'
   properties:
   - type: OpenAPI
@@ -255,7 +262,8 @@ apis:
     1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.describecluster.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.DescribeCluster'
   properties:
   - type: OpenAPI
@@ -304,7 +312,8 @@ apis:
     Family — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.describereturnshippinglabel.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.DescribeReturnShippingLabel'
   properties:
   - type: OpenAPI
@@ -328,7 +337,8 @@ apis:
     operation(s) for #x amz target=awsiesnowballjobmanagementservice.getjobmanifest.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.GetJobManifest'
   properties:
   - type: OpenAPI
@@ -352,7 +362,8 @@ apis:
     1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.getjobunlockcode.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.GetJobUnlockCode'
   properties:
   - type: OpenAPI
@@ -376,7 +387,8 @@ apis:
     1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.getsnowballusage.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.GetSnowballUsage'
   properties:
   - type: OpenAPI
@@ -401,7 +413,8 @@ apis:
     — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.getsoftwareupdates.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.GetSoftwareUpdates'
   properties:
   - type: OpenAPI
@@ -425,7 +438,8 @@ apis:
     1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.listclusterjobs.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs'
   properties:
   - type: OpenAPI
@@ -474,7 +488,8 @@ apis:
     — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.listcompatibleimages.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.ListCompatibleImages'
   properties:
   - type: OpenAPI
@@ -523,7 +538,8 @@ apis:
     — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.listlongtermpricing.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.ListLongTermPricing'
   properties:
   - type: OpenAPI
@@ -548,7 +564,8 @@ apis:
     — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.listpickuplocations.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.ListPickupLocations'
   properties:
   - type: OpenAPI
@@ -573,7 +590,8 @@ apis:
     — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.listserviceversions.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.ListServiceVersions'
   properties:
   - type: OpenAPI
@@ -597,7 +615,8 @@ apis:
     operation(s) for #x amz target=awsiesnowballjobmanagementservice.updatecluster.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.UpdateCluster'
   properties:
   - type: OpenAPI
@@ -646,7 +665,8 @@ apis:
     — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.updatejobshipmentstate.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.UpdateJobShipmentState'
   properties:
   - type: OpenAPI
@@ -671,7 +691,8 @@ apis:
     — 1 operation(s) for #x amz target=awsiesnowballjobmanagementservice.updatelongtermpricing.
   humanURL: https://aws.amazon.com/snow/
   baseURL: https://snow-device-management.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=AWSIESnowballJobManagementService.UpdateLongTermPricing'
   properties:
   - type: OpenAPI
