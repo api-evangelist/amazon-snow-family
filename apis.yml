@@ -4,6 +4,18 @@ description: AWS Snow Family is a collection of physical devices and capacity po
   in and out of AWS when network capacity is limited or unavailable. It includes Snowcone, Snowball, and Snowmobile devices
   for edge computing and offline data migration.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
