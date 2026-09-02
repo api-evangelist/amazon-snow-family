@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs API'
+  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs #X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs API'
   description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -203,6 +203,83 @@ paths:
       - '#X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs'
 components:
   schemas:
+    JobType:
+      type: string
+      enum:
+      - IMPORT
+      - EXPORT
+      - LOCAL_USE
+    ClusterId:
+      type: string
+      pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 39
+      maxLength: 39
+    InvalidResourceException: {}
+    InvalidNextTokenException: {}
+    ListClusterJobsRequest:
+      type: object
+      required:
+      - ClusterId
+      title: ListClusterJobsRequest
+      properties:
+        ClusterId:
+          allOf:
+          - $ref: '#/components/schemas/ClusterId'
+          - description: The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/ListLimit'
+          - description: The number of <code>JobListEntry</code> objects to return.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
+    JobListEntry:
+      type: object
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        JobState:
+          allOf:
+          - $ref: '#/components/schemas/JobState'
+          - description: The current state of this job.
+        IsMaster:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.
+        JobType:
+          allOf:
+          - $ref: '#/components/schemas/JobType'
+          - description: The type of job.
+        SnowballType:
+          allOf:
+          - $ref: '#/components/schemas/SnowballType'
+          - description: The type of device used with this job.
+        CreationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The creation date for this job.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
+      description: Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
+    String:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1024
+    Boolean:
+      type: boolean
+    JobListEntryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobListEntry'
+    Timestamp:
+      type: string
+      format: date-time
     ListClusterJobsResult:
       type: object
       example:
@@ -251,43 +328,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.
-    String:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1024
-    InvalidNextTokenException: {}
-    JobType:
-      type: string
-      enum:
-      - IMPORT
-      - EXPORT
-      - LOCAL_USE
-    ListLimit:
-      type: integer
-      minimum: 0
-      maximum: 100
-    Boolean:
-      type: boolean
-    ClusterId:
-      type: string
-      pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 39
-      maxLength: 39
-    InvalidResourceException: {}
-    SnowballType:
-      type: string
-      enum:
-      - STANDARD
-      - EDGE
-      - EDGE_C
-      - EDGE_CG
-      - EDGE_S
-      - SNC1_HDD
-      - SNC1_SSD
-      - V3_5C
-      - V3_5S
-      - RACK_5U_C
     JobState:
       type: string
       enum:
@@ -304,64 +344,48 @@ components:
       - Cancelled
       - Listing
       - Pending
-    JobListEntry:
-      type: object
-      properties:
-        JobId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-        JobState:
-          allOf:
-          - $ref: '#/components/schemas/JobState'
-          - description: The current state of this job.
-        IsMaster:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.
-        JobType:
-          allOf:
-          - $ref: '#/components/schemas/JobType'
-          - description: The type of job.
-        SnowballType:
-          allOf:
-          - $ref: '#/components/schemas/SnowballType'
-          - description: The type of device used with this job.
-        CreationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The creation date for this job.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
-      description: Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
-    JobListEntryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobListEntry'
-    Timestamp:
+    ListLimit:
+      type: integer
+      minimum: 0
+      maximum: 100
+    SnowballType:
       type: string
-      format: date-time
-    ListClusterJobsRequest:
-      type: object
-      required:
-      - ClusterId
-      title: ListClusterJobsRequest
-      properties:
-        ClusterId:
-          allOf:
-          - $ref: '#/components/schemas/ClusterId'
-          - description: The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/ListLimit'
-          - description: The number of <code>JobListEntry</code> objects to return.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
+      enum:
+      - STANDARD
+      - EDGE
+      - EDGE_C
+      - EDGE_CG
+      - EDGE_S
+      - SNC1_HDD
+      - SNC1_SSD
+      - V3_5C
+      - V3_5S
+      - RACK_5U_C
   parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -374,32 +398,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
       in: header
       schema:
         type: string

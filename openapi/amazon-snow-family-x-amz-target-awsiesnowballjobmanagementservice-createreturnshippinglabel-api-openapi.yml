@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel API'
+  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel #X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel API'
   description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -222,7 +222,6 @@ paths:
       - '#X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel'
 components:
   schemas:
-    ConflictException: {}
     CreateReturnShippingLabelRequest:
       type: object
       required:
@@ -237,27 +236,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/ShippingOption'
           - description: 'The shipping speed for a particular job. This speed doesn''t dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:'
-    ReturnShippingLabelAlreadyExistsException: {}
-    ShippingLabelStatus:
-      type: string
-      enum:
-      - InProgress
-      - TimedOut
-      - Succeeded
-      - Failed
-    CreateReturnShippingLabelResult:
-      type: object
-      properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/ShippingLabelStatus'
-          - description: The status information of the task on a Snow device that is being returned to Amazon Web Services.
-    InvalidJobStateException: {}
-    JobId:
-      type: string
-      pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 39
-      maxLength: 39
     ShippingOption:
       type: string
       enum:
@@ -265,23 +243,39 @@ components:
       - NEXT_DAY
       - EXPRESS
       - STANDARD
+    ShippingLabelStatus:
+      type: string
+      enum:
+      - InProgress
+      - TimedOut
+      - Succeeded
+      - Failed
+    ConflictException: {}
+    JobId:
+      type: string
+      pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 39
+      maxLength: 39
     InvalidResourceException: {}
+    CreateReturnShippingLabelResult:
+      type: object
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/ShippingLabelStatus'
+          - description: The status information of the task on a Snow device that is being returned to Amazon Web Services.
     InvalidInputCombinationException: {}
+    ReturnShippingLabelAlreadyExistsException: {}
+    InvalidJobStateException: {}
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -292,14 +286,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

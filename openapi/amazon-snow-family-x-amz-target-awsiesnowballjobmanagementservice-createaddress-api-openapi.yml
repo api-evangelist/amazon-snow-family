@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateAddress API'
+  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateAddress #X Amz Target=AWSIESnowballJobManagementService.CreateAddress API'
   description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -187,9 +187,78 @@ paths:
       tags:
       - '#X Amz Target=AWSIESnowballJobManagementService.CreateAddress'
 components:
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    AddressType:
+      type: string
+      enum:
+      - CUST_PICKUP
+      - AWS_SHIP
+    String:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1024
+    CreateAddressResult:
+      type: object
+      example:
+        AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
+      properties:
+        AddressId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.
     Boolean:
       type: boolean
+    UnsupportedAddressException: {}
+    AddressId:
+      type: string
+      pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 40
+      maxLength: 40
+    InvalidAddressException: {}
     CreateAddressRequest:
       type: object
       required:
@@ -200,11 +269,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/Address'
           - description: The address that you want the Snow device shipped to.
-    String:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1024
     Address:
       type: object
       properties:
@@ -269,70 +333,6 @@ components:
           - $ref: '#/components/schemas/AddressType'
           - description: Differentiates between delivery address and pickup address in the customer account. Provided at job creation.
       description: The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.
-    AddressType:
-      type: string
-      enum:
-      - CUST_PICKUP
-      - AWS_SHIP
-    CreateAddressResult:
-      type: object
-      example:
-        AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
-      properties:
-        AddressId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.
-    InvalidAddressException: {}
-    UnsupportedAddressException: {}
-    AddressId:
-      type: string
-      pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 40
-      maxLength: 40
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

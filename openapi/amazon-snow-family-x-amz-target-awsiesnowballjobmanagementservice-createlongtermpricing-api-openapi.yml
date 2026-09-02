@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing API'
+  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing #X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing API'
   description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -178,25 +178,64 @@ paths:
       tags:
       - '#X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing'
 components:
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
     LongTermPricingId:
       type: string
       pattern: LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
       minLength: 41
       maxLength: 41
-    SnowballType:
-      type: string
-      enum:
-      - STANDARD
-      - EDGE
-      - EDGE_C
-      - EDGE_CG
-      - EDGE_S
-      - SNC1_HDD
-      - SNC1_SSD
-      - V3_5C
-      - V3_5S
-      - RACK_5U_C
+    JavaBoolean:
+      type: boolean
+    CreateLongTermPricingResult:
+      type: object
+      properties:
+        LongTermPricingId:
+          allOf:
+          - $ref: '#/components/schemas/LongTermPricingId'
+          - description: The ID of the long-term pricing type for the device.
     CreateLongTermPricingRequest:
       type: object
       required:
@@ -216,65 +255,26 @@ components:
           allOf:
           - $ref: '#/components/schemas/SnowballType'
           - description: The type of Snow Family devices to use for the long-term pricing job.
-    JavaBoolean:
-      type: boolean
-    CreateLongTermPricingResult:
-      type: object
-      properties:
-        LongTermPricingId:
-          allOf:
-          - $ref: '#/components/schemas/LongTermPricingId'
-          - description: The ID of the long-term pricing type for the device.
+    InvalidResourceException: {}
+    SnowballType:
+      type: string
+      enum:
+      - STANDARD
+      - EDGE
+      - EDGE_C
+      - EDGE_CG
+      - EDGE_S
+      - SNC1_HDD
+      - SNC1_SSD
+      - V3_5C
+      - V3_5S
+      - RACK_5U_C
     LongTermPricingType:
       type: string
       enum:
       - OneYear
       - ThreeYear
       - OneMonth
-    InvalidResourceException: {}
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey
