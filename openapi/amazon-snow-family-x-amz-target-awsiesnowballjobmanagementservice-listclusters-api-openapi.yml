@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2016-06-30'
   x-release: v4
-  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListClusters #X Amz Target=AWSIESnowballJobManagementService.ListClusters API'
-  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+  title: 'Amazon Import/Export Snowball #X Amz…'
+  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3).
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/snowball-2016-06-30.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +125,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ListClusters
-      description: Returns an array of <code>ClusterListEntry</code> objects of the specified length. Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.
+      description: Returns an array of ClusterListEntry objects of the specified length. Each ClusterListEntry object contains a cluster's state, a cluster's ID, and other important status information.
       responses:
         '200':
           description: Success
@@ -190,59 +191,11 @@ paths:
       tags:
       - '#X Amz Target=AWSIESnowballJobManagementService.ListClusters'
 components:
-  parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    String:
+    Timestamp:
       type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1024
-    ClusterListEntryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ClusterListEntry'
+      format: date-time
+    InvalidNextTokenException: {}
     ClusterState:
       type: string
       enum:
@@ -251,6 +204,31 @@ components:
       - InUse
       - Complete
       - Cancelled
+    ClusterListEntry:
+      type: object
+      properties:
+        ClusterId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        ClusterState:
+          allOf:
+          - $ref: '#/components/schemas/ClusterState'
+          - description: The current state of this cluster. For information about the state of a specific node, see <a>JobListEntry$JobState</a>.
+        CreationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The creation date for this cluster.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.
+      description: Contains a cluster's state, a cluster's ID, and other important information.
+    String:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1024
     ListClustersRequest:
       type: object
       title: ListClustersRequest
@@ -263,7 +241,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
-    InvalidNextTokenException: {}
+    ClusterListEntryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ClusterListEntry'
     ListLimit:
       type: integer
       minimum: 0
@@ -285,29 +266,49 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.
-    ClusterListEntry:
-      type: object
-      properties:
-        ClusterId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
-        ClusterState:
-          allOf:
-          - $ref: '#/components/schemas/ClusterState'
-          - description: The current state of this cluster. For information about the state of a specific node, see <a>JobListEntry$JobState</a>.
-        CreationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The creation date for this cluster.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.
-      description: Contains a cluster's state, a cluster's ID, and other important information.
-    Timestamp:
-      type: string
-      format: date-time
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

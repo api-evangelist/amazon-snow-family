@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2016-06-30'
   x-release: v4
-  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing #X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing API'
-  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+  title: 'Amazon Import/Export Snowball #X Amz…'
+  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3).
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/snowball-2016-06-30.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +125,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateLongTermPricing
-      description: 'Creates a job with the long-term usage option for a device. The long-term usage is a 1-year or 3-year long-term pricing type for the device. You are billed upfront, and Amazon Web Services provides discounts for long-term pricing. '
+      description: Creates a job with the long-term usage option for a device. The long-term usage is a 1-year or 3-year long-term pricing type for the device. You are billed upfront, and Amazon Web Services provides discounts for long-term pricing.
       responses:
         '200':
           description: Success
@@ -179,14 +180,8 @@ paths:
       - '#X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing'
 components:
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -197,20 +192,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -222,13 +223,6 @@ components:
         type: string
       required: false
   schemas:
-    LongTermPricingId:
-      type: string
-      pattern: LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 41
-      maxLength: 41
-    JavaBoolean:
-      type: boolean
     CreateLongTermPricingResult:
       type: object
       properties:
@@ -236,26 +230,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/LongTermPricingId'
           - description: The ID of the long-term pricing type for the device.
-    CreateLongTermPricingRequest:
-      type: object
-      required:
-      - LongTermPricingType
-      - SnowballType
-      title: CreateLongTermPricingRequest
-      properties:
-        LongTermPricingType:
-          allOf:
-          - $ref: '#/components/schemas/LongTermPricingType'
-          - description: The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
-        IsLongTermPricingAutoRenew:
-          allOf:
-          - $ref: '#/components/schemas/JavaBoolean'
-          - description: Specifies whether the current long-term pricing type for the device should be renewed.
-        SnowballType:
-          allOf:
-          - $ref: '#/components/schemas/SnowballType'
-          - description: The type of Snow Family devices to use for the long-term pricing job.
-    InvalidResourceException: {}
+    JavaBoolean:
+      type: boolean
     SnowballType:
       type: string
       enum:
@@ -275,6 +251,31 @@ components:
       - OneYear
       - ThreeYear
       - OneMonth
+    CreateLongTermPricingRequest:
+      type: object
+      required:
+      - LongTermPricingType
+      - SnowballType
+      title: CreateLongTermPricingRequest
+      properties:
+        LongTermPricingType:
+          allOf:
+          - $ref: '#/components/schemas/LongTermPricingType'
+          - description: The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
+        IsLongTermPricingAutoRenew:
+          allOf:
+          - $ref: '#/components/schemas/JavaBoolean'
+          - description: Specifies whether the current long-term pricing type for the device should be renewed.
+        SnowballType:
+          allOf:
+          - $ref: '#/components/schemas/SnowballType'
+          - description: The type of Snow Family devices to use for the long-term pricing job.
+    LongTermPricingId:
+      type: string
+      pattern: LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 41
+      maxLength: 41
+    InvalidResourceException: {}
   securitySchemes:
     hmac:
       type: apiKey

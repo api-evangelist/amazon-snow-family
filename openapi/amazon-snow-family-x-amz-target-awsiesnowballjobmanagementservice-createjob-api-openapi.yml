@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2016-06-30'
   x-release: v4
-  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateJob #X Amz Target=AWSIESnowballJobManagementService.CreateJob API'
-  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+  title: 'Amazon Import/Export Snowball #X Amz…'
+  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3).
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/snowball-2016-06-30.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +125,118 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateJob
-      description: '<p>Creates a job to import or export data between Amazon S3 and your on-premises data center. Your Amazon Web Services account must have the right trust policies and permissions in place to create a job for a Snow device. If you''re creating a job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are inherited from the cluster. </p> <note> <p>Only the Snowball; Edge device type is supported when ordering clustered jobs.</p> <p>The device capacity is optional.</p> <p>Availability of device types differ by Amazon Web Services Region. For more information about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon Web Services Regional Services</a>.</p> </note> <p/> <p class="title"> <b>Snow Family devices and their capacities.</b> </p> <ul> <li> <p>Device type: <b>SNC1_SSD</b> </p> <ul> <li> <p>Capacity: T14</p> </li> <li> <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Device type: <b>SNC1_HDD</b> </p> <ul> <li> <p>Capacity: T8</p> </li> <li> <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Device type: <b>EDGE_S</b> </p> <ul> <li> <p>Capacity: T98</p> </li> <li> <p>Description: Snowball Edge Storage Optimized for data transfer only </p> </li> </ul> <p/> </li> <li> <p>Device type: <b>EDGE_CG</b> </p> <ul> <li> <p>Capacity: T42</p> </li> <li> <p>Description: Snowball Edge Compute Optimized with GPU</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>EDGE_C</b> </p> <ul> <li> <p>Capacity: T42</p> </li> <li> <p>Description: Snowball Edge Compute Optimized without GPU</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>EDGE</b> </p> <ul> <li> <p>Capacity: T100</p> </li> <li> <p>Description: Snowball Edge Storage Optimized with EC2 Compute</p> </li> </ul> <note> <p>This device is replaced with T98.</p> </note> <p/> </li> <li> <p>Device type: <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T50</p> </li> <li> <p>Description: Original Snowball device</p> <note> <p>This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region </p> </note> </li> </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li> <p>Description: Original Snowball device</p> <note> <p>This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region. </p> </note> </li> </ul> <p/> </li> <li> <p>Snow Family device type: <b>RACK_5U_C</b> </p> <ul> <li> <p>Capacity: T13 </p> </li> <li> <p>Description: Snowblade.</p> </li> </ul> </li> <li> <p>Device type: <b>V3_5S</b> </p> <ul> <li> <p>Capacity: T240</p> </li> <li> <p>Description: Snowball Edge Storage Optimized 210TB</p> </li> </ul> </li> </ul>'
+      description: 'Creates a job to import or export data between Amazon S3 and your on-premises data center. Your Amazon Web Services account must have the right trust policies and permissions in place to create a job for a Snow device. If you''re creating a job for a node in a cluster, you only need to provide the clusterId value; the other job attributes are inherited from the cluster.
+
+
+        Only the Snowball; Edge device type is supported when ordering clustered jobs.
+
+
+        The device capacity is optional.
+
+
+        Availability of device types differ by Amazon Web Services Region. For more information about Region availability, see Amazon Web Services Regional Services.
+
+
+        Snow Family devices and their capacities.
+
+
+        Device type: SNC1_SSD
+
+
+        Capacity: T14
+
+
+        Description: Snowcone
+
+
+        Device type: SNC1_HDD
+
+
+        Capacity: T8
+
+
+        Description: Snowcone
+
+
+        Device type: EDGE_S
+
+
+        Capacity: T98
+
+
+        Description: Snowball Edge Storage Optimized for data transfer only
+
+
+        Device type: EDGE_CG
+
+
+        Capacity: T42
+
+
+        Description: Snowball Edge Compute Optimized with GPU
+
+
+        Device type: EDGE_C
+
+
+        Capacity: T42
+
+
+        Description: Snowball Edge Compute Optimized without GPU
+
+
+        Device type: EDGE
+
+
+        Capacity: T100
+
+
+        Description: Snowball Edge Storage Optimized with EC2 Compute
+
+
+        This device is replaced with T98.
+
+
+        Device type: STANDARD
+
+
+        Capacity: T50
+
+
+        Description: Original Snowball device
+
+
+        This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region
+
+
+        Device type: STANDARD
+
+
+        Capacity: T80
+
+
+        Description: Original Snowball device
+
+
+        This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region.
+
+
+        Snow Family device type: RACK_5U_C
+
+
+        Capacity: T13
+
+
+        Description: Snowblade.
+
+
+        Device type: V3_5S
+
+
+        Capacity: T240
+
+
+        Description: Snowball Edge Storage Optimized 210TB'
       responses:
         '200':
           description: Success
@@ -238,335 +350,29 @@ paths:
       tags:
       - '#X Amz Target=AWSIESnowballJobManagementService.CreateJob'
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    INDTaxDocuments:
-      type: object
-      properties:
-        GSTIN:
-          allOf:
-          - $ref: '#/components/schemas/GSTIN'
-          - description: The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.
-      description: The tax documents required in Amazon Web Services Region in India.
-    JobStateList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobState'
-    Email:
-      type: string
-      pattern: ^(?=.{3,100}$).+@.+[.].+$
-      minLength: 3
-      maxLength: 320
-      format: password
-    LongTermPricingId:
-      type: string
-      pattern: LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 41
-      maxLength: 41
-    PhoneNumber:
-      type: string
-      pattern: '^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$'
-      minLength: 7
-      maxLength: 30
-      format: password
-    LambdaResourceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LambdaResource'
-    RemoteManagement:
-      type: string
-      enum:
-      - INSTALLED_ONLY
-      - INSTALLED_AUTOSTART
-      - NOT_INSTALLED
-    DeviceConfiguration:
-      type: object
-      properties:
-        SnowconeDeviceConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/SnowconeDeviceConfiguration'
-          - description: Returns information about the device configuration for an Snowcone job.
-      description: 'The container for <code>SnowconeDeviceConfiguration</code>. '
-    JobResource:
-      type: object
-      properties:
-        S3Resources:
-          allOf:
-          - $ref: '#/components/schemas/S3ResourceList'
-          - description: An array of <code>S3Resource</code> objects.
-        LambdaResources:
-          allOf:
-          - $ref: '#/components/schemas/LambdaResourceList'
-          - description: The Python-language Lambda functions for this job.
-        Ec2AmiResources:
-          allOf:
-          - $ref: '#/components/schemas/Ec2AmiResourceList'
-          - description: The Amazon Machine Images (AMIs) associated with this job.
-      description: Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
-    S3Resource:
-      type: object
-      properties:
-        BucketArn:
-          allOf:
-          - $ref: '#/components/schemas/ResourceARN'
-          - description: The Amazon Resource Name (ARN) of an Amazon S3 bucket.
-        KeyRange:
-          allOf:
-          - $ref: '#/components/schemas/KeyRange'
-          - description: For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
-        TargetOnDeviceServices:
-          allOf:
-          - $ref: '#/components/schemas/TargetOnDeviceServiceList'
-          - description: Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).
-      description: Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
-    WirelessConnection:
-      type: object
-      properties:
-        IsWifiEnabled:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Enables the Wi-Fi adapter on an Snowcone device.
-      description: Configures the wireless connection on an Snowcone device.
-    ResourceARN:
-      type: string
-      pattern: arn:aws.*:*
-      maxLength: 255
-    ImpactLevel:
-      type: string
-      enum:
-      - IL2
-      - IL4
-      - IL5
-      - IL6
-      - IL99
-    LambdaResource:
-      type: object
-      properties:
-        LambdaArn:
-          allOf:
-          - $ref: '#/components/schemas/ResourceARN'
-          - description: An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.
-        EventTriggers:
-          allOf:
-          - $ref: '#/components/schemas/EventTriggerDefinitionList'
-          - description: The array of ARNs for <a>S3Resource</a> objects to trigger the <a>LambdaResource</a> objects associated with this job.
-      description: 'Identifies '
-    StorageUnit:
-      type: string
-      enum:
-      - TB
-    AmiId:
-      type: string
-      pattern: (ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})
-      minLength: 12
-      maxLength: 21
-    NFSOnDeviceServiceConfiguration:
-      type: object
-      properties:
-        StorageLimit:
-          allOf:
-          - $ref: '#/components/schemas/StorageLimit'
-          - description: The maximum NFS storage for one Snow Family device.
-        StorageUnit:
-          allOf:
-          - $ref: '#/components/schemas/StorageUnit'
-          - description: '<p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>'
-      description: An object that represents the metadata and configuration settings for the NFS (Network File System) service on an Amazon Web Services Snow Family device.
-    Notification:
-      type: object
-      properties:
-        SnsTopicARN:
-          allOf:
-          - $ref: '#/components/schemas/SnsTopicARN'
-          - description: <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-        JobStatesToNotify:
-          allOf:
-          - $ref: '#/components/schemas/JobStateList'
-          - description: The list of job states that will trigger a notification for this job.
-        NotifyAll:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Any change in job state will trigger a notification for this job.
-        DevicePickupSnsTopicARN:
-          allOf:
-          - $ref: '#/components/schemas/SnsTopicARN'
-          - description: Used to send SNS notifications for the person picking up the device (identified during job creation).
-      description: <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
-    InvalidInputCombinationException: {}
-    TargetOnDeviceServiceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/TargetOnDeviceService'
-    TGWOnDeviceServiceConfiguration:
-      type: object
-      properties:
-        StorageLimit:
-          allOf:
-          - $ref: '#/components/schemas/StorageLimit'
-          - description: The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.
-        StorageUnit:
-          allOf:
-          - $ref: '#/components/schemas/StorageUnit'
-          - description: The scale unit of the virtual tapes on the device.
-      description: An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.
     S3ResourceList:
       type: array
       items:
         $ref: '#/components/schemas/S3Resource'
-    EventTriggerDefinition:
+    EKSOnDeviceServiceConfiguration:
       type: object
       properties:
-        EventResourceARN:
+        KubernetesVersion:
           allOf:
-          - $ref: '#/components/schemas/ResourceARN'
-          - description: The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.
-      description: The container for the <a>EventTriggerDefinition$EventResourceARN</a>.
-    S3StorageLimit:
-      type: number
-      format: double
-      minimum: 0
-    JobType:
+          - $ref: '#/components/schemas/String'
+          - description: The Kubernetes version for EKS Anywhere on the Snow Family device.
+        EKSAnywhereVersion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The version of EKS Anywhere on the Snow Family device.
+      description: An object representing the metadata and configuration settings of EKS Anywhere on the Snow Family device.
+    TransferOption:
       type: string
       enum:
       - IMPORT
       - EXPORT
       - LOCAL_USE
-    KeyRange:
-      type: object
-      properties:
-        BeginMarker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.
-        EndMarker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.
-      description: Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
-    Ec2AmiResourceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Ec2AmiResource'
-    PickupDetails:
-      type: object
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the person picking up the device.
-        PhoneNumber:
-          allOf:
-          - $ref: '#/components/schemas/PhoneNumber'
-          - description: The phone number of the person picking up the device.
-        Email:
-          allOf:
-          - $ref: '#/components/schemas/Email'
-          - description: The email address of the person picking up the device.
-        IdentificationNumber:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The number on the credential identifying the person picking up the device.
-        IdentificationExpirationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: Expiration date of the credential identifying the person picking up the device.
-        IdentificationIssuingOrg:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Organization that issued the credential identifying the person picking up the device.
-        DevicePickupId:
-          allOf:
-          - $ref: '#/components/schemas/DevicePickupId'
-          - description: The unique ID for a device that will be picked up.
-      description: Information identifying the person picking up the device.
-    SnowconeDeviceConfiguration:
-      type: object
-      properties:
-        WirelessConnection:
-          allOf:
-          - $ref: '#/components/schemas/WirelessConnection'
-          - description: Configures the wireless connection for the Snowcone device.
-      description: Specifies the device configuration for an Snowcone job.
-    SnowballCapacity:
-      type: string
-      enum:
-      - T50
-      - T80
-      - T100
-      - T42
-      - T98
-      - T8
-      - T14
-      - T32
-      - NoPreference
-      - T240
-      - T13
-    CreateJobResult:
-      type: object
-      example:
-        JobId: JID123e4567-e89b-12d3-a456-426655440000
-      properties:
-        JobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-    KmsKeyARN:
-      type: string
-      pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
-      maxLength: 255
-    JobId:
-      type: string
-      pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 39
-      maxLength: 39
-    ClusterId:
-      type: string
-      pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 39
-      maxLength: 39
-    InvalidResourceException: {}
     CreateJobRequest:
       type: object
       title: CreateJobRequest
@@ -647,42 +453,182 @@ components:
           allOf:
           - $ref: '#/components/schemas/PickupDetails'
           - description: Information identifying the person picking up the device.
-    OnDeviceServiceConfiguration:
-      type: object
-      properties:
-        NFSOnDeviceService:
-          allOf:
-          - $ref: '#/components/schemas/NFSOnDeviceServiceConfiguration'
-          - description: Represents the NFS (Network File System) service on a Snow Family device.
-        TGWOnDeviceService:
-          allOf:
-          - $ref: '#/components/schemas/TGWOnDeviceServiceConfiguration'
-          - description: Represents the Storage Gateway service Tape Gateway type on a Snow Family device.
-        EKSOnDeviceService:
-          allOf:
-          - $ref: '#/components/schemas/EKSOnDeviceServiceConfiguration'
-          - description: The configuration of EKS Anywhere on the Snow Family device.
-        S3OnDeviceService:
-          allOf:
-          - $ref: '#/components/schemas/S3OnDeviceServiceConfiguration'
-          - description: Configuration for Amazon S3 compatible storage on Snow family devices.
-      description: An object that represents the metadata and configuration settings for services on an Amazon Web Services Snow Family device.
-    SnsTopicARN:
-      type: string
-      pattern: arn:aws.*:sns:.*:[0-9]{12}:.*
-      maxLength: 255
-    DevicePickupId:
-      type: string
-      pattern: DPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 40
-      maxLength: 40
-    ShippingOption:
+    Boolean:
+      type: boolean
+    TargetOnDeviceServiceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TargetOnDeviceService'
+    RemoteManagement:
       type: string
       enum:
-      - SECOND_DAY
-      - NEXT_DAY
-      - EXPRESS
-      - STANDARD
+      - INSTALLED_ONLY
+      - INSTALLED_AUTOSTART
+      - NOT_INSTALLED
+    JobId:
+      type: string
+      pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 39
+      maxLength: 39
+    EventTriggerDefinition:
+      type: object
+      properties:
+        EventResourceARN:
+          allOf:
+          - $ref: '#/components/schemas/ResourceARN'
+          - description: The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.
+      description: The container for the <a>EventTriggerDefinition$EventResourceARN</a>.
+    JobResource:
+      type: object
+      properties:
+        S3Resources:
+          allOf:
+          - $ref: '#/components/schemas/S3ResourceList'
+          - description: An array of <code>S3Resource</code> objects.
+        LambdaResources:
+          allOf:
+          - $ref: '#/components/schemas/LambdaResourceList'
+          - description: The Python-language Lambda functions for this job.
+        Ec2AmiResources:
+          allOf:
+          - $ref: '#/components/schemas/Ec2AmiResourceList'
+          - description: The Amazon Machine Images (AMIs) associated with this job.
+      description: Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
+    JobStateList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobState'
+    EventTriggerDefinitionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EventTriggerDefinition'
+    Ec2AmiResource:
+      type: object
+      required:
+      - AmiId
+      properties:
+        AmiId:
+          allOf:
+          - $ref: '#/components/schemas/AmiId'
+          - description: The ID of the AMI in Amazon EC2.
+        SnowballAmiId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The ID of the AMI on the Snow device.
+      description: A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2-compatible AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.
+    Notification:
+      type: object
+      properties:
+        SnsTopicARN:
+          allOf:
+          - $ref: '#/components/schemas/SnsTopicARN'
+          - description: <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
+        JobStatesToNotify:
+          allOf:
+          - $ref: '#/components/schemas/JobStateList'
+          - description: The list of job states that will trigger a notification for this job.
+        NotifyAll:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Any change in job state will trigger a notification for this job.
+        DevicePickupSnsTopicARN:
+          allOf:
+          - $ref: '#/components/schemas/SnsTopicARN'
+          - description: Used to send SNS notifications for the person picking up the device (identified during job creation).
+      description: <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
+    ResourceARN:
+      type: string
+      pattern: arn:aws.*:*
+      maxLength: 255
+    RoleARN:
+      type: string
+      pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+      maxLength: 255
+    InvalidResourceException: {}
+    InvalidInputCombinationException: {}
+    NFSOnDeviceServiceConfiguration:
+      type: object
+      properties:
+        StorageLimit:
+          allOf:
+          - $ref: '#/components/schemas/StorageLimit'
+          - description: The maximum NFS storage for one Snow Family device.
+        StorageUnit:
+          allOf:
+          - $ref: '#/components/schemas/StorageUnit'
+          - description: '<p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>'
+      description: An object that represents the metadata and configuration settings for the NFS (Network File System) service on an Amazon Web Services Snow Family device.
+    DeviceConfiguration:
+      type: object
+      properties:
+        SnowconeDeviceConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/SnowconeDeviceConfiguration'
+          - description: Returns information about the device configuration for an Snowcone job.
+      description: 'The container for <code>SnowconeDeviceConfiguration</code>. '
+    WirelessConnection:
+      type: object
+      properties:
+        IsWifiEnabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Enables the Wi-Fi adapter on an Snowcone device.
+      description: Configures the wireless connection on an Snowcone device.
+    LambdaResource:
+      type: object
+      properties:
+        LambdaArn:
+          allOf:
+          - $ref: '#/components/schemas/ResourceARN'
+          - description: An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.
+        EventTriggers:
+          allOf:
+          - $ref: '#/components/schemas/EventTriggerDefinitionList'
+          - description: The array of ARNs for <a>S3Resource</a> objects to trigger the <a>LambdaResource</a> objects associated with this job.
+      description: 'Identifies '
+    GSTIN:
+      type: string
+      pattern: \d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}
+      minLength: 15
+      maxLength: 15
+    NodeFaultTolerance:
+      type: integer
+      minimum: 1
+      maximum: 4
+    String:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1024
+    Email:
+      type: string
+      pattern: ^(?=.{3,100}$).+@.+[.].+$
+      minLength: 3
+      maxLength: 320
+      format: password
+    KeyRange:
+      type: object
+      properties:
+        BeginMarker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The key that starts an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.
+        EndMarker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.
+      description: Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
+    StorageLimit:
+      type: integer
+      minimum: 0
+    INDTaxDocuments:
+      type: object
+      properties:
+        GSTIN:
+          allOf:
+          - $ref: '#/components/schemas/GSTIN'
+          - description: The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.
+      description: The tax documents required in Amazon Web Services Region in India.
     TargetOnDeviceService:
       type: object
       properties:
@@ -695,6 +641,53 @@ components:
           - $ref: '#/components/schemas/TransferOption'
           - description: Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.
       description: An object that represents the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).
+    TGWOnDeviceServiceConfiguration:
+      type: object
+      properties:
+        StorageLimit:
+          allOf:
+          - $ref: '#/components/schemas/StorageLimit'
+          - description: The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.
+        StorageUnit:
+          allOf:
+          - $ref: '#/components/schemas/StorageUnit'
+          - description: The scale unit of the virtual tapes on the device.
+      description: An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.
+    AddressId:
+      type: string
+      pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 40
+      maxLength: 40
+    Timestamp:
+      type: string
+      format: date-time
+    SnowballCapacity:
+      type: string
+      enum:
+      - T50
+      - T80
+      - T100
+      - T42
+      - T98
+      - T8
+      - T14
+      - T32
+      - NoPreference
+      - T240
+      - T13
+    ShippingOption:
+      type: string
+      enum:
+      - SECOND_DAY
+      - NEXT_DAY
+      - EXPRESS
+      - STANDARD
+    JobType:
+      type: string
+      enum:
+      - IMPORT
+      - EXPORT
+      - LOCAL_USE
     S3OnDeviceServiceConfiguration:
       type: object
       properties:
@@ -715,29 +708,81 @@ components:
           - $ref: '#/components/schemas/NodeFaultTolerance'
           - description: '&gt;Fault tolerance level of the cluster. This indicates the number of nodes that can go down without degrading the performance of the cluster. This additional input helps when the specified <code>StorageLimit</code> matches more than one Amazon S3 compatible storage on Snow family devices service configuration.'
       description: Amazon S3 compatible storage on Snow family devices configuration items.
-    String:
+    SnsTopicARN:
       type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1024
-    KMSRequestFailedException: {}
-    Boolean:
-      type: boolean
+      pattern: arn:aws.*:sns:.*:[0-9]{12}:.*
+      maxLength: 255
     TaxDocuments:
       type: object
       properties:
         IND:
           $ref: '#/components/schemas/INDTaxDocuments'
       description: The tax documents required in your Amazon Web Services Region.
-    TransferOption:
+    ClusterLimitExceededException: {}
+    DeviceServiceName:
       type: string
       enum:
-      - IMPORT
-      - EXPORT
-      - LOCAL_USE
-    Timestamp:
+      - NFS_ON_DEVICE_SERVICE
+      - S3_ON_DEVICE_SERVICE
+    ImpactLevel:
       type: string
-      format: date-time
+      enum:
+      - IL2
+      - IL4
+      - IL5
+      - IL6
+      - IL99
+    DevicePickupId:
+      type: string
+      pattern: DPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 40
+      maxLength: 40
+    AmiId:
+      type: string
+      pattern: (ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})
+      minLength: 12
+      maxLength: 21
+    S3StorageLimit:
+      type: number
+      format: double
+      minimum: 0
+    LongTermPricingId:
+      type: string
+      pattern: LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 41
+      maxLength: 41
+    ServiceSize:
+      type: integer
+      minimum: 3
+      maximum: 16
+    Ec2RequestFailedException: {}
+    OnDeviceServiceConfiguration:
+      type: object
+      properties:
+        NFSOnDeviceService:
+          allOf:
+          - $ref: '#/components/schemas/NFSOnDeviceServiceConfiguration'
+          - description: Represents the NFS (Network File System) service on a Snow Family device.
+        TGWOnDeviceService:
+          allOf:
+          - $ref: '#/components/schemas/TGWOnDeviceServiceConfiguration'
+          - description: Represents the Storage Gateway service Tape Gateway type on a Snow Family device.
+        EKSOnDeviceService:
+          allOf:
+          - $ref: '#/components/schemas/EKSOnDeviceServiceConfiguration'
+          - description: The configuration of EKS Anywhere on the Snow Family device.
+        S3OnDeviceService:
+          allOf:
+          - $ref: '#/components/schemas/S3OnDeviceServiceConfiguration'
+          - description: Configuration for Amazon S3 compatible storage on Snow family devices.
+      description: An object that represents the metadata and configuration settings for services on an Amazon Web Services Snow Family device.
+    KMSRequestFailedException: {}
+    PhoneNumber:
+      type: string
+      pattern: '^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$'
+      minLength: 7
+      maxLength: 30
+      format: password
     JobState:
       type: string
       enum:
@@ -754,46 +799,22 @@ components:
       - Cancelled
       - Listing
       - Pending
-    ClusterLimitExceededException: {}
-    EKSOnDeviceServiceConfiguration:
+    LambdaResourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LambdaResource'
+    SnowconeDeviceConfiguration:
       type: object
       properties:
-        KubernetesVersion:
+        WirelessConnection:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Kubernetes version for EKS Anywhere on the Snow Family device.
-        EKSAnywhereVersion:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The version of EKS Anywhere on the Snow Family device.
-      description: An object representing the metadata and configuration settings of EKS Anywhere on the Snow Family device.
-    RoleARN:
-      type: string
-      pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-      maxLength: 255
-    DeviceServiceName:
-      type: string
-      enum:
-      - NFS_ON_DEVICE_SERVICE
-      - S3_ON_DEVICE_SERVICE
-    NodeFaultTolerance:
-      type: integer
-      minimum: 1
-      maximum: 4
-    Ec2AmiResource:
-      type: object
-      required:
-      - AmiId
-      properties:
-        AmiId:
-          allOf:
-          - $ref: '#/components/schemas/AmiId'
-          - description: The ID of the AMI in Amazon EC2.
-        SnowballAmiId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The ID of the AMI on the Snow device.
-      description: A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2-compatible AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.
+          - $ref: '#/components/schemas/WirelessConnection'
+          - description: Configures the wireless connection for the Snowcone device.
+      description: Specifies the device configuration for an Snowcone job.
+    Ec2AmiResourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Ec2AmiResource'
     SnowballType:
       type: string
       enum:
@@ -807,28 +828,119 @@ components:
       - V3_5C
       - V3_5S
       - RACK_5U_C
-    AddressId:
+    ClusterId:
       type: string
-      pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 40
-      maxLength: 40
-    StorageLimit:
-      type: integer
-      minimum: 0
-    GSTIN:
+      pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 39
+      maxLength: 39
+    CreateJobResult:
+      type: object
+      example:
+        JobId: JID123e4567-e89b-12d3-a456-426655440000
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+    S3Resource:
+      type: object
+      properties:
+        BucketArn:
+          allOf:
+          - $ref: '#/components/schemas/ResourceARN'
+          - description: The Amazon Resource Name (ARN) of an Amazon S3 bucket.
+        KeyRange:
+          allOf:
+          - $ref: '#/components/schemas/KeyRange'
+          - description: For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
+        TargetOnDeviceServices:
+          allOf:
+          - $ref: '#/components/schemas/TargetOnDeviceServiceList'
+          - description: Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).
+      description: Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
+    KmsKeyARN:
       type: string
-      pattern: \d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}
-      minLength: 15
-      maxLength: 15
-    ServiceSize:
-      type: integer
-      minimum: 3
-      maximum: 16
-    Ec2RequestFailedException: {}
-    EventTriggerDefinitionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EventTriggerDefinition'
+      pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
+      maxLength: 255
+    PickupDetails:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the person picking up the device.
+        PhoneNumber:
+          allOf:
+          - $ref: '#/components/schemas/PhoneNumber'
+          - description: The phone number of the person picking up the device.
+        Email:
+          allOf:
+          - $ref: '#/components/schemas/Email'
+          - description: The email address of the person picking up the device.
+        IdentificationNumber:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The number on the credential identifying the person picking up the device.
+        IdentificationExpirationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Expiration date of the credential identifying the person picking up the device.
+        IdentificationIssuingOrg:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Organization that issued the credential identifying the person picking up the device.
+        DevicePickupId:
+          allOf:
+          - $ref: '#/components/schemas/DevicePickupId'
+          - description: The unique ID for a device that will be picked up.
+      description: Information identifying the person picking up the device.
+    StorageUnit:
+      type: string
+      enum:
+      - TB
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

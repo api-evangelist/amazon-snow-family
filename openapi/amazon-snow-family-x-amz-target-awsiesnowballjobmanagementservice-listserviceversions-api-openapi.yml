@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2016-06-30'
   x-release: v4
-  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListServiceVersions #X Amz Target=AWSIESnowballJobManagementService.ListServiceVersions API'
-  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+  title: 'Amazon Import/Export Snowball #X Amz…'
+  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3).
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/snowball-2016-06-30.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +125,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ListServiceVersions
-      description: Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code> object containing the supported versions for a particular service.
+      description: Lists all supported versions for Snow on-device services. Returns an array of ServiceVersion object containing the supported versions for a particular service.
       responses:
         '200':
           description: Success
@@ -193,69 +194,16 @@ paths:
       tags:
       - '#X Amz Target=AWSIESnowballJobManagementService.ListServiceVersions'
 components:
-  parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ServiceName:
-      type: string
-      enum:
-      - KUBERNETES
-      - EKS_ANYWHERE
-    ServiceVersionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ServiceVersion'
-    DependentServiceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DependentService'
-    String:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1024
-    InvalidResourceException: {}
+    ServiceVersion:
+      type: object
+      properties:
+        Version:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The version number of the requested service.
+      description: The version of the requested service.
+    InvalidNextTokenException: {}
     ListServiceVersionsRequest:
       type: object
       required:
@@ -278,10 +226,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: Because HTTP requests are stateless, this is the starting point for the next list of returned <code>ListServiceVersionsRequest</code> versions.
-    ListLimit:
-      type: integer
-      minimum: 0
-      maximum: 100
+    DependentServiceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DependentService'
+    String:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1024
     ListServiceVersionsResult:
       type: object
       required:
@@ -304,7 +257,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.
-    InvalidNextTokenException: {}
     DependentService:
       type: object
       properties:
@@ -317,14 +269,63 @@ components:
           - $ref: '#/components/schemas/ServiceVersion'
           - description: The version of the dependent service.
       description: The name and version of the service dependant on the requested service.
-    ServiceVersion:
-      type: object
-      properties:
-        Version:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The version number of the requested service.
-      description: The version of the requested service.
+    ServiceName:
+      type: string
+      enum:
+      - KUBERNETES
+      - EKS_ANYWHERE
+    ListLimit:
+      type: integer
+      minimum: 0
+      maximum: 100
+    ServiceVersionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ServiceVersion'
+    InvalidResourceException: {}
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

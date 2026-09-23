@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2016-06-30'
   x-release: v4
-  title: 'Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListLongTermPricing #X Amz Target=AWSIESnowballJobManagementService.ListLongTermPricing API'
-  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands described here provide access to the same functionality that is available in the Amazon Web Services Snow Family Management Console, which enables you to create and manage jobs for a Snow Family device. To transfer data locally with a Snow Family device, you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+  title: 'Amazon Import/Export Snowball #X Amz…'
+  description: The Amazon Web Services Snow Family provides a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3).
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/snowball-2016-06-30.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -201,12 +202,50 @@ paths:
       tags:
       - '#X Amz Target=AWSIESnowballJobManagementService.ListLongTermPricing'
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    LongTermPricingId:
-      type: string
-      pattern: LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 41
-      maxLength: 41
     LongTermPricingListEntry:
       type: object
       properties:
@@ -251,6 +290,12 @@ components:
           - $ref: '#/components/schemas/LongTermPricingAssociatedJobIdList'
           - description: The IDs of the jobs that are associated with a long-term pricing type.
       description: Each <code>LongTermPricingListEntry</code> object contains information about a long-term pricing type.
+    JobId:
+      type: string
+      pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 39
+      maxLength: 39
+    InvalidResourceException: {}
     ListLongTermPricingRequest:
       type: object
       title: ListLongTermPricingRequest
@@ -263,37 +308,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.
-    JobId:
-      type: string
-      pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 39
-      maxLength: 39
-    InvalidResourceException: {}
-    InvalidNextTokenException: {}
-    LongTermPricingEntryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LongTermPricingListEntry'
-    JavaBoolean:
-      type: boolean
-    String:
-      type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1024
-    LongTermPricingType:
-      type: string
-      enum:
-      - OneYear
-      - ThreeYear
-      - OneMonth
-    LongTermPricingAssociatedJobIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobId'
-    Timestamp:
-      type: string
-      format: date-time
     ListLongTermPricingResult:
       type: object
       properties:
@@ -305,10 +319,36 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.
+    String:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1024
+    LongTermPricingType:
+      type: string
+      enum:
+      - OneYear
+      - ThreeYear
+      - OneMonth
+    LongTermPricingEntryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LongTermPricingListEntry'
+    Timestamp:
+      type: string
+      format: date-time
+    InvalidNextTokenException: {}
+    JavaBoolean:
+      type: boolean
     ListLimit:
       type: integer
       minimum: 0
       maximum: 100
+    LongTermPricingId:
+      type: string
+      pattern: LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 41
+      maxLength: 41
     SnowballType:
       type: string
       enum:
@@ -322,49 +362,10 @@ components:
       - V3_5C
       - V3_5S
       - RACK_5U_C
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
+    LongTermPricingAssociatedJobIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobId'
   securitySchemes:
     hmac:
       type: apiKey
