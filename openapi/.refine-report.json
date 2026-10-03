@@ -6,9 +6,7 @@
   "outputs": [
     "amazon-snow-family-amazon-import-export-snowball-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 27 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -42,36 +40,9 @@
     "amazon-snow-family.yaml: tagged paths POST /#X-Amz-Target=AWSIESnowballJobManagementService.UpdateJobShipmentState -> Amazon Import/Export Snowball",
     "amazon-snow-family.yaml: tagged paths POST /#X-Amz-Target=AWSIESnowballJobManagementService.UpdateLongTermPricing -> Amazon Import/Export Snowball",
     "amazon-snow-family.yaml: declared missing tag: Amazon Import/Export Snowball",
-    "superseded outputs removed: amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api-openapi.yml, amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api-openapi.yml, amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api-openapi.yml, amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api-openapi.yml, amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api-openapi.yml \u2026",
-    "apis.yml register: written (+1 apis, 1 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "amazon-snow-family-amazon-import-export-snowball-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }
