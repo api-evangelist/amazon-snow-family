@@ -2472,39 +2472,67 @@ paths:
       - Amazon Import/Export Snowball
 components:
   schemas:
-    CreateLongTermPricingResult:
+    InitialClusterSize:
+      type: integer
+      minimum: 0
+      maximum: 16
+    DescribeReturnShippingLabelResult:
       type: object
       properties:
-        LongTermPricingId:
+        Status:
           allOf:
-          - $ref: '#/components/schemas/LongTermPricingId'
-          - description: The ID of the long-term pricing type for the device.
-    UpdateClusterRequest:
+          - $ref: '#/components/schemas/ShippingLabelStatus'
+          - description: The status information of the task on a Snow device that is being returned to Amazon Web Services.
+        ExpirationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The expiration date of the current return shipping label.
+        ReturnShippingLabelURI:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The pre-signed Amazon S3 URI used to download the return shipping label.
+    StorageUnit:
+      type: string
+      enum:
+      - TB
+    CompatibleImage:
+      type: object
+      properties:
+        AmiId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The unique identifier for an individual Snow device AMI.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The optional name of a compatible image.
+      description: A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snow device AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.
+    UpdateJobRequest:
       type: object
       required:
-      - ClusterId
-      title: UpdateClusterRequest
+      - JobId
+      title: UpdateJobRequest
       properties:
-        ClusterId:
+        JobId:
           allOf:
-          - $ref: '#/components/schemas/ClusterId'
-          - description: The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+          - $ref: '#/components/schemas/JobId'
+          - description: The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
         RoleARN:
           allOf:
           - $ref: '#/components/schemas/RoleARN'
-          - description: The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).
-        Description:
+          - description: The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.
+        Notification:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The updated description of this cluster.
+          - $ref: '#/components/schemas/Notification'
+          - description: The new or updated <a>Notification</a> object.
         Resources:
           allOf:
           - $ref: '#/components/schemas/JobResource'
-          - description: The updated arrays of <a>JobResource</a> objects that can include updated <a>S3Resource</a> objects or <a>LambdaResource</a> objects.
+          - description: 'The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. '
         OnDeviceServiceConfiguration:
           allOf:
           - $ref: '#/components/schemas/OnDeviceServiceConfiguration'
-          - description: Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).
+          - description: Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.
         AddressId:
           allOf:
           - $ref: '#/components/schemas/AddressId'
@@ -2512,146 +2540,38 @@ components:
         ShippingOption:
           allOf:
           - $ref: '#/components/schemas/ShippingOption'
-          - description: The updated shipping option value of this cluster's <a>ShippingDetails</a> object.
-        Notification:
+          - description: The updated shipping option value of this job's <a>ShippingDetails</a> object.
+        Description:
           allOf:
-          - $ref: '#/components/schemas/Notification'
-          - description: The new or updated <a>Notification</a> object.
+          - $ref: '#/components/schemas/String'
+          - description: The updated description of this job's <a>JobMetadata</a> object.
+        SnowballCapacityPreference:
+          allOf:
+          - $ref: '#/components/schemas/SnowballCapacity'
+          - description: <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US regions.</p> <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         ForwardingAddressId:
           allOf:
           - $ref: '#/components/schemas/AddressId'
-          - description: The updated ID for the forwarding address for a cluster. This field is not supported in most regions.
-    SnowconeDeviceConfiguration:
-      type: object
-      properties:
-        WirelessConnection:
-          allOf:
-          - $ref: '#/components/schemas/WirelessConnection'
-          - description: Configures the wireless connection for the Snowcone device.
-      description: Specifies the device configuration for an Snowcone job.
-    Email:
-      type: string
-      pattern: ^(?=.{3,100}$).+@.+[.].+$
-      minLength: 3
-      maxLength: 320
-      format: password
-    DescribeReturnShippingLabelRequest:
-      type: object
-      required:
-      - JobId
-      title: DescribeReturnShippingLabelRequest
-      properties:
-        JobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-    LongTermPricingId:
-      type: string
-      pattern: LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 41
-      maxLength: 41
-    InvalidJobStateException: {}
-    DescribeClusterRequest:
-      type: object
-      required:
-      - ClusterId
-      title: DescribeClusterRequest
-      properties:
-        ClusterId:
-          allOf:
-          - $ref: '#/components/schemas/ClusterId'
-          - description: The automatically generated ID for a cluster.
-    SnowballType:
-      type: string
-      enum:
-      - STANDARD
-      - EDGE
-      - EDGE_C
-      - EDGE_CG
-      - EDGE_S
-      - SNC1_HDD
-      - SNC1_SSD
-      - V3_5C
-      - V3_5S
-      - RACK_5U_C
-    StorageLimit:
-      type: integer
-      minimum: 0
-    GetJobUnlockCodeRequest:
-      type: object
-      required:
-      - JobId
-      title: GetJobUnlockCodeRequest
-      properties:
-        JobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-    CancelClusterRequest:
-      type: object
-      required:
-      - ClusterId
-      title: CancelClusterRequest
-      properties:
-        ClusterId:
-          allOf:
-          - $ref: '#/components/schemas/ClusterId'
-          - description: The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
-    CreateJobResult:
+          - description: The updated ID for the forwarding address for a job. This field is not supported in most regions.
+        PickupDetails:
+          $ref: '#/components/schemas/PickupDetails'
+    ListClustersResult:
       type: object
       example:
-        JobId: JID123e4567-e89b-12d3-a456-426655440000
+        ClusterListEntries:
+        - ClusterId: CID123e4567-e89b-12d3-a456-426655440000
+          ClusterState: Pending
+          CreationDate: '1480475517.0'
+          Description: MyCluster
       properties:
-        JobId:
+        ClusterListEntries:
           allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-    Boolean:
-      type: boolean
-    ClusterLimitExceededException: {}
-    SnowballCapacity:
-      type: string
-      enum:
-      - T50
-      - T80
-      - T100
-      - T42
-      - T98
-      - T8
-      - T14
-      - T32
-      - NoPreference
-      - T240
-      - T13
-    S3Resource:
-      type: object
-      properties:
-        BucketArn:
+          - $ref: '#/components/schemas/ClusterListEntryList'
+          - description: Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.
+        NextToken:
           allOf:
-          - $ref: '#/components/schemas/ResourceARN'
-          - description: The Amazon Resource Name (ARN) of an Amazon S3 bucket.
-        KeyRange:
-          allOf:
-          - $ref: '#/components/schemas/KeyRange'
-          - description: For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
-        TargetOnDeviceServices:
-          allOf:
-          - $ref: '#/components/schemas/TargetOnDeviceServiceList'
-          - description: Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).
-      description: Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
-    UpdateClusterResult:
-      type: object
-      properties: {}
-    JobType:
-      type: string
-      enum:
-      - IMPORT
-      - EXPORT
-      - LOCAL_USE
-    LongTermPricingIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LongTermPricingId'
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.
     CreateClusterRequest:
       type: object
       required:
@@ -2729,6 +2649,32 @@ components:
           allOf:
           - $ref: '#/components/schemas/SnowballCapacity'
           - description: <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    EventTriggerDefinitionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EventTriggerDefinition'
+    ListServiceVersionsRequest:
+      type: object
+      required:
+      - ServiceName
+      title: ListServiceVersionsRequest
+      properties:
+        ServiceName:
+          allOf:
+          - $ref: '#/components/schemas/ServiceName'
+          - description: The name of the service for which you're requesting supported versions.
+        DependentServices:
+          allOf:
+          - $ref: '#/components/schemas/DependentServiceList'
+          - description: A list of names and versions of dependant services of the requested service.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/ListLimit'
+          - description: The maximum number of <code>ListServiceVersions</code> objects to return.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Because HTTP requests are stateless, this is the starting point for the next list of returned <code>ListServiceVersionsRequest</code> versions.
     KeyRange:
       type: object
       properties:
@@ -2741,237 +2687,164 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The key that ends an optional key range for an export job. Ranges are inclusive and UTF-8 binary sorted.
       description: Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
-    AmiId:
-      type: string
-      pattern: (ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})
-      minLength: 12
-      maxLength: 21
-    Integer:
-      type: integer
-    KmsKeyARN:
-      type: string
-      pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
-      maxLength: 255
-    DataTransfer:
+    ServiceVersion:
       type: object
       properties:
-        BytesTransferred:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: The number of bytes transferred between a Snow device and Amazon S3.
-        ObjectsTransferred:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: The number of objects transferred between a Snow device and Amazon S3.
-        TotalBytes:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.
-        TotalObjects:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.
-      description: Defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
-    Notification:
-      type: object
-      properties:
-        SnsTopicARN:
-          allOf:
-          - $ref: '#/components/schemas/SnsTopicARN'
-          - description: <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-        JobStatesToNotify:
-          allOf:
-          - $ref: '#/components/schemas/JobStateList'
-          - description: The list of job states that will trigger a notification for this job.
-        NotifyAll:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Any change in job state will trigger a notification for this job.
-        DevicePickupSnsTopicARN:
-          allOf:
-          - $ref: '#/components/schemas/SnsTopicARN'
-          - description: Used to send SNS notifications for the person picking up the device (identified during job creation).
-      description: <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
-    RoleARN:
-      type: string
-      pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-      maxLength: 255
-    Ec2RequestFailedException: {}
-    EKSOnDeviceServiceConfiguration:
-      type: object
-      properties:
-        KubernetesVersion:
+        Version:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The Kubernetes version for EKS Anywhere on the Snow Family device.
-        EKSAnywhereVersion:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The version of EKS Anywhere on the Snow Family device.
-      description: An object representing the metadata and configuration settings of EKS Anywhere on the Snow Family device.
-    DescribeAddressesRequest:
+          - description: The version number of the requested service.
+      description: The version of the requested service.
+    GSTIN:
+      type: string
+      pattern: \d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}
+      minLength: 15
+      maxLength: 15
+    UpdateLongTermPricingRequest:
       type: object
-      title: DescribeAddressesRequest
+      required:
+      - LongTermPricingId
+      title: UpdateLongTermPricingRequest
       properties:
-        MaxResults:
+        LongTermPricingId:
           allOf:
-          - $ref: '#/components/schemas/ListLimit'
-          - description: The number of <code>ADDRESS</code> objects to return.
+          - $ref: '#/components/schemas/LongTermPricingId'
+          - description: The ID of the long-term pricing type for the device.
+        ReplacementJob:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: Specifies that a device that is ordered with long-term pricing should be replaced with a new device.
+        IsLongTermPricingAutoRenew:
+          allOf:
+          - $ref: '#/components/schemas/JavaBoolean'
+          - description: If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.
+    CreateAddressRequest:
+      type: object
+      required:
+      - Address
+      title: CreateAddressRequest
+      properties:
+        Address:
+          allOf:
+          - $ref: '#/components/schemas/Address'
+          - description: The address that you want the Snow device shipped to.
+    UpdateJobShipmentStateResult:
+      type: object
+      properties: {}
+    ListPickupLocationsResult:
+      type: object
+      example:
+        Addresses:
+        - AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
+          City: Seattle
+          Company: My Company
+          Country: US
+          Name: My Name
+          PhoneNumber: 425-555-5555
+          PostalCode: '98101'
+          StateOrProvince: WA
+          Street1: 123 Main Street
+      properties:
+        Addresses:
+          allOf:
+          - $ref: '#/components/schemas/AddressList'
+          - description: Information about the address of pickup locations.
         NextToken:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.
-    ListLimit:
-      type: integer
-      minimum: 0
-      maximum: 100
+          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>ListPickupLocationsResult</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
     S3StorageLimit:
       type: number
       format: double
       minimum: 0
-    TaxDocuments:
+    InvalidNextTokenException: {}
+    ListLimit:
+      type: integer
+      minimum: 0
+      maximum: 100
+    Ec2AmiResourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Ec2AmiResource'
+    TargetOnDeviceServiceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TargetOnDeviceService'
+    ListCompatibleImagesRequest:
       type: object
-      properties:
-        IND:
-          $ref: '#/components/schemas/INDTaxDocuments'
-      description: The tax documents required in your Amazon Web Services Region.
-    ListLongTermPricingRequest:
-      type: object
-      title: ListLongTermPricingRequest
-      properties:
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/ListLimit'
-          - description: The maximum number of <code>ListLongTermPricing</code> objects to return.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.
-    JobLogs:
-      type: object
-      properties:
-        JobCompletionReportURI:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A link to an Amazon S3 presigned URL where the job completion report is located.
-        JobSuccessLogURI:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A link to an Amazon S3 presigned URL where the job success log is located.
-        JobFailureLogURI:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A link to an Amazon S3 presigned URL where the job failure log is located.
-      description: '<p>Contains job logs. Whenever a Snow device is used to import data into or export data out of Amazon S3, you''ll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you''ll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p>'
-    ListJobsRequest:
-      type: object
-      title: ListJobsRequest
+      title: ListCompatibleImagesRequest
       properties:
         MaxResults:
           allOf:
           - $ref: '#/components/schemas/ListLimit'
-          - description: The number of <code>JobListEntry</code> objects to return.
+          - description: The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.
         NextToken:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
-    String:
+          - description: HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.
+    KmsKeyARN:
       type: string
-      pattern: .*
-      minLength: 1
-      maxLength: 1024
-    JobState:
+      pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
+      maxLength: 255
+    AddressList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Address'
+    Ec2RequestFailedException: {}
+    INDTaxDocuments:
+      type: object
+      properties:
+        GSTIN:
+          allOf:
+          - $ref: '#/components/schemas/GSTIN'
+          - description: The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.
+      description: The tax documents required in Amazon Web Services Region in India.
+    CreateAddressResult:
+      type: object
+      example:
+        AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
+      properties:
+        AddressId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.
+    GetJobManifestRequest:
+      type: object
+      required:
+      - JobId
+      title: GetJobManifestRequest
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+    JavaBoolean:
+      type: boolean
+    ShipmentState:
       type: string
       enum:
-      - New
-      - PreparingAppliance
-      - PreparingShipment
-      - InTransitToCustomer
-      - WithCustomer
-      - InTransitToAWS
-      - WithAWSSortingFacility
-      - WithAWS
-      - InProgress
-      - Complete
-      - Cancelled
-      - Listing
-      - Pending
-    DependentServiceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DependentService'
-    ListLongTermPricingResult:
+      - RECEIVED
+      - RETURNED
+    TargetOnDeviceService:
       type: object
       properties:
-        LongTermPricingEntries:
+        ServiceName:
           allOf:
-          - $ref: '#/components/schemas/LongTermPricingEntryList'
-          - description: 'Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. '
-        NextToken:
+          - $ref: '#/components/schemas/DeviceServiceName'
+          - description: Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.
+        TransferOption:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.
-    DescribeJobResult:
-      type: object
-      example:
-        JobMetadata:
-          AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
-          CreationDate: '1475626164'
-          Description: My Job
-          JobId: JID123e4567-e89b-12d3-a456-426655440000
-          JobState: New
-          JobType: IMPORT
-          KmsKeyARN: arn:aws:kms:us-east-1:123456789012:key/abcd1234-12ab-34cd-56ef-123456123456
-          Notification:
-            JobStatesToNotify: []
-            NotifyAll: false
-          Resources:
-            S3Resources:
-            - BucketArn: arn:aws:s3:::MyBucket
-              KeyRange: {}
-          RoleARN: arn:aws:iam::123456789012:role/snowball-import-S3-role
-          ShippingDetails:
-            ShippingOption: SECOND_DAY
-          SnowballCapacityPreference: T80
-          SnowballType: STANDARD
-      properties:
-        JobMetadata:
-          allOf:
-          - $ref: '#/components/schemas/JobMetadata'
-          - description: Information about a specific job, including shipping information, job status, and other important metadata.
-        SubJobMetadata:
-          allOf:
-          - $ref: '#/components/schemas/JobMetadataList'
-          - description: Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.
-    ListJobsResult:
-      type: object
-      example:
-        JobListEntries:
-        - CreationDate: '1460678186.0'
-          Description: MyJob
-          IsMaster: false
-          JobId: JID123e4567-e89b-12d3-a456-426655440000
-          JobState: New
-          JobType: IMPORT
-          SnowballType: STANDARD
-      properties:
-        JobListEntries:
-          allOf:
-          - $ref: '#/components/schemas/JobListEntryList'
-          - description: 'Each <code>JobListEntry</code> object contains a job''s state, a job''s ID, and a value that indicates whether the job is a job part, in the case of export jobs. '
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.
-    ServiceVersionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ServiceVersion'
-    ClusterId:
+          - $ref: '#/components/schemas/TransferOption'
+          - description: Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.
+      description: An object that represents the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).
+    Timestamp:
       type: string
-      pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 39
-      maxLength: 39
+      format: date-time
+    DevicePickupId:
+      type: string
+      pattern: DPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 40
+      maxLength: 40
     OnDeviceServiceConfiguration:
       type: object
       properties:
@@ -2992,12 +2865,315 @@ components:
           - $ref: '#/components/schemas/S3OnDeviceServiceConfiguration'
           - description: Configuration for Amazon S3 compatible storage on Snow family devices.
       description: An object that represents the metadata and configuration settings for services on an Amazon Web Services Snow Family device.
-    CancelJobResult:
+    CreateReturnShippingLabelRequest:
+      type: object
+      required:
+      - JobId
+      title: CreateReturnShippingLabelRequest
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        ShippingOption:
+          allOf:
+          - $ref: '#/components/schemas/ShippingOption'
+          - description: 'The shipping speed for a particular job. This speed doesn''t dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:'
+    DataTransfer:
+      type: object
+      properties:
+        BytesTransferred:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The number of bytes transferred between a Snow device and Amazon S3.
+        ObjectsTransferred:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The number of objects transferred between a Snow device and Amazon S3.
+        TotalBytes:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.
+        TotalObjects:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.
+      description: Defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
+    DescribeAddressRequest:
+      type: object
+      required:
+      - AddressId
+      title: DescribeAddressRequest
+      properties:
+        AddressId:
+          allOf:
+          - $ref: '#/components/schemas/AddressId'
+          - description: The automatically generated ID for a specific address.
+    ResourceARN:
+      type: string
+      pattern: arn:aws.*:*
+      maxLength: 255
+    DescribeClusterRequest:
+      type: object
+      required:
+      - ClusterId
+      title: DescribeClusterRequest
+      properties:
+        ClusterId:
+          allOf:
+          - $ref: '#/components/schemas/ClusterId'
+          - description: The automatically generated ID for a cluster.
+    Email:
+      type: string
+      pattern: ^(?=.{3,100}$).+@.+[.].+$
+      minLength: 3
+      maxLength: 320
+      format: password
+    DeviceServiceName:
+      type: string
+      enum:
+      - NFS_ON_DEVICE_SERVICE
+      - S3_ON_DEVICE_SERVICE
+    PhoneNumber:
+      type: string
+      pattern: '^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$'
+      minLength: 7
+      maxLength: 30
+      format: password
+    LambdaResourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LambdaResource'
+    SnowballCapacity:
+      type: string
+      enum:
+      - T50
+      - T80
+      - T100
+      - T42
+      - T98
+      - T8
+      - T14
+      - T32
+      - NoPreference
+      - T240
+      - T13
+    UpdateClusterResult:
       type: object
       properties: {}
-    UpdateJobShipmentStateResult:
+    JobState:
+      type: string
+      enum:
+      - New
+      - PreparingAppliance
+      - PreparingShipment
+      - InTransitToCustomer
+      - WithCustomer
+      - InTransitToAWS
+      - WithAWSSortingFacility
+      - WithAWS
+      - InProgress
+      - Complete
+      - Cancelled
+      - Listing
+      - Pending
+    Shipment:
       type: object
-      properties: {}
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Status information for a shipment.
+        TrackingNumber:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
+      description: The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.
+    Boolean:
+      type: boolean
+    ClusterId:
+      type: string
+      pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 39
+      maxLength: 39
+    JobMetadataList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobMetadata'
+    ListClustersRequest:
+      type: object
+      title: ListClustersRequest
+      properties:
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/ListLimit'
+          - description: The number of <code>ClusterListEntry</code> objects to return.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
+    UpdateClusterRequest:
+      type: object
+      required:
+      - ClusterId
+      title: UpdateClusterRequest
+      properties:
+        ClusterId:
+          allOf:
+          - $ref: '#/components/schemas/ClusterId'
+          - description: The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        RoleARN:
+          allOf:
+          - $ref: '#/components/schemas/RoleARN'
+          - description: The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The updated description of this cluster.
+        Resources:
+          allOf:
+          - $ref: '#/components/schemas/JobResource'
+          - description: The updated arrays of <a>JobResource</a> objects that can include updated <a>S3Resource</a> objects or <a>LambdaResource</a> objects.
+        OnDeviceServiceConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/OnDeviceServiceConfiguration'
+          - description: Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).
+        AddressId:
+          allOf:
+          - $ref: '#/components/schemas/AddressId'
+          - description: The ID of the updated <a>Address</a> object.
+        ShippingOption:
+          allOf:
+          - $ref: '#/components/schemas/ShippingOption'
+          - description: The updated shipping option value of this cluster's <a>ShippingDetails</a> object.
+        Notification:
+          allOf:
+          - $ref: '#/components/schemas/Notification'
+          - description: The new or updated <a>Notification</a> object.
+        ForwardingAddressId:
+          allOf:
+          - $ref: '#/components/schemas/AddressId'
+          - description: The updated ID for the forwarding address for a cluster. This field is not supported in most regions.
+    InvalidInputCombinationException: {}
+    InvalidJobStateException: {}
+    JobResource:
+      type: object
+      properties:
+        S3Resources:
+          allOf:
+          - $ref: '#/components/schemas/S3ResourceList'
+          - description: An array of <code>S3Resource</code> objects.
+        LambdaResources:
+          allOf:
+          - $ref: '#/components/schemas/LambdaResourceList'
+          - description: The Python-language Lambda functions for this job.
+        Ec2AmiResources:
+          allOf:
+          - $ref: '#/components/schemas/Ec2AmiResourceList'
+          - description: The Amazon Machine Images (AMIs) associated with this job.
+      description: Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
+    GetJobManifestResult:
+      type: object
+      example:
+        ManifestURI: https://awsie-frosty-manifests-prod.s3.amazonaws.com/JID123e4567-e89b-12d3-a456-426655440000_manifest.bin?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20161224T005115Z&X-Amz-SignedHeaders=...
+      properties:
+        ManifestURI:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.
+    ReturnShippingLabelAlreadyExistsException: {}
+    WirelessConnection:
+      type: object
+      properties:
+        IsWifiEnabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Enables the Wi-Fi adapter on an Snowcone device.
+      description: Configures the wireless connection on an Snowcone device.
+    ListServiceVersionsResult:
+      type: object
+      required:
+      - ServiceVersions
+      - ServiceName
+      properties:
+        ServiceVersions:
+          allOf:
+          - $ref: '#/components/schemas/ServiceVersionList'
+          - description: A list of supported versions.
+        ServiceName:
+          allOf:
+          - $ref: '#/components/schemas/ServiceName'
+          - description: The name of the service for which the system provided supported versions.
+        DependentServices:
+          allOf:
+          - $ref: '#/components/schemas/DependentServiceList'
+          - description: A list of names and versions of dependant services of the service for which the system provided supported versions.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.
+    JobType:
+      type: string
+      enum:
+      - IMPORT
+      - EXPORT
+      - LOCAL_USE
+    DescribeJobRequest:
+      type: object
+      required:
+      - JobId
+      title: DescribeJobRequest
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+    ShippingLabelStatus:
+      type: string
+      enum:
+      - InProgress
+      - TimedOut
+      - Succeeded
+      - Failed
+    LongTermPricingIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LongTermPricingId'
+    AmiId:
+      type: string
+      pattern: (ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})
+      minLength: 12
+      maxLength: 21
+    InvalidResourceException: {}
+    S3Resource:
+      type: object
+      properties:
+        BucketArn:
+          allOf:
+          - $ref: '#/components/schemas/ResourceARN'
+          - description: The Amazon Resource Name (ARN) of an Amazon S3 bucket.
+        KeyRange:
+          allOf:
+          - $ref: '#/components/schemas/KeyRange'
+          - description: For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
+        TargetOnDeviceServices:
+          allOf:
+          - $ref: '#/components/schemas/TargetOnDeviceServiceList'
+          - description: Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).
+      description: Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
+    TGWOnDeviceServiceConfiguration:
+      type: object
+      properties:
+        StorageLimit:
+          allOf:
+          - $ref: '#/components/schemas/StorageLimit'
+          - description: The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.
+        StorageUnit:
+          allOf:
+          - $ref: '#/components/schemas/StorageUnit'
+          - description: The scale unit of the virtual tapes on the device.
+      description: An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.
+    ConflictException: {}
     JobMetadata:
       type: object
       properties:
@@ -3100,36 +3276,6 @@ components:
           - $ref: '#/components/schemas/String'
           - description: Unique ID associated with a device.
       description: Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.
-    ListServiceVersionsResult:
-      type: object
-      required:
-      - ServiceVersions
-      - ServiceName
-      properties:
-        ServiceVersions:
-          allOf:
-          - $ref: '#/components/schemas/ServiceVersionList'
-          - description: A list of supported versions.
-        ServiceName:
-          allOf:
-          - $ref: '#/components/schemas/ServiceName'
-          - description: The name of the service for which the system provided supported versions.
-        DependentServices:
-          allOf:
-          - $ref: '#/components/schemas/DependentServiceList'
-          - description: A list of names and versions of dependant services of the service for which the system provided supported versions.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.
-    ServiceVersion:
-      type: object
-      properties:
-        Version:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The version number of the requested service.
-      description: The version of the requested service.
     ListPickupLocationsRequest:
       type: object
       title: ListPickupLocationsRequest
@@ -3142,82 +3288,95 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>ListPickupLocationsRequest</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
-    LambdaResource:
-      type: object
-      properties:
-        LambdaArn:
-          allOf:
-          - $ref: '#/components/schemas/ResourceARN'
-          - description: An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.
-        EventTriggers:
-          allOf:
-          - $ref: '#/components/schemas/EventTriggerDefinitionList'
-          - description: The array of ARNs for <a>S3Resource</a> objects to trigger the <a>LambdaResource</a> objects associated with this job.
-      description: 'Identifies '
-    CreateAddressRequest:
-      type: object
-      required:
-      - Address
-      title: CreateAddressRequest
-      properties:
-        Address:
-          allOf:
-          - $ref: '#/components/schemas/Address'
-          - description: The address that you want the Snow device shipped to.
-    DeviceServiceName:
-      type: string
-      enum:
-      - NFS_ON_DEVICE_SERVICE
-      - S3_ON_DEVICE_SERVICE
-    Shipment:
-      type: object
-      properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Status information for a shipment.
-        TrackingNumber:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
-      description: The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.
-    DevicePickupId:
-      type: string
-      pattern: DPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 40
-      maxLength: 40
-    CreateClusterResult:
-      type: object
-      example:
-        ClusterId: CID123e4567-e89b-12d3-a456-426655440000
-      properties:
-        ClusterId:
-          allOf:
-          - $ref: '#/components/schemas/ClusterId'
-          - description: The automatically generated ID for a cluster.
-        JobListEntries:
-          allOf:
-          - $ref: '#/components/schemas/JobListEntryList'
-          - description: List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.
-    TGWOnDeviceServiceConfiguration:
+    NFSOnDeviceServiceConfiguration:
       type: object
       properties:
         StorageLimit:
           allOf:
           - $ref: '#/components/schemas/StorageLimit'
-          - description: The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.
+          - description: The maximum NFS storage for one Snow Family device.
         StorageUnit:
           allOf:
           - $ref: '#/components/schemas/StorageUnit'
-          - description: The scale unit of the virtual tapes on the device.
-      description: An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.
-    InvalidNextTokenException: {}
-    RemoteManagement:
+          - description: '<p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>'
+      description: An object that represents the metadata and configuration settings for the NFS (Network File System) service on an Amazon Web Services Snow Family device.
+    CancelClusterRequest:
+      type: object
+      required:
+      - ClusterId
+      title: CancelClusterRequest
+      properties:
+        ClusterId:
+          allOf:
+          - $ref: '#/components/schemas/ClusterId'
+          - description: The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+    TransferOption:
       type: string
       enum:
-      - INSTALLED_ONLY
-      - INSTALLED_AUTOSTART
-      - NOT_INSTALLED
+      - IMPORT
+      - EXPORT
+      - LOCAL_USE
+    Long:
+      type: integer
+    UpdateJobResult:
+      type: object
+      properties: {}
+    SnsTopicARN:
+      type: string
+      pattern: arn:aws.*:sns:.*:[0-9]{12}:.*
+      maxLength: 255
+    KMSRequestFailedException: {}
+    Ec2AmiResource:
+      type: object
+      required:
+      - AmiId
+      properties:
+        AmiId:
+          allOf:
+          - $ref: '#/components/schemas/AmiId'
+          - description: The ID of the AMI in Amazon EC2.
+        SnowballAmiId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The ID of the AMI on the Snow device.
+      description: A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2-compatible AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.
+    DescribeJobResult:
+      type: object
+      example:
+        JobMetadata:
+          AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
+          CreationDate: '1475626164'
+          Description: My Job
+          JobId: JID123e4567-e89b-12d3-a456-426655440000
+          JobState: New
+          JobType: IMPORT
+          KmsKeyARN: arn:aws:kms:us-east-1:123456789012:key/abcd1234-12ab-34cd-56ef-123456123456
+          Notification:
+            JobStatesToNotify: []
+            NotifyAll: false
+          Resources:
+            S3Resources:
+            - BucketArn: arn:aws:s3:::MyBucket
+              KeyRange: {}
+          RoleARN: arn:aws:iam::123456789012:role/snowball-import-S3-role
+          ShippingDetails:
+            ShippingOption: SECOND_DAY
+          SnowballCapacityPreference: T80
+          SnowballType: STANDARD
+      properties:
+        JobMetadata:
+          allOf:
+          - $ref: '#/components/schemas/JobMetadata'
+          - description: Information about a specific job, including shipping information, job status, and other important metadata.
+        SubJobMetadata:
+          allOf:
+          - $ref: '#/components/schemas/JobMetadataList'
+          - description: Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.
+    UnsupportedAddressException: {}
+    NodeFaultTolerance:
+      type: integer
+      minimum: 1
+      maximum: 4
     DependentService:
       type: object
       properties:
@@ -3230,6 +3389,137 @@ components:
           - $ref: '#/components/schemas/ServiceVersion'
           - description: The version of the dependent service.
       description: The name and version of the service dependant on the requested service.
+    JobId:
+      type: string
+      pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 39
+      maxLength: 39
+    GetSnowballUsageResult:
+      type: object
+      example:
+        SnowballLimit: 1
+        SnowballsInUse: 0
+      properties:
+        SnowballLimit:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).
+        SnowballsInUse:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of Snow devices that this account is currently using.
+    DescribeAddressResult:
+      type: object
+      example:
+        Address:
+          AddressId: ADID5643ec50-3eec-4eb3-9be6-9374c10eb51b
+          City: Seattle
+          Company: My Company
+          Country: US
+          Name: My Name
+          PhoneNumber: 425-555-5555
+          PostalCode: '98101'
+          StateOrProvince: WA
+          Street1: 123 Main Street
+      properties:
+        Address:
+          allOf:
+          - $ref: '#/components/schemas/Address'
+          - description: The address that you want the Snow device(s) associated with a specific job to be shipped to.
+    GetJobUnlockCodeRequest:
+      type: object
+      required:
+      - JobId
+      title: GetJobUnlockCodeRequest
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+    ServiceName:
+      type: string
+      enum:
+      - KUBERNETES
+      - EKS_ANYWHERE
+    CancelJobResult:
+      type: object
+      properties: {}
+    AddressId:
+      type: string
+      pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 40
+      maxLength: 40
+    UpdateLongTermPricingResult:
+      type: object
+      properties: {}
+    Notification:
+      type: object
+      properties:
+        SnsTopicARN:
+          allOf:
+          - $ref: '#/components/schemas/SnsTopicARN'
+          - description: <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
+        JobStatesToNotify:
+          allOf:
+          - $ref: '#/components/schemas/JobStateList'
+          - description: The list of job states that will trigger a notification for this job.
+        NotifyAll:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Any change in job state will trigger a notification for this job.
+        DevicePickupSnsTopicARN:
+          allOf:
+          - $ref: '#/components/schemas/SnsTopicARN'
+          - description: Used to send SNS notifications for the person picking up the device (identified during job creation).
+      description: <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
+    ShippingOption:
+      type: string
+      enum:
+      - SECOND_DAY
+      - NEXT_DAY
+      - EXPRESS
+      - STANDARD
+    JobListEntry:
+      type: object
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        JobState:
+          allOf:
+          - $ref: '#/components/schemas/JobState'
+          - description: The current state of this job.
+        IsMaster:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.
+        JobType:
+          allOf:
+          - $ref: '#/components/schemas/JobType'
+          - description: The type of job.
+        SnowballType:
+          allOf:
+          - $ref: '#/components/schemas/SnowballType'
+          - description: The type of device used with this job.
+        CreationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The creation date for this job.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
+      description: Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
+    CreateJobResult:
+      type: object
+      example:
+        JobId: JID123e4567-e89b-12d3-a456-426655440000
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
     PickupDetails:
       type: object
       properties:
@@ -3262,76 +3552,84 @@ components:
           - $ref: '#/components/schemas/DevicePickupId'
           - description: The unique ID for a device that will be picked up.
       description: Information identifying the person picking up the device.
-    JavaBoolean:
-      type: boolean
-    LambdaResourceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LambdaResource'
-    ListClustersResult:
+    JobLogs:
       type: object
-      example:
-        ClusterListEntries:
-        - ClusterId: CID123e4567-e89b-12d3-a456-426655440000
-          ClusterState: Pending
-          CreationDate: '1480475517.0'
-          Description: MyCluster
       properties:
-        ClusterListEntries:
-          allOf:
-          - $ref: '#/components/schemas/ClusterListEntryList'
-          - description: Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.
-        NextToken:
+        JobCompletionReportURI:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.
-    ListClusterJobsRequest:
+          - description: A link to an Amazon S3 presigned URL where the job completion report is located.
+        JobSuccessLogURI:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A link to an Amazon S3 presigned URL where the job success log is located.
+        JobFailureLogURI:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A link to an Amazon S3 presigned URL where the job failure log is located.
+      description: '<p>Contains job logs. Whenever a Snow device is used to import data into or export data out of Amazon S3, you''ll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you''ll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p>'
+    TaxDocuments:
+      type: object
+      properties:
+        IND:
+          $ref: '#/components/schemas/INDTaxDocuments'
+      description: The tax documents required in your Amazon Web Services Region.
+    EKSOnDeviceServiceConfiguration:
+      type: object
+      properties:
+        KubernetesVersion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Kubernetes version for EKS Anywhere on the Snow Family device.
+        EKSAnywhereVersion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The version of EKS Anywhere on the Snow Family device.
+      description: An object representing the metadata and configuration settings of EKS Anywhere on the Snow Family device.
+    SnowballType:
+      type: string
+      enum:
+      - STANDARD
+      - EDGE
+      - EDGE_C
+      - EDGE_CG
+      - EDGE_S
+      - SNC1_HDD
+      - SNC1_SSD
+      - V3_5C
+      - V3_5S
+      - RACK_5U_C
+    DescribeReturnShippingLabelRequest:
       type: object
       required:
-      - ClusterId
-      title: ListClusterJobsRequest
+      - JobId
+      title: DescribeReturnShippingLabelRequest
       properties:
-        ClusterId:
+        JobId:
           allOf:
-          - $ref: '#/components/schemas/ClusterId'
-          - description: The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+          - $ref: '#/components/schemas/JobId'
+          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+    ClusterListEntryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ClusterListEntry'
+    LongTermPricingId:
+      type: string
+      pattern: LTPID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+      minLength: 41
+      maxLength: 41
+    ListLongTermPricingRequest:
+      type: object
+      title: ListLongTermPricingRequest
+      properties:
         MaxResults:
           allOf:
           - $ref: '#/components/schemas/ListLimit'
-          - description: The number of <code>JobListEntry</code> objects to return.
+          - description: The maximum number of <code>ListLongTermPricing</code> objects to return.
         NextToken:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
-    Ec2AmiResource:
-      type: object
-      required:
-      - AmiId
-      properties:
-        AmiId:
-          allOf:
-          - $ref: '#/components/schemas/AmiId'
-          - description: The ID of the AMI in Amazon EC2.
-        SnowballAmiId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The ID of the AMI on the Snow device.
-      description: A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2-compatible AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.
-    ServiceName:
-      type: string
-      enum:
-      - KUBERNETES
-      - EKS_ANYWHERE
-    DescribeAddressRequest:
-      type: object
-      required:
-      - AddressId
-      title: DescribeAddressRequest
-      properties:
-        AddressId:
-          allOf:
-          - $ref: '#/components/schemas/AddressId'
-          - description: The automatically generated ID for a specific address.
+          - description: Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.
     ClusterMetadata:
       type: object
       properties:
@@ -3396,167 +3694,38 @@ components:
           - $ref: '#/components/schemas/OnDeviceServiceConfiguration'
           - description: Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.
       description: Contains metadata about a specific cluster.
-    GetSnowballUsageRequest:
-      type: object
-      title: GetSnowballUsageRequest
-      properties: {}
-    TargetOnDeviceService:
+    CreateReturnShippingLabelResult:
       type: object
       properties:
-        ServiceName:
+        Status:
           allOf:
-          - $ref: '#/components/schemas/DeviceServiceName'
-          - description: Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.
-        TransferOption:
-          allOf:
-          - $ref: '#/components/schemas/TransferOption'
-          - description: Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.
-      description: An object that represents the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).
-    KMSRequestFailedException: {}
-    TransferOption:
-      type: string
-      enum:
-      - IMPORT
-      - EXPORT
-      - LOCAL_USE
-    InvalidInputCombinationException: {}
-    DescribeJobRequest:
-      type: object
-      required:
-      - JobId
-      title: DescribeJobRequest
-      properties:
-        JobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-    JobListEntryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobListEntry'
-    NFSOnDeviceServiceConfiguration:
-      type: object
-      properties:
-        StorageLimit:
-          allOf:
-          - $ref: '#/components/schemas/StorageLimit'
-          - description: The maximum NFS storage for one Snow Family device.
-        StorageUnit:
-          allOf:
-          - $ref: '#/components/schemas/StorageUnit'
-          - description: '<p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>'
-      description: An object that represents the metadata and configuration settings for the NFS (Network File System) service on an Amazon Web Services Snow Family device.
-    CreateAddressResult:
+          - $ref: '#/components/schemas/ShippingLabelStatus'
+          - description: The status information of the task on a Snow device that is being returned to Amazon Web Services.
+    DescribeClusterResult:
       type: object
       example:
-        AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
+        ClusterMetadata:
+          AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
+          ClusterId: CID123e4567-e89b-12d3-a456-426655440000
+          ClusterState: Pending
+          CreationDate: '1480475517.0'
+          Description: MyCluster
+          JobType: LOCAL_USE
+          KmsKeyARN: arn:aws:kms:us-east-1:123456789012:key/abcd1234-12ab-34cd-56ef-123456123456
+          Notification:
+            JobStatesToNotify: []
+            NotifyAll: false
+          Resources:
+            S3Resources:
+            - BucketArn: arn:aws:s3:::MyBucket
+              KeyRange: {}
+          RoleARN: arn:aws:iam::123456789012:role/snowball-import-S3-role
+          ShippingOption: SECOND_DAY
       properties:
-        AddressId:
+        ClusterMetadata:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.
-    CancelJobRequest:
-      type: object
-      required:
-      - JobId
-      title: CancelJobRequest
-      properties:
-        JobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-    PhoneNumber:
-      type: string
-      pattern: '^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$'
-      minLength: 7
-      maxLength: 30
-      format: password
-    WirelessConnection:
-      type: object
-      properties:
-        IsWifiEnabled:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Enables the Wi-Fi adapter on an Snowcone device.
-      description: Configures the wireless connection on an Snowcone device.
-    NodeFaultTolerance:
-      type: integer
-      minimum: 1
-      maximum: 4
-    UpdateLongTermPricingRequest:
-      type: object
-      required:
-      - LongTermPricingId
-      title: UpdateLongTermPricingRequest
-      properties:
-        LongTermPricingId:
-          allOf:
-          - $ref: '#/components/schemas/LongTermPricingId'
-          - description: The ID of the long-term pricing type for the device.
-        ReplacementJob:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: Specifies that a device that is ordered with long-term pricing should be replaced with a new device.
-        IsLongTermPricingAutoRenew:
-          allOf:
-          - $ref: '#/components/schemas/JavaBoolean'
-          - description: If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.
-    GetSoftwareUpdatesRequest:
-      type: object
-      required:
-      - JobId
-      title: GetSoftwareUpdatesRequest
-      properties:
-        JobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-    JobId:
-      type: string
-      pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 39
-      maxLength: 39
-    CreateReturnShippingLabelRequest:
-      type: object
-      required:
-      - JobId
-      title: CreateReturnShippingLabelRequest
-      properties:
-        JobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-        ShippingOption:
-          allOf:
-          - $ref: '#/components/schemas/ShippingOption'
-          - description: 'The shipping speed for a particular job. This speed doesn''t dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:'
-    ReturnShippingLabelAlreadyExistsException: {}
-    TargetOnDeviceServiceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/TargetOnDeviceService'
-    ListPickupLocationsResult:
-      type: object
-      example:
-        Addresses:
-        - AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
-          City: Seattle
-          Company: My Company
-          Country: US
-          Name: My Name
-          PhoneNumber: 425-555-5555
-          PostalCode: '98101'
-          StateOrProvince: WA
-          Street1: 123 Main Street
-      properties:
-        Addresses:
-          allOf:
-          - $ref: '#/components/schemas/AddressList'
-          - description: Information about the address of pickup locations.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>ListPickupLocationsResult</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
+          - $ref: '#/components/schemas/ClusterMetadata'
+          - description: Information about a specific cluster, including shipping information, cluster status, and other important metadata.
     CreateLongTermPricingRequest:
       type: object
       required:
@@ -3576,84 +3745,80 @@ components:
           allOf:
           - $ref: '#/components/schemas/SnowballType'
           - description: The type of Snow Family devices to use for the long-term pricing job.
-    EventTriggerDefinitionList:
+    DescribeAddressesRequest:
+      type: object
+      title: DescribeAddressesRequest
+      properties:
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/ListLimit'
+          - description: The number of <code>ADDRESS</code> objects to return.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.
+    LongTermPricingAssociatedJobIdList:
       type: array
       items:
-        $ref: '#/components/schemas/EventTriggerDefinition'
-    UpdateJobRequest:
+        $ref: '#/components/schemas/JobId'
+    UpdateJobShipmentStateRequest:
       type: object
       required:
       - JobId
-      title: UpdateJobRequest
+      - ShipmentState
+      title: UpdateJobShipmentStateRequest
       properties:
         JobId:
           allOf:
           - $ref: '#/components/schemas/JobId'
-          - description: The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-        RoleARN:
+          - description: The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        ShipmentState:
           allOf:
-          - $ref: '#/components/schemas/RoleARN'
-          - description: The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.
-        Notification:
-          allOf:
-          - $ref: '#/components/schemas/Notification'
-          - description: The new or updated <a>Notification</a> object.
-        Resources:
-          allOf:
-          - $ref: '#/components/schemas/JobResource'
-          - description: 'The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. '
-        OnDeviceServiceConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/OnDeviceServiceConfiguration'
-          - description: Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.
-        AddressId:
-          allOf:
-          - $ref: '#/components/schemas/AddressId'
-          - description: The ID of the updated <a>Address</a> object.
-        ShippingOption:
-          allOf:
-          - $ref: '#/components/schemas/ShippingOption'
-          - description: The updated shipping option value of this job's <a>ShippingDetails</a> object.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The updated description of this job's <a>JobMetadata</a> object.
-        SnowballCapacityPreference:
-          allOf:
-          - $ref: '#/components/schemas/SnowballCapacity'
-          - description: <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US regions.</p> <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        ForwardingAddressId:
-          allOf:
-          - $ref: '#/components/schemas/AddressId'
-          - description: The updated ID for the forwarding address for a job. This field is not supported in most regions.
-        PickupDetails:
-          $ref: '#/components/schemas/PickupDetails'
-    StorageUnit:
-      type: string
-      enum:
-      - TB
-    ListServiceVersionsRequest:
+          - $ref: '#/components/schemas/ShipmentState'
+          - description: <p>The state of a device when it is being shipped. </p> <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p> <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
+    S3OnDeviceServiceConfiguration:
       type: object
-      required:
-      - ServiceName
-      title: ListServiceVersionsRequest
       properties:
-        ServiceName:
+        StorageLimit:
           allOf:
-          - $ref: '#/components/schemas/ServiceName'
-          - description: The name of the service for which you're requesting supported versions.
-        DependentServices:
+          - $ref: '#/components/schemas/S3StorageLimit'
+          - description: If the specified storage limit value matches storage limit of one of the defined configurations, that configuration will be used. If the specified storage limit value does not match any defined configuration, the request will fail. If more than one configuration has the same storage limit as specified, the other input need to be provided.
+        StorageUnit:
           allOf:
-          - $ref: '#/components/schemas/DependentServiceList'
-          - description: A list of names and versions of dependant services of the requested service.
+          - $ref: '#/components/schemas/StorageUnit'
+          - description: Storage unit. Currently the only supported unit is TB.
+        ServiceSize:
+          allOf:
+          - $ref: '#/components/schemas/ServiceSize'
+          - description: Applicable when creating a cluster. Specifies how many nodes are needed for Amazon S3 compatible storage on Snow family devices. If specified, the other input can be omitted.
+        FaultTolerance:
+          allOf:
+          - $ref: '#/components/schemas/NodeFaultTolerance'
+          - description: '&gt;Fault tolerance level of the cluster. This indicates the number of nodes that can go down without degrading the performance of the cluster. This additional input helps when the specified <code>StorageLimit</code> matches more than one Amazon S3 compatible storage on Snow family devices service configuration.'
+      description: Amazon S3 compatible storage on Snow family devices configuration items.
+    StorageLimit:
+      type: integer
+      minimum: 0
+    ListJobsRequest:
+      type: object
+      title: ListJobsRequest
+      properties:
         MaxResults:
           allOf:
           - $ref: '#/components/schemas/ListLimit'
-          - description: The maximum number of <code>ListServiceVersions</code> objects to return.
+          - description: The number of <code>JobListEntry</code> objects to return.
         NextToken:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: Because HTTP requests are stateless, this is the starting point for the next list of returned <code>ListServiceVersionsRequest</code> versions.
+          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
+    EventTriggerDefinition:
+      type: object
+      properties:
+        EventResourceARN:
+          allOf:
+          - $ref: '#/components/schemas/ResourceARN'
+          - description: The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.
+      description: The container for the <a>EventTriggerDefinition$EventResourceARN</a>.
     GetJobUnlockCodeResult:
       type: object
       example:
@@ -3663,24 +3828,58 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.
-    AddressId:
-      type: string
-      pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-      minLength: 40
-      maxLength: 40
-    UpdateLongTermPricingResult:
+    SnowconeDeviceConfiguration:
       type: object
-      properties: {}
-    LongTermPricingType:
-      type: string
-      enum:
-      - OneYear
-      - ThreeYear
-      - OneMonth
-    Ec2AmiResourceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Ec2AmiResource'
+      properties:
+        WirelessConnection:
+          allOf:
+          - $ref: '#/components/schemas/WirelessConnection'
+          - description: Configures the wireless connection for the Snowcone device.
+      description: Specifies the device configuration for an Snowcone job.
+    LongTermPricingListEntry:
+      type: object
+      properties:
+        LongTermPricingId:
+          allOf:
+          - $ref: '#/components/schemas/LongTermPricingId'
+          - description: The ID of the long-term pricing type for the device.
+        LongTermPricingEndDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The end date the long-term pricing contract.
+        LongTermPricingStartDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The start date of the long-term pricing contract.
+        LongTermPricingType:
+          allOf:
+          - $ref: '#/components/schemas/LongTermPricingType'
+          - description: The type of long-term pricing that was selected for the device.
+        CurrentActiveJob:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The current active jobs on the device the long-term pricing type.
+        ReplacementJob:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: A new device that replaces a device that is ordered with long-term pricing.
+        IsLongTermPricingAutoRenew:
+          allOf:
+          - $ref: '#/components/schemas/JavaBoolean'
+          - description: If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.
+        LongTermPricingStatus:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The status of the long-term pricing type.
+        SnowballType:
+          allOf:
+          - $ref: '#/components/schemas/SnowballType'
+          - description: The type of Snow Family devices associated with this long-term pricing job.
+        JobIds:
+          allOf:
+          - $ref: '#/components/schemas/LongTermPricingAssociatedJobIdList'
+          - description: The IDs of the jobs that are associated with a long-term pricing type.
+      description: Each <code>LongTermPricingListEntry</code> object contains information about a long-term pricing type.
     Address:
       type: object
       properties:
@@ -3745,248 +3944,6 @@ components:
           - $ref: '#/components/schemas/AddressType'
           - description: Differentiates between delivery address and pickup address in the customer account. Provided at job creation.
       description: The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.
-    ShipmentState:
-      type: string
-      enum:
-      - RECEIVED
-      - RETURNED
-    InvalidResourceException: {}
-    ListCompatibleImagesResult:
-      type: object
-      properties:
-        CompatibleImages:
-          allOf:
-          - $ref: '#/components/schemas/CompatibleImageList'
-          - description: A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Because HTTP requests are stateless, this is the starting point for your next list of returned images.
-    ShippingLabelStatus:
-      type: string
-      enum:
-      - InProgress
-      - TimedOut
-      - Succeeded
-      - Failed
-    GetSnowballUsageResult:
-      type: object
-      example:
-        SnowballLimit: 1
-        SnowballsInUse: 0
-      properties:
-        SnowballLimit:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).
-        SnowballsInUse:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of Snow devices that this account is currently using.
-    DescribeAddressResult:
-      type: object
-      example:
-        Address:
-          AddressId: ADID5643ec50-3eec-4eb3-9be6-9374c10eb51b
-          City: Seattle
-          Company: My Company
-          Country: US
-          Name: My Name
-          PhoneNumber: 425-555-5555
-          PostalCode: '98101'
-          StateOrProvince: WA
-          Street1: 123 Main Street
-      properties:
-        Address:
-          allOf:
-          - $ref: '#/components/schemas/Address'
-          - description: The address that you want the Snow device(s) associated with a specific job to be shipped to.
-    S3OnDeviceServiceConfiguration:
-      type: object
-      properties:
-        StorageLimit:
-          allOf:
-          - $ref: '#/components/schemas/S3StorageLimit'
-          - description: If the specified storage limit value matches storage limit of one of the defined configurations, that configuration will be used. If the specified storage limit value does not match any defined configuration, the request will fail. If more than one configuration has the same storage limit as specified, the other input need to be provided.
-        StorageUnit:
-          allOf:
-          - $ref: '#/components/schemas/StorageUnit'
-          - description: Storage unit. Currently the only supported unit is TB.
-        ServiceSize:
-          allOf:
-          - $ref: '#/components/schemas/ServiceSize'
-          - description: Applicable when creating a cluster. Specifies how many nodes are needed for Amazon S3 compatible storage on Snow family devices. If specified, the other input can be omitted.
-        FaultTolerance:
-          allOf:
-          - $ref: '#/components/schemas/NodeFaultTolerance'
-          - description: '&gt;Fault tolerance level of the cluster. This indicates the number of nodes that can go down without degrading the performance of the cluster. This additional input helps when the specified <code>StorageLimit</code> matches more than one Amazon S3 compatible storage on Snow family devices service configuration.'
-      description: Amazon S3 compatible storage on Snow family devices configuration items.
-    CancelClusterResult:
-      type: object
-      properties: {}
-    AddressType:
-      type: string
-      enum:
-      - CUST_PICKUP
-      - AWS_SHIP
-    JobMetadataList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobMetadata'
-    ClusterListEntry:
-      type: object
-      properties:
-        ClusterId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
-        ClusterState:
-          allOf:
-          - $ref: '#/components/schemas/ClusterState'
-          - description: The current state of this cluster. For information about the state of a specific node, see <a>JobListEntry$JobState</a>.
-        CreationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The creation date for this cluster.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.
-      description: Contains a cluster's state, a cluster's ID, and other important information.
-    Long:
-      type: integer
-    DeviceConfiguration:
-      type: object
-      properties:
-        SnowconeDeviceConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/SnowconeDeviceConfiguration'
-          - description: Returns information about the device configuration for an Snowcone job.
-      description: 'The container for <code>SnowconeDeviceConfiguration</code>. '
-    Timestamp:
-      type: string
-      format: date-time
-    ConflictException: {}
-    ResourceARN:
-      type: string
-      pattern: arn:aws.*:*
-      maxLength: 255
-    JobResource:
-      type: object
-      properties:
-        S3Resources:
-          allOf:
-          - $ref: '#/components/schemas/S3ResourceList'
-          - description: An array of <code>S3Resource</code> objects.
-        LambdaResources:
-          allOf:
-          - $ref: '#/components/schemas/LambdaResourceList'
-          - description: The Python-language Lambda functions for this job.
-        Ec2AmiResources:
-          allOf:
-          - $ref: '#/components/schemas/Ec2AmiResourceList'
-          - description: The Amazon Machine Images (AMIs) associated with this job.
-      description: Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
-    UpdateJobShipmentStateRequest:
-      type: object
-      required:
-      - JobId
-      - ShipmentState
-      title: UpdateJobShipmentStateRequest
-      properties:
-        JobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-        ShipmentState:
-          allOf:
-          - $ref: '#/components/schemas/ShipmentState'
-          - description: <p>The state of a device when it is being shipped. </p> <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p> <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
-    INDTaxDocuments:
-      type: object
-      properties:
-        GSTIN:
-          allOf:
-          - $ref: '#/components/schemas/GSTIN'
-          - description: The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.
-      description: The tax documents required in Amazon Web Services Region in India.
-    UpdateJobResult:
-      type: object
-      properties: {}
-    ShippingDetails:
-      type: object
-      properties:
-        ShippingOption:
-          allOf:
-          - $ref: '#/components/schemas/ShippingOption'
-          - description: <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p> <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> </ul>
-        InboundShipment:
-          allOf:
-          - $ref: '#/components/schemas/Shipment'
-          - description: The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.
-        OutboundShipment:
-          allOf:
-          - $ref: '#/components/schemas/Shipment'
-          - description: The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.
-      description: A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.
-    LongTermPricingEntryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LongTermPricingListEntry'
-    SnsTopicARN:
-      type: string
-      pattern: arn:aws.*:sns:.*:[0-9]{12}:.*
-      maxLength: 255
-    S3ResourceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/S3Resource'
-    InvalidAddressException: {}
-    DescribeClusterResult:
-      type: object
-      example:
-        ClusterMetadata:
-          AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
-          ClusterId: CID123e4567-e89b-12d3-a456-426655440000
-          ClusterState: Pending
-          CreationDate: '1480475517.0'
-          Description: MyCluster
-          JobType: LOCAL_USE
-          KmsKeyARN: arn:aws:kms:us-east-1:123456789012:key/abcd1234-12ab-34cd-56ef-123456123456
-          Notification:
-            JobStatesToNotify: []
-            NotifyAll: false
-          Resources:
-            S3Resources:
-            - BucketArn: arn:aws:s3:::MyBucket
-              KeyRange: {}
-          RoleARN: arn:aws:iam::123456789012:role/snowball-import-S3-role
-          ShippingOption: SECOND_DAY
-      properties:
-        ClusterMetadata:
-          allOf:
-          - $ref: '#/components/schemas/ClusterMetadata'
-          - description: Information about a specific cluster, including shipping information, cluster status, and other important metadata.
-    ClusterState:
-      type: string
-      enum:
-      - AwaitingQuorum
-      - Pending
-      - InUse
-      - Complete
-      - Cancelled
-    CompatibleImage:
-      type: object
-      properties:
-        AmiId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The unique identifier for an individual Snow device AMI.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The optional name of a compatible image.
-      description: A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snow device AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.
     CreateJobRequest:
       type: object
       title: CreateJobRequest
@@ -4067,120 +4024,263 @@ components:
           allOf:
           - $ref: '#/components/schemas/PickupDetails'
           - description: Information identifying the person picking up the device.
-    EventTriggerDefinition:
+    DeviceConfiguration:
       type: object
       properties:
-        EventResourceARN:
+        SnowconeDeviceConfiguration:
           allOf:
-          - $ref: '#/components/schemas/ResourceARN'
-          - description: The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.
-      description: The container for the <a>EventTriggerDefinition$EventResourceARN</a>.
-    UnsupportedAddressException: {}
-    InitialClusterSize:
-      type: integer
-      minimum: 0
-      maximum: 16
-    GSTIN:
-      type: string
-      pattern: \d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}
-      minLength: 15
-      maxLength: 15
-    ListCompatibleImagesRequest:
+          - $ref: '#/components/schemas/SnowconeDeviceConfiguration'
+          - description: Returns information about the device configuration for an Snowcone job.
+      description: 'The container for <code>SnowconeDeviceConfiguration</code>. '
+    CancelJobRequest:
       type: object
-      title: ListCompatibleImagesRequest
-      properties:
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/ListLimit'
-          - description: The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.
-    LongTermPricingAssociatedJobIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobId'
-    ClusterListEntryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ClusterListEntry'
-    JobListEntry:
-      type: object
+      required:
+      - JobId
+      title: CancelJobRequest
       properties:
         JobId:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-        JobState:
-          allOf:
-          - $ref: '#/components/schemas/JobState'
-          - description: The current state of this job.
-        IsMaster:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.
-        JobType:
-          allOf:
-          - $ref: '#/components/schemas/JobType'
-          - description: The type of job.
-        SnowballType:
-          allOf:
-          - $ref: '#/components/schemas/SnowballType'
-          - description: The type of device used with this job.
-        CreationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The creation date for this job.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
-      description: Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
-    LongTermPricingListEntry:
+          - $ref: '#/components/schemas/JobId'
+          - description: The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+    CreateLongTermPricingResult:
       type: object
       properties:
         LongTermPricingId:
           allOf:
           - $ref: '#/components/schemas/LongTermPricingId'
           - description: The ID of the long-term pricing type for the device.
-        LongTermPricingEndDate:
+    LambdaResource:
+      type: object
+      properties:
+        LambdaArn:
           allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The end date the long-term pricing contract.
-        LongTermPricingStartDate:
+          - $ref: '#/components/schemas/ResourceARN'
+          - description: An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.
+        EventTriggers:
           allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The start date of the long-term pricing contract.
-        LongTermPricingType:
+          - $ref: '#/components/schemas/EventTriggerDefinitionList'
+          - description: The array of ARNs for <a>S3Resource</a> objects to trigger the <a>LambdaResource</a> objects associated with this job.
+      description: 'Identifies '
+    ClusterState:
+      type: string
+      enum:
+      - AwaitingQuorum
+      - Pending
+      - InUse
+      - Complete
+      - Cancelled
+    RemoteManagement:
+      type: string
+      enum:
+      - INSTALLED_ONLY
+      - INSTALLED_AUTOSTART
+      - NOT_INSTALLED
+    LongTermPricingEntryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LongTermPricingListEntry'
+    JobListEntryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobListEntry'
+    Integer:
+      type: integer
+    ShippingDetails:
+      type: object
+      properties:
+        ShippingOption:
           allOf:
-          - $ref: '#/components/schemas/LongTermPricingType'
-          - description: The type of long-term pricing that was selected for the device.
-        CurrentActiveJob:
+          - $ref: '#/components/schemas/ShippingOption'
+          - description: <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p> <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> </ul>
+        InboundShipment:
           allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The current active jobs on the device the long-term pricing type.
-        ReplacementJob:
+          - $ref: '#/components/schemas/Shipment'
+          - description: The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.
+        OutboundShipment:
           allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: A new device that replaces a device that is ordered with long-term pricing.
-        IsLongTermPricingAutoRenew:
+          - $ref: '#/components/schemas/Shipment'
+          - description: The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.
+      description: A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.
+    ListCompatibleImagesResult:
+      type: object
+      properties:
+        CompatibleImages:
           allOf:
-          - $ref: '#/components/schemas/JavaBoolean'
-          - description: If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.
-        LongTermPricingStatus:
+          - $ref: '#/components/schemas/CompatibleImageList'
+          - description: A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.
+        NextToken:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The status of the long-term pricing type.
-        SnowballType:
+          - description: Because HTTP requests are stateless, this is the starting point for your next list of returned images.
+    ListClusterJobsRequest:
+      type: object
+      required:
+      - ClusterId
+      title: ListClusterJobsRequest
+      properties:
+        ClusterId:
           allOf:
-          - $ref: '#/components/schemas/SnowballType'
-          - description: The type of Snow Family devices associated with this long-term pricing job.
-        JobIds:
+          - $ref: '#/components/schemas/ClusterId'
+          - description: The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        MaxResults:
           allOf:
-          - $ref: '#/components/schemas/LongTermPricingAssociatedJobIdList'
-          - description: The IDs of the jobs that are associated with a long-term pricing type.
-      description: Each <code>LongTermPricingListEntry</code> object contains information about a long-term pricing type.
+          - $ref: '#/components/schemas/ListLimit'
+          - description: The number of <code>JobListEntry</code> objects to return.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
+    ClusterListEntry:
+      type: object
+      properties:
+        ClusterId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        ClusterState:
+          allOf:
+          - $ref: '#/components/schemas/ClusterState'
+          - description: The current state of this cluster. For information about the state of a specific node, see <a>JobListEntry$JobState</a>.
+        CreationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The creation date for this cluster.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.
+      description: Contains a cluster's state, a cluster's ID, and other important information.
+    CreateClusterResult:
+      type: object
+      example:
+        ClusterId: CID123e4567-e89b-12d3-a456-426655440000
+      properties:
+        ClusterId:
+          allOf:
+          - $ref: '#/components/schemas/ClusterId'
+          - description: The automatically generated ID for a cluster.
+        JobListEntries:
+          allOf:
+          - $ref: '#/components/schemas/JobListEntryList'
+          - description: List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.
+    RoleARN:
+      type: string
+      pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+      maxLength: 255
+    ListJobsResult:
+      type: object
+      example:
+        JobListEntries:
+        - CreationDate: '1460678186.0'
+          Description: MyJob
+          IsMaster: false
+          JobId: JID123e4567-e89b-12d3-a456-426655440000
+          JobState: New
+          JobType: IMPORT
+          SnowballType: STANDARD
+      properties:
+        JobListEntries:
+          allOf:
+          - $ref: '#/components/schemas/JobListEntryList'
+          - description: 'Each <code>JobListEntry</code> object contains a job''s state, a job''s ID, and a value that indicates whether the job is a job part, in the case of export jobs. '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.
+    CancelClusterResult:
+      type: object
+      properties: {}
+    DependentServiceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DependentService'
+    ServiceVersionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ServiceVersion'
+    JobStateList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobState'
+    ServiceSize:
+      type: integer
+      minimum: 3
+      maximum: 16
+    S3ResourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/S3Resource'
+    ImpactLevel:
+      type: string
+      enum:
+      - IL2
+      - IL4
+      - IL5
+      - IL6
+      - IL99
+    GetSnowballUsageRequest:
+      type: object
+      title: GetSnowballUsageRequest
+      properties: {}
+    DescribeAddressesResult:
+      type: object
+      example:
+        Addresses:
+        - AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
+          City: Seattle
+          Company: My Company
+          Country: US
+          Name: My Name
+          PhoneNumber: 425-555-5555
+          PostalCode: '98101'
+          StateOrProvince: WA
+          Street1: 123 Main Street
+      properties:
+        Addresses:
+          allOf:
+          - $ref: '#/components/schemas/AddressList'
+          - description: The Snow device shipping addresses that were created for this account.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.
+    LongTermPricingType:
+      type: string
+      enum:
+      - OneYear
+      - ThreeYear
+      - OneMonth
+    GetSoftwareUpdatesRequest:
+      type: object
+      required:
+      - JobId
+      title: GetSoftwareUpdatesRequest
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/JobId'
+          - description: The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+    CompatibleImageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CompatibleImage'
+    ClusterLimitExceededException: {}
+    String:
+      type: string
+      pattern: .*
+      minLength: 1
+      maxLength: 1024
+    ListLongTermPricingResult:
+      type: object
+      properties:
+        LongTermPricingEntries:
+          allOf:
+          - $ref: '#/components/schemas/LongTermPricingEntryList'
+          - description: 'Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.
     ListClusterJobsResult:
       type: object
       example:
@@ -4229,15 +4329,12 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.
-    GetJobManifestResult:
-      type: object
-      example:
-        ManifestURI: https://awsie-frosty-manifests-prod.s3.amazonaws.com/JID123e4567-e89b-12d3-a456-426655440000_manifest.bin?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20161224T005115Z&X-Amz-SignedHeaders=...
-      properties:
-        ManifestURI:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.
+    AddressType:
+      type: string
+      enum:
+      - CUST_PICKUP
+      - AWS_SHIP
+    InvalidAddressException: {}
     GetSoftwareUpdatesResult:
       type: object
       properties:
@@ -4245,104 +4342,31 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.
-    JobStateList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobState'
-    CreateReturnShippingLabelResult:
-      type: object
-      properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/ShippingLabelStatus'
-          - description: The status information of the task on a Snow device that is being returned to Amazon Web Services.
-    AddressList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Address'
-    DescribeAddressesResult:
-      type: object
-      example:
-        Addresses:
-        - AddressId: ADID1234ab12-3eec-4eb3-9be6-9374c10eb51b
-          City: Seattle
-          Company: My Company
-          Country: US
-          Name: My Name
-          PhoneNumber: 425-555-5555
-          PostalCode: '98101'
-          StateOrProvince: WA
-          Street1: 123 Main Street
-      properties:
-        Addresses:
-          allOf:
-          - $ref: '#/components/schemas/AddressList'
-          - description: The Snow device shipping addresses that were created for this account.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.
-    GetJobManifestRequest:
-      type: object
-      required:
-      - JobId
-      title: GetJobManifestRequest
-      properties:
-        JobId:
-          allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
-    ShippingOption:
-      type: string
-      enum:
-      - SECOND_DAY
-      - NEXT_DAY
-      - EXPRESS
-      - STANDARD
-    ServiceSize:
-      type: integer
-      minimum: 3
-      maximum: 16
-    DescribeReturnShippingLabelResult:
-      type: object
-      properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/ShippingLabelStatus'
-          - description: The status information of the task on a Snow device that is being returned to Amazon Web Services.
-        ExpirationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The expiration date of the current return shipping label.
-        ReturnShippingLabelURI:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The pre-signed Amazon S3 URI used to download the return shipping label.
-    ListClustersRequest:
-      type: object
-      title: ListClustersRequest
-      properties:
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/ListLimit'
-          - description: The number of <code>ClusterListEntry</code> objects to return.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.
-    ImpactLevel:
-      type: string
-      enum:
-      - IL2
-      - IL4
-      - IL5
-      - IL6
-      - IL99
-    CompatibleImageList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CompatibleImage'
   parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
@@ -4355,32 +4379,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
