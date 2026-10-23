@@ -10,167 +10,167 @@ artifacts:
     method: derived
     evidence: declared in the artifact
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api
+  : method: unknown
+    evidence: no authorship recorded
   examples/amazon-snow-family-address-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -1098,127 +1098,7 @@ artifacts:
   json-structure/amazon-snow-family-wireless-connection-structure.json:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T125852.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T133943.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T143147.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T154045.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-26T215308.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T094438.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T103455.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T123021.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T132314.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T140727.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-28T221322.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T213958.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T230545.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T203505.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T220315.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-31T223420.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T063623.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T210448.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T222808.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T224043.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T161828.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T174231.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T062714.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T212454.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T224856.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T055819.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T144739.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T195450.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T211839.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T011047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T224210.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T200636.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T213054.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T214843.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T232836.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T204815.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T222408.yml:
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-12T062655.yml:
@@ -1302,175 +1182,112 @@ artifacts:
   kin/score-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   openapi/_original/amazon-snow-family.yaml:
     method: harvested
     evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
       to the provider's source is unverified
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api-openapi.yml:
+  openapi/amazon-snow-family-amazon-import-export-snowball-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   plans/amazon-snow-family-plans-pricing.yml:
     method: generated
     evidence: declared in the artifact
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejobshipmentstate-api
+  : method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatelongtermpricing-api
+  : method: unknown
+    evidence: no authorship recorded
   rate-limits/amazon-snow-family-rate-limits.yml:
     method: generated
     evidence: declared in the artifact
