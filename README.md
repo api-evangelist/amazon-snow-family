@@ -1,4 +1,4 @@
-# Amazon Snow Family (amazon-snow-family)
+# Amazon Snow Family
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,127 +64,262 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-The Amazon Snow Family is a collection of physical devices that migrate large amounts of data into and out of AWS and run compute at the edge.
+AWS Snow Family is a collection of physical devices and capacity points that help customers with data transfers in and out of AWS when network capacity is limited or unavailable. It includes Snowcone, Snowball, and Snowmobile devices for edge computing and offline data migration.
 
-**URL:** [https://aws.amazon.com/snowball/](https://aws.amazon.com/snowball/)
+**Areas:** AWS · Data Migration · Edge Computing · Offline Transfer · Physical Appliance
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon Snow Family on APIs.io
 
-## Tags:
+Everything profiled for Amazon Snow Family is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-snow-family/](https://apis.io/providers/amazon-snow-family/)** — or go straight to one of the APIs or properties below.
 
- - AWS, Edge Computing, Data Transfer, Data Migration, Hybrid Cloud
+### APIs (1)
 
-## Timestamps
+- [Amazon Snow Family Amazon Import/Export Snowball API](https://apis.io/apis/amazon-snow-family/amazon-snow-family-amazon-import-export-snowball-api/) — The Amazon Import/Export Snowball API from Amazon Snow Family — 27 operation(s) for amazon import/export snowball.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon Snow Family API
+#### Agentic access (1)
 
-The Amazon Snow Family is a collection of physical devices that migrate large amounts of data into and out of AWS and run compute at the edge.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-**Human URL:** [https://aws.amazon.com/snowball/](https://aws.amazon.com/snowball/)
+- [Amazon Snow Family Agentic Access](https://apis.io/agentic-access/amazon-snow-family/amazon-snow-family-agentic-access/)
 
-#### Tags:
+#### JSON Schema (102)
 
- - Data Transfer, Edge Computing, Hybrid Cloud
+The data models the API reads and writes.
 
-#### Properties
+- [Address](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-address/)
+- [AddressType](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-address-type/)
+- [CancelClusterRequest](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-cancel-cluster-request/)
+- [CancelClusterResult](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-cancel-cluster-result/)
+- [CancelJobRequest](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-cancel-job-request/)
+- [CancelJobResult](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-cancel-job-result/)
+- [ClusterListEntry](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-cluster-list-entry/)
+- [ClusterMetadata](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-cluster-metadata/)
+- [ClusterState](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-cluster-state/)
+- [CompatibleImage](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-compatible-image/)
+- [CreateAddressRequest](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-create-address-request/)
+- [CreateAddressResult](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-create-address-result/)
+- [CreateClusterRequest](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-create-cluster-request/)
+- [CreateClusterResult](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-create-cluster-result/)
+- [CreateJobRequest](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-create-job-request/)
+- [CreateJobResult](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-create-job-result/)
+- [CreateLongTermPricingRequest](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-create-long-term-pricing-request/)
+- [CreateLongTermPricingResult](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-create-long-term-pricing-result/)
+- [CreateReturnShippingLabelRequest](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-create-return-shipping-label-request/)
+- [CreateReturnShippingLabelResult](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-create-return-shipping-label-result/)
+- [DataTransfer](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-data-transfer/)
+- [DependentService](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-dependent-service/)
+- [DescribeAddressRequest](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-describe-address-request/)
+- [DescribeAddressResult](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-describe-address-result/)
+- [DescribeAddressesRequest](https://apis.io/schemas/amazon-snow-family/amazon-snow-family-describe-addresses-request/)
+- …and 77 more published on APIs.io
 
+#### JSON Structure (102)
+
+Data models expressed in JSON Structure.
+
+- [Amazon Snow Family Address Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-address-structure/)
+- [Amazon Snow Family Address Type Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-address-type-structure/)
+- [Amazon Snow Family Cancel Cluster Request Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-cancel-cluster-request-structure/)
+- [Amazon Snow Family Cancel Cluster Result Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-cancel-cluster-result-structure/)
+- [Amazon Snow Family Cancel Job Request Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-cancel-job-request-structure/)
+- [Amazon Snow Family Cancel Job Result Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-cancel-job-result-structure/)
+- [Amazon Snow Family Cluster List Entry Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-cluster-list-entry-structure/)
+- [Amazon Snow Family Cluster Metadata Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-cluster-metadata-structure/)
+- [Amazon Snow Family Cluster State Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-cluster-state-structure/)
+- [Amazon Snow Family Compatible Image Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-compatible-image-structure/)
+- [Amazon Snow Family Create Address Request Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-create-address-request-structure/)
+- [Amazon Snow Family Create Address Result Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-create-address-result-structure/)
+- [Amazon Snow Family Create Cluster Request Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-create-cluster-request-structure/)
+- [Amazon Snow Family Create Cluster Result Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-create-cluster-result-structure/)
+- [Amazon Snow Family Create Job Request Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-create-job-request-structure/)
+- [Amazon Snow Family Create Job Result Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-create-job-result-structure/)
+- [Amazon Snow Family Create Long Term Pricing Request Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-create-long-term-pricing-request-structure/)
+- [Amazon Snow Family Create Long Term Pricing Result Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-create-long-term-pricing-result-structure/)
+- [Amazon Snow Family Create Return Shipping Label Request Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-create-return-shipping-label-request-structure/)
+- [Amazon Snow Family Create Return Shipping Label Result Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-create-return-shipping-label-result-structure/)
+- [Amazon Snow Family Data Transfer Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-data-transfer-structure/)
+- [Amazon Snow Family Dependent Service Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-dependent-service-structure/)
+- [Amazon Snow Family Describe Address Request Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-describe-address-request-structure/)
+- [Amazon Snow Family Describe Address Result Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-describe-address-result-structure/)
+- [Amazon Snow Family Describe Addresses Request Structure](https://apis.io/json-structure/amazon-snow-family/amazon-snow-family-describe-addresses-request-structure/)
+- …and 77 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Snow Family Context](https://apis.io/jsonld/amazon-snow-family/amazon-snow-family-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Snow Family Vocabulary](https://apis.io/vocabularies/amazon-snow-family/amazon-snow-family-vocabulary/)
+
+#### Examples (86)
+
+Example requests and responses.
+
+- [Amazon Snow Family Address Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-address-example/)
+- [Amazon Snow Family Cancel Cluster Request Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-cancel-cluster-request-example/)
+- [Amazon Snow Family Cancel Cluster Result Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-cancel-cluster-result-example/)
+- [Amazon Snow Family Cancel Job Request Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-cancel-job-request-example/)
+- [Amazon Snow Family Cancel Job Result Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-cancel-job-result-example/)
+- [Amazon Snow Family Cluster List Entry Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-cluster-list-entry-example/)
+- [Amazon Snow Family Cluster Metadata Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-cluster-metadata-example/)
+- [Amazon Snow Family Compatible Image Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-compatible-image-example/)
+- [Amazon Snow Family Create Address Request Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-create-address-request-example/)
+- [Amazon Snow Family Create Address Result Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-create-address-result-example/)
+- [Amazon Snow Family Create Cluster Request Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-create-cluster-request-example/)
+- [Amazon Snow Family Create Cluster Result Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-create-cluster-result-example/)
+- [Amazon Snow Family Create Job Request Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-create-job-request-example/)
+- [Amazon Snow Family Create Job Result Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-create-job-result-example/)
+- [Amazon Snow Family Create Long Term Pricing Request Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-create-long-term-pricing-request-example/)
+- [Amazon Snow Family Create Long Term Pricing Result Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-create-long-term-pricing-result-example/)
+- [Amazon Snow Family Create Return Shipping Label Request Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-create-return-shipping-label-request-example/)
+- [Amazon Snow Family Create Return Shipping Label Result Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-create-return-shipping-label-result-example/)
+- [Amazon Snow Family Data Transfer Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-data-transfer-example/)
+- [Amazon Snow Family Dependent Service Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-dependent-service-example/)
+- [Amazon Snow Family Describe Address Request Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-describe-address-request-example/)
+- [Amazon Snow Family Describe Address Result Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-describe-address-result-example/)
+- [Amazon Snow Family Describe Addresses Request Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-describe-addresses-request-example/)
+- [Amazon Snow Family Describe Addresses Result Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-describe-addresses-result-example/)
+- [Amazon Snow Family Describe Cluster Request Example](https://apis.io/examples/amazon-snow-family/amazon-snow-family-describe-cluster-request-example/)
+- …and 61 more published on APIs.io
+
+#### Collections (54)
+
+Postman and Open Collection request collections.
+
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-cancelcluster-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelJob API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-canceljob-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateAddress API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createaddress-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateCluster API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createcluster-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateJob API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createjob-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateLongTermPricing API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createlongtermpricing-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CreateReturnShippingLabel API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-createreturnshippinglabel-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.DescribeAddress API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddress-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.DescribeAddresses API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describeaddresses-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.DescribeCluster API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describecluster-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.DescribeJob API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describejob-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.DescribeReturnShippingLabel API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-describereturnshippinglabel-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.GetJobManifest API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobmanifest-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.GetJobUnlockCode API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getjobunlockcode-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.GetSnowballUsage API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsnowballusage-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.GetSoftwareUpdates API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-getsoftwareupdates-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListClusterJobs API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusterjobs-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListClusters API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listclusters-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListCompatibleImages API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listcompatibleimages-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListJobs API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listjobs-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListLongTermPricing API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listlongtermpricing-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListPickupLocations API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listpickuplocations-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.ListServiceVersions API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-listserviceversions-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.UpdateCluster API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatecluster-api/)
+- [Amazon Import/Export Snowball #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.CancelCluster #X Amz Target=AWSIESnowballJobManagementService.UpdateJob API](https://apis.io/collections/amazon-snow-family/open-amazon-snow-family-x-amz-target-awsiesnowballjobmanagementservice-updatejob-api/)
+- …and 29 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Snow Family — jsonschema rules](https://apis.io/rules/amazon-snow-family/amazon-snow-family-jsonschema-spectral-rules/)
+- [Amazon Snow Family API Rules](https://apis.io/rules/amazon-snow-family/amazon-snow-family-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Snow Family Authentication](https://apis.io/security/amazon-snow-family/amazon-snow-family-authentication/)
+- [Amazon Snow Family Domain Security](https://apis.io/security/amazon-snow-family/amazon-snow-family-domain-security/)
+- [Amazon Snow Family Trust Center](https://apis.io/security/amazon-snow-family/amazon-snow-family-trust-center/)
+- [Amazon Snow Family Vulnerability Disclosure](https://apis.io/security/amazon-snow-family/amazon-snow-family-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Snow Family Plans Pricing](https://apis.io/plans/amazon-snow-family/amazon-snow-family-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Snow Family Rate Limits](https://apis.io/rate-limits/amazon-snow-family/amazon-snow-family-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Snow Family Finops](https://apis.io/finops/amazon-snow-family/amazon-snow-family-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/snowball/)
 - [Documentation](https://docs.aws.amazon.com/snowball/latest/developer-guide/api-reference.html)
-- [OpenAPI](openapi/amazon-snow-family.yaml)
-- [GettingStarted](https://aws.amazon.com/snowball/)
-- [Pricing](https://aws.amazon.com/snowball/pricing/)
+- [Support](https://aws.amazon.com/premiumsupport/)
+- [Blog](https://aws.amazon.com/blogs/storage/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Common Properties
+## API Evangelist rating
 
-- [Portal](https://aws.amazon.com/snowball/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
-- [GitHubOrganization](https://github.com/aws)
-- [StatusPage](https://health.aws.amazon.com/health/status)
+**Kin Score 53.2** — developing · rubric 0.25.0 · scored 2026-10-23
 
-## Features
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 62.0 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 54.3 |
+| Access clarity | 53.9 |
 
-| Name | Description |
-|------|-------------|
-| Petabyte-scale Data Transfer | Transfer large datasets to AWS using physical devices. |
-| Edge Computing | Run compute workloads at the edge with Snowball Edge and Snowcone. |
-| Encryption | All data is automatically encrypted with 256-bit encryption. |
+**Agent readiness 31.9** — agent-ready
 
-## Use Cases
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| Large Data Migration | Migrate terabytes to petabytes of data to AWS. |
-| Disconnected Edge Computing | Run AWS compute in environments with no internet connectivity. |
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
-## Integrations
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-snow-family/](https://apis.io/providers/amazon-snow-family/).
 
-| Name | Description |
-|------|-------------|
-| Amazon S3 | Transfer data directly to S3 buckets using Snow devices. |
-| AWS IoT Greengrass | Run IoT Greengrass on Snowball Edge for edge IoT workloads. |
+## How this profile is made
 
-## Artifacts
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-Machine-readable API specifications organized by format.
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Snow Family: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### OpenAPI
+## Open an issue
 
-- [amazon-snow-family.yaml](openapi/amazon-snow-family.yaml)
-
-### JSON Schema
-
-- [amazon-snow-family-address-schema.json](json-schema/amazon-snow-family-address-schema.json)
-- [amazon-snow-family-address-type-schema.json](json-schema/amazon-snow-family-address-type-schema.json)
-- [amazon-snow-family-cancel-cluster-request-schema.json](json-schema/amazon-snow-family-cancel-cluster-request-schema.json)
-- [amazon-snow-family-cancel-cluster-result-schema.json](json-schema/amazon-snow-family-cancel-cluster-result-schema.json)
-- [amazon-snow-family-cancel-job-request-schema.json](json-schema/amazon-snow-family-cancel-job-request-schema.json)
-- ... and 97 more
-
-### JSON Structure
-
-- [amazon-snow-family-address-structure.json](json-structure/amazon-snow-family-address-structure.json)
-- [amazon-snow-family-address-type-structure.json](json-structure/amazon-snow-family-address-type-structure.json)
-- [amazon-snow-family-cancel-cluster-request-structure.json](json-structure/amazon-snow-family-cancel-cluster-request-structure.json)
-- [amazon-snow-family-cancel-cluster-result-structure.json](json-structure/amazon-snow-family-cancel-cluster-result-structure.json)
-- [amazon-snow-family-cancel-job-request-structure.json](json-structure/amazon-snow-family-cancel-job-request-structure.json)
-- ... and 97 more
-
-### JSON-LD
-
-- [amazon-snow-family-context.jsonld](json-ld/amazon-snow-family-context.jsonld)
-
-### Examples
-
-- [amazon-snow-family-address-example.json](examples/amazon-snow-family-address-example.json)
-- [amazon-snow-family-address-type-example.json](examples/amazon-snow-family-address-type-example.json)
-- [amazon-snow-family-cancel-cluster-request-example.json](examples/amazon-snow-family-cancel-cluster-request-example.json)
-- [amazon-snow-family-cancel-cluster-result-example.json](examples/amazon-snow-family-cancel-cluster-result-example.json)
-- [amazon-snow-family-cancel-job-request-example.json](examples/amazon-snow-family-cancel-job-request-example.json)
-- ... and 97 more
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions.
-
-### Shared Per-API Definitions
-
-- [amazon-snow-family.yaml](capabilities/shared/amazon-snow-family.yaml) — Amazon Snow Family operations for resource management
-
-## Vocabulary
-
-- [Amazon Snow Family Vocabulary](vocabulary/amazon-snow-family-vocabulary.yaml) — Unified taxonomy mapping resources, actions, workflows, and personas
-
-## Rules
-
-- [Amazon Snow Family Spectral Rules](rules/amazon-snow-family-spectral-rules.yml) — Rules enforcing Amazon Snow Family API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-snow-family/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
