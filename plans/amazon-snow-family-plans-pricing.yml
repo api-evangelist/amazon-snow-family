@@ -1,0 +1,170 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/snowball/pricing/
+sources:
+- https://aws.amazon.com/snowball/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: usage-other
+delivery:
+  delivery: managed+licensed
+  method: page
+  read: '2026-10-28'
+  evidence: AWS only charges you based on the full days the device is at your physical location
+  managed_tier: On-Demand Job Fee for up to 100TB (includes 15 days)
+published: true
+note: 'AWS Snowball pricing page: per-job service fees, per-day fees, monthly and 1-year upfront commitment
+  fees by region (regional table values identical across listed regions); data transfer OUT priced by
+  region (example cites $0.05 / GB). Some options direct to AWS Sales for quotes.'
+plan_count: 9
+currency: USD
+plans:
+- name: Snowball Edge Storage Optimized 210TB — On-Demand Job Fee up to 100TB (US East N. Virginia)
+  price_text: $1,800
+  price: 1800
+  currency: USD
+  period: one-time
+  unit: per job
+  included_quota: includes 15 days of onsite use
+  overage: $250 per day beyond 15 days of use
+- name: Snowball Edge Storage Optimized 210TB — On-Demand Job Fee 101TB to 210TB
+  price_text: $3,200
+  price: 3200
+  currency: USD
+  period: one-time
+  unit: per job
+  included_quota: includes 15 days
+  overage: $250 per day beyond 15 days of use
+- name: Snowball Edge Storage Optimized 210TB — Monthly Fee
+  price_text: $9,885
+  price: 9885
+  currency: USD
+  period: month
+  unit: per device
+  included_quota: no service fee or per-day fees
+- name: Snowball Edge Storage Optimized 210TB — 1 year Commitment Upfront Fee
+  price_text: $97,268
+  price: 97268
+  currency: USD
+  period: year
+  unit: per device
+  included_quota: shipping included
+  overage: Device Cycling fee may apply
+- name: Snowball Edge Compute Optimized (up to 104 vCPUs, 416 GB RAM) — Monthly
+  price_text: $5,038 per month
+  price: 5038
+  currency: USD
+  period: month
+  unit: per device
+  included_quota: no shipping or EC2 compute fees
+- name: Snowball Edge Compute Optimized (up to 104 vCPUs, 416 GB RAM) — 1 Year Commit Upfront
+  price_text: $37,960 per year
+  price: 37960
+  currency: USD
+  period: year
+  unit: per device
+- name: Amazon S3 compatible storage on Snowball (monthly)
+  price_text: $0.01
+  price: 0.01
+  currency: USD
+  period: month
+  unit: per GB per month
+  included_quota: no charges for S3 API actions on device
+- name: Amazon S3 compatible storage on Snowball (yearly)
+  price_text: $0.12 per GB per year
+  price: 0.12
+  currency: USD
+  period: year
+  unit: per GB per year
+- name: Data transfer IN to Amazon S3
+  price_text: $0.00 per GB
+  price: 0
+  currency: USD
+  period: per-use
+  unit: per GB
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  - subscription
+  units:
+  - data
+  plans:
+  - name: Snowball Edge Storage Optimized 210TB — On-Demand Job Fee up to 100TB (US East N
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Snowball Edge Storage Optimized 210TB — On-Demand Job Fee 101TB to 210TB
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Snowball Edge Storage Optimized 210TB — Monthly Fee
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Snowball Edge Storage Optimized 210TB — 1 year Commitment Upfront Fee
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - year
+  - name: Snowball Edge Compute Optimized (up to 104 vCPUs, 416 GB RAM) — Monthly
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Snowball Edge Compute Optimized (up to 104 vCPUs, 416 GB RAM) — 1 Year Commit Up
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - year
+  - name: Amazon S3 compatible storage on Snowball (monthly)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - month
+  - name: Amazon S3 compatible storage on Snowball (yearly)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - year
+  - name: Data transfer IN to Amazon S3
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
